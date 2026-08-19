@@ -1,0 +1,1964 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Medical Skill Hub｜7分钟路演</title>
+  <style>
+    :root {
+      --ink: #f5f7fb;
+      --muted: #9ca9bf;
+      --dim: #6f7d97;
+      --navy: #07111f;
+      --navy-2: #0b1930;
+      --navy-3: #102445;
+      --cyan: #38d5ef;
+      --blue: #4f8cff;
+      --coral: #ff6f8f;
+      --amber: #ffbd64;
+      --green: #48db9b;
+      --line: rgba(203, 218, 244, .16);
+      --slide-w: 1600;
+      --slide-h: 900;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #02070e;
+      color: var(--ink);
+      font-family: Inter, "SF Pro Display", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      text-rendering: geometricPrecision;
+    }
+
+    button { font: inherit; }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(255,255,255,.35);
+      text-underline-offset: .18em;
+    }
+
+    #stage {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(79,140,255,.12), transparent 30%),
+        radial-gradient(circle at 82% 85%, rgba(255,111,143,.08), transparent 30%),
+        #02070e;
+    }
+
+    #deck {
+      position: relative;
+      width: min(100vw, calc(100vh * 16 / 9));
+      height: min(100vh, calc(100vw * 9 / 16));
+      overflow: hidden;
+      background: var(--navy);
+      box-shadow: 0 34px 120px rgba(0,0,0,.5);
+      isolation: isolate;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      overflow: hidden;
+      padding: 6.7% 6.4% 5.8%;
+      background:
+        radial-gradient(circle at 83% 18%, rgba(56,213,239,.07), transparent 25%),
+        linear-gradient(135deg, #07111f 0%, #09162a 55%, #07111f 100%);
+    }
+
+    .slide.active {
+      display: block;
+      animation: enter .42s cubic-bezier(.2,.78,.25,1) both;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      opacity: .4;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.68), transparent 88%);
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      width: 33%;
+      height: 58%;
+      right: -16%;
+      top: -29%;
+      border: 1px solid rgba(56,213,239,.18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 42px rgba(56,213,239,.025), 0 0 0 84px rgba(79,140,255,.02);
+      pointer-events: none;
+    }
+
+    @keyframes enter {
+      from { opacity: 0; transform: translateX(1.6%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .eyebrow {
+      position: absolute;
+      top: 4.2%;
+      left: 6.4%;
+      right: 6.4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: clamp(10px, 1.05vw, 17px);
+      font-weight: 760;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow .section {
+      color: var(--cyan);
+      letter-spacing: .11em;
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: .7em;
+      margin: 0 0 1.15%;
+      color: var(--cyan);
+      font-size: clamp(11px, 1.2vw, 19px);
+      font-weight: 780;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 2.2em;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 77%;
+      margin-bottom: 2.2%;
+      font-size: clamp(42px, 5.65vw, 91px);
+      line-height: 1.06;
+      letter-spacing: -.045em;
+      font-weight: 860;
+    }
+
+    h1 em {
+      color: var(--cyan);
+      font-style: normal;
+    }
+
+    h2 {
+      max-width: 92%;
+      margin: 0 0 3.6%;
+      font-size: clamp(31px, 4vw, 65px);
+      line-height: 1.13;
+      letter-spacing: -.035em;
+      font-weight: 830;
+    }
+
+    h2 .accent { color: var(--cyan); }
+
+    h3 {
+      font-size: clamp(18px, 1.9vw, 30px);
+      line-height: 1.22;
+      letter-spacing: -.02em;
+    }
+
+    .lead {
+      max-width: 68%;
+      color: #cbd5e8;
+      font-size: clamp(17px, 1.65vw, 27px);
+      line-height: 1.62;
+    }
+
+    .mono {
+      font-family: "SFMono-Regular", "Roboto Mono", ui-monospace, monospace;
+      letter-spacing: .02em;
+    }
+
+    .accent-line {
+      height: 4px;
+      border: 0;
+      margin: 0;
+      background: linear-gradient(90deg, var(--cyan) 0 18%, var(--blue) 18% 45%, var(--coral) 45% 72%, transparent 72%);
+      border-radius: 999px;
+    }
+
+    .source {
+      position: absolute;
+      left: 6.4%;
+      bottom: 2.35%;
+      z-index: 3;
+      max-width: 80%;
+      color: #7f8da6;
+      font-size: clamp(8px, .75vw, 12px);
+      line-height: 1.35;
+      letter-spacing: .01em;
+    }
+
+    .source .generated { color: #afbacd; }
+
+    .slide-no {
+      position: absolute;
+      right: 6.4%;
+      bottom: 2.25%;
+      color: #66758f;
+      font-size: clamp(9px, .8vw, 13px);
+      font-weight: 750;
+      letter-spacing: .16em;
+    }
+
+    /* Slide 1 */
+    .s1 {
+      background:
+        radial-gradient(circle at 84% 21%, rgba(56,213,239,.17), transparent 19%),
+        radial-gradient(circle at 78% 67%, rgba(255,111,143,.13), transparent 28%),
+        linear-gradient(126deg, #06101d 0%, #0b1930 66%, #091326 100%);
+    }
+
+    .s1 .hero {
+      position: absolute;
+      left: 6.4%;
+      top: 16.5%;
+      width: 82%;
+    }
+
+    .s1 h1 { max-width: 79%; }
+
+    .s1 .lead {
+      max-width: 64%;
+      margin-bottom: 0;
+    }
+
+    .s1 .thesis {
+      position: absolute;
+      right: 6.4%;
+      bottom: 10.2%;
+      width: 37%;
+      padding: 1.5% 0 0;
+      border-top: 1px solid rgba(255,255,255,.22);
+      color: var(--muted);
+      font-size: clamp(13px, 1.25vw, 20px);
+      line-height: 1.45;
+      text-align: right;
+    }
+
+    .s1 .thesis b {
+      display: block;
+      margin-bottom: .3em;
+      color: var(--ink);
+      font-size: 1.36em;
+    }
+
+    .s1 .orbit {
+      position: absolute;
+      right: 5.1%;
+      top: 18%;
+      width: 24%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(56,213,239,.26);
+      border-radius: 50%;
+      transform: rotate(-11deg);
+    }
+
+    .s1 .orbit::before,
+    .s1 .orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .s1 .orbit::before {
+      inset: 18%;
+      border: 1px solid rgba(255,111,143,.28);
+    }
+
+    .s1 .orbit::after {
+      width: 13%;
+      height: 13%;
+      right: 5%;
+      top: 41%;
+      background: var(--cyan);
+      box-shadow: 0 0 36px rgba(56,213,239,.72);
+    }
+
+    /* Slide 2 */
+    .s2 h2 {
+      max-width: 100%;
+      margin-bottom: 2.8%;
+    }
+
+    .problem-layout {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 6.2%;
+      align-items: stretch;
+    }
+
+    .demand-field {
+      padding-top: 2.6%;
+      border-top: 4px solid var(--cyan);
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .9vw, 15px);
+      font-weight: 820;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .demand-number {
+      margin: .08em 0 .12em;
+      color: var(--ink);
+      font-size: clamp(62px, 7.2vw, 116px);
+      font-weight: 880;
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+
+    .demand-number small {
+      margin-left: .18em;
+      color: var(--cyan);
+      font-size: .28em;
+      font-weight: 760;
+      letter-spacing: -.02em;
+    }
+
+    .demand-field p {
+      max-width: 90%;
+      margin: 0;
+      color: #c9d4e6;
+      font-size: clamp(15px, 1.38vw, 22px);
+      line-height: 1.55;
+    }
+
+    .demand-field p b { color: var(--ink); }
+
+    .scarcity-stack {
+      border-top: 1px solid var(--line);
+    }
+
+    .scarcity-item {
+      display: grid;
+      grid-template-columns: 38% 1fr;
+      align-items: center;
+      min-height: 47%;
+      padding: 3.2% 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .scarcity-number {
+      color: var(--coral);
+      font-size: clamp(38px, 4vw, 64px);
+      font-weight: 870;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    .scarcity-item:nth-child(2) .scarcity-number { color: var(--amber); }
+
+    .scarcity-copy strong {
+      display: block;
+      margin-bottom: .28em;
+      color: var(--ink);
+      font-size: clamp(17px, 1.72vw, 28px);
+      letter-spacing: -.02em;
+    }
+
+    .scarcity-copy span {
+      color: var(--muted);
+      font-size: clamp(12px, 1.08vw, 17px);
+      line-height: 1.48;
+    }
+
+    .policy-note {
+      display: grid;
+      grid-template-columns: 18% 1fr;
+      gap: 3.2%;
+      align-items: center;
+      margin-top: 2.8%;
+      padding: 1.8% 0 0;
+      border-top: 1px solid rgba(56,213,239,.28);
+    }
+
+    .policy-note .signal {
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .88vw, 14px);
+      font-weight: 850;
+      letter-spacing: .13em;
+    }
+
+    .policy-note p {
+      margin: 0;
+      color: #dce4f1;
+      font-size: clamp(16px, 1.48vw, 24px);
+      font-weight: 690;
+      line-height: 1.45;
+    }
+
+    .policy-note p b { color: var(--cyan); }
+
+    /* Slide 3 */
+    .s3 h2 {
+      max-width: 100%;
+      margin-bottom: 2.6%;
+    }
+
+    .market-layout {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 5.5%;
+      align-items: stretch;
+    }
+
+    .market-scale {
+      padding-top: 3%;
+      border-top: 4px solid var(--cyan);
+    }
+
+    .market-scale .period {
+      color: var(--muted);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .88vw, 14px);
+      font-weight: 820;
+      letter-spacing: .13em;
+    }
+
+    .growth-numbers {
+      display: flex;
+      align-items: center;
+      gap: 5%;
+      margin: 4.5% 0 5.5%;
+    }
+
+    .growth-numbers strong {
+      color: var(--ink);
+      font-size: clamp(36px, 4.2vw, 68px);
+      font-weight: 880;
+      line-height: .95;
+      letter-spacing: -.055em;
+    }
+
+    .growth-numbers strong:last-child { color: var(--cyan); }
+
+    .growth-numbers strong small {
+      display: block;
+      margin-top: .35em;
+      color: var(--muted);
+      font-size: .25em;
+      font-weight: 650;
+      letter-spacing: .02em;
+    }
+
+    .growth-numbers i {
+      color: var(--dim);
+      font-size: clamp(20px, 2vw, 32px);
+      font-style: normal;
+    }
+
+    .penetration {
+      display: flex;
+      align-items: baseline;
+      gap: 4%;
+      padding-top: 4.5%;
+      border-top: 1px solid var(--line);
+    }
+
+    .penetration b {
+      color: var(--amber);
+      font-size: clamp(30px, 3.5vw, 56px);
+      letter-spacing: -.045em;
+    }
+
+    .penetration span {
+      color: var(--muted);
+      font-size: clamp(11px, 1vw, 16px);
+      line-height: 1.45;
+    }
+
+    .deployment-lanes {
+      border-top: 1px solid var(--line);
+    }
+
+    .market-lane {
+      display: grid;
+      grid-template-columns: 25% 1fr;
+      gap: 4%;
+      align-items: start;
+      padding: 2.8% 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .market-lane .lane-name {
+      color: var(--cyan);
+      font-size: clamp(17px, 1.65vw, 26px);
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .market-lane:nth-child(2) .lane-name { color: var(--coral); }
+
+    .market-lane .examples {
+      margin: 0 0 .35em;
+      color: #dbe3f0;
+      font-size: clamp(14px, 1.28vw, 20px);
+      font-weight: 710;
+      line-height: 1.45;
+    }
+
+    .market-lane .reality {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(11px, 1vw, 16px);
+      line-height: 1.5;
+    }
+
+    .workflow-thesis {
+      display: grid;
+      grid-template-columns: 22% 1fr;
+      gap: 3.5%;
+      align-items: center;
+      margin-top: 2.7%;
+      padding-top: 1.8%;
+      border-top: 1px solid rgba(56,213,239,.3);
+    }
+
+    .workflow-thesis .thesis-label {
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .86vw, 14px);
+      font-weight: 850;
+      letter-spacing: .13em;
+    }
+
+    .workflow-chain {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2%;
+      color: #e4eaf4;
+      font-size: clamp(14px, 1.28vw, 20px);
+      font-weight: 720;
+      white-space: nowrap;
+    }
+
+    .workflow-chain i {
+      color: var(--coral);
+      font-style: normal;
+    }
+
+    .workflow-chain b { color: var(--cyan); }
+
+    /* Slide 4 */
+    .s4 {
+      background:
+        radial-gradient(circle at 50% 58%, rgba(56,213,239,.16), transparent 25%),
+        linear-gradient(135deg, #06111f, #0c1d37 55%, #091322);
+    }
+
+    .s4 h2 {
+      max-width: 100%;
+      margin-bottom: 2.5%;
+    }
+
+    .two-innovations {
+      border-top: 1px solid var(--line);
+    }
+
+    .innovation-block {
+      display: grid;
+      grid-template-columns: 7% 25% 1fr;
+      gap: 2.5%;
+      align-items: center;
+      padding: 2% 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .innovation-block .innovation-num {
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(16px, 1.45vw, 23px);
+      font-weight: 850;
+      letter-spacing: .08em;
+    }
+
+    .innovation-block.case .innovation-num { color: var(--coral); }
+
+    .innovation-title strong {
+      display: block;
+      color: var(--ink);
+      font-size: clamp(22px, 2.15vw, 34px);
+      line-height: 1.2;
+      letter-spacing: -.025em;
+    }
+
+    .innovation-title span {
+      display: block;
+      margin-top: .45em;
+      color: var(--muted);
+      font-size: clamp(10px, .9vw, 14px);
+      line-height: 1.4;
+    }
+
+    .innovation-mainline {
+      margin: 0 0 .42em;
+      color: #dfe6f1;
+      font-size: clamp(15px, 1.42vw, 23px);
+      font-weight: 760;
+      line-height: 1.38;
+    }
+
+    .innovation-mainline b { color: var(--cyan); }
+    .innovation-block.case .innovation-mainline b { color: var(--coral); }
+
+    .innovation-description {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(11px, 1vw, 16px);
+      line-height: 1.5;
+    }
+
+    .innovation-description strong { color: #d8e1ed; }
+
+    .guideline-fields {
+      margin-top: 1.5%;
+      color: #c9d4e4;
+      font-size: clamp(10px, .92vw, 15px);
+      line-height: 1.48;
+    }
+
+    .who-note {
+      margin: 1.4% 0 0;
+      padding-left: 2.2%;
+      border-left: 3px solid var(--cyan);
+      color: #d9e3ef;
+      font-size: clamp(10px, .94vw, 15px);
+      line-height: 1.45;
+    }
+
+    .who-note b { color: var(--cyan); }
+
+    .innovation-footer {
+      display: grid;
+      grid-template-columns: 42% 1fr;
+      gap: 4%;
+      align-items: center;
+      margin-top: 1.6%;
+      padding-top: 1.25%;
+      border-top: 1px solid rgba(56,213,239,.3);
+    }
+
+    .patent-progress span {
+      display: block;
+      margin-bottom: .3em;
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(9px, .78vw, 12px);
+      font-weight: 850;
+      letter-spacing: .13em;
+    }
+
+    .patent-progress strong {
+      color: #e6ecf5;
+      font-size: clamp(15px, 1.38vw, 22px);
+      line-height: 1.3;
+    }
+
+    .patent-progress small {
+      margin-left: .55em;
+      color: var(--muted);
+      font-size: clamp(9px, .76vw, 12px);
+    }
+
+    .innovation-result {
+      display: flex;
+      justify-content: flex-end;
+      gap: 4%;
+      color: var(--muted);
+      font-size: clamp(11px, 1.02vw, 16px);
+      font-weight: 720;
+    }
+
+    .innovation-result span::before {
+      content: "↳";
+      margin-right: .45em;
+      color: var(--coral);
+    }
+
+    /* Slide 5 */
+    .s5 {
+      background:
+        radial-gradient(circle at 50% 55%, rgba(56,213,239,.13), transparent 27%),
+        linear-gradient(135deg, #06111f, #0c1d37 55%, #091322);
+    }
+
+    .s5 h2 {
+      max-width: 100%;
+      margin-bottom: 3.2%;
+    }
+
+    .demo-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4%;
+      margin-top: 1%;
+    }
+
+    .demo-stage::before {
+      content: "";
+      position: absolute;
+      left: 4%;
+      right: 4%;
+      top: 3px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--coral));
+      opacity: .55;
+    }
+
+    .demo-node {
+      position: relative;
+      padding-top: 3.7%;
+      border-top: 4px solid var(--cyan);
+    }
+
+    .demo-node:nth-child(2) { border-color: #42c0f4; }
+    .demo-node:nth-child(3) { border-color: var(--blue); }
+    .demo-node:nth-child(4) { border-color: var(--coral); }
+
+    .demo-node small {
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .88vw, 14px);
+      font-weight: 850;
+      letter-spacing: .12em;
+    }
+
+    .demo-node:nth-child(3) small { color: var(--blue); }
+    .demo-node:nth-child(4) small { color: var(--coral); }
+
+    .demo-node h3 {
+      margin: .55em 0 .42em;
+      font-size: clamp(22px, 2.25vw, 36px);
+    }
+
+    .demo-node p {
+      max-width: 92%;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(13px, 1.18vw, 19px);
+      line-height: 1.5;
+    }
+
+    .demo-proof {
+      display: grid;
+      grid-template-columns: 22% 1fr;
+      gap: 3.5%;
+      align-items: center;
+      margin-top: 5%;
+      padding-top: 2.2%;
+      border-top: 1px solid rgba(56,213,239,.3);
+    }
+
+    .demo-proof .proof-label {
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .88vw, 14px);
+      font-weight: 850;
+      letter-spacing: .13em;
+    }
+
+    .proof-items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .proof-items span {
+      padding-left: 8%;
+      border-left: 1px solid var(--line);
+      color: #e2e8f3;
+      font-size: clamp(16px, 1.55vw, 25px);
+      font-weight: 760;
+    }
+
+    .proof-items span b {
+      display: block;
+      margin-bottom: .32em;
+      color: var(--amber);
+      font-family: ui-monospace, monospace;
+      font-size: .54em;
+      letter-spacing: .1em;
+    }
+
+    /* Slide 6 · Test results */
+    .s-results h2 {
+      max-width: 100%;
+      margin-bottom: 2.5%;
+    }
+
+    .results-layout {
+      display: grid;
+      grid-template-columns: .31fr .69fr;
+      gap: 5.5%;
+      align-items: stretch;
+    }
+
+    .result-summary {
+      padding-top: 3%;
+      border-top: 4px solid var(--cyan);
+    }
+
+    .summary-label {
+      color: var(--muted);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .88vw, 14px);
+      font-weight: 850;
+      letter-spacing: .13em;
+    }
+
+    .result-big {
+      margin: .12em 0 .16em;
+      color: var(--cyan);
+      font-size: clamp(50px, 5.8vw, 93px);
+      font-weight: 890;
+      line-height: 1;
+      letter-spacing: -.055em;
+    }
+
+    .result-big small {
+      margin-left: .18em;
+      color: var(--muted);
+      font-size: .24em;
+      font-weight: 760;
+      letter-spacing: .02em;
+    }
+
+    .result-summary > p {
+      margin: 0;
+      color: #d5deeb;
+      font-size: clamp(14px, 1.25vw, 20px);
+      line-height: 1.45;
+    }
+
+    .summary-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8%;
+      margin-top: 8%;
+      padding-top: 6%;
+      border-top: 1px solid var(--line);
+    }
+
+    .summary-pair b {
+      display: block;
+      color: var(--ink);
+      font-size: clamp(28px, 3vw, 48px);
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .summary-pair span:last-child b { color: var(--coral); }
+
+    .summary-pair small {
+      display: block;
+      margin-top: .55em;
+      color: var(--muted);
+      font-size: clamp(9px, .8vw, 13px);
+      line-height: 1.35;
+    }
+
+    .model-chart {
+      border-top: 1px solid var(--line);
+    }
+
+    .chart-legend {
+      display: flex;
+      justify-content: flex-end;
+      gap: 4%;
+      padding: 1.7% 0 1.2%;
+      color: var(--muted);
+      font-size: clamp(9px, .82vw, 13px);
+    }
+
+    .chart-legend span::before {
+      content: "";
+      display: inline-block;
+      width: 1.6em;
+      height: .55em;
+      margin-right: .55em;
+      background: #66758f;
+    }
+
+    .chart-legend span:last-child::before { background: var(--cyan); }
+
+    .model-row {
+      display: grid;
+      grid-template-columns: 26% 1fr;
+      gap: 3%;
+      align-items: center;
+      padding: 1.25% 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .model-name {
+      color: #dce4ef;
+      font-size: clamp(11px, 1.02vw, 16px);
+      font-weight: 730;
+      line-height: 1.25;
+    }
+
+    .bar-pair {
+      display: grid;
+      gap: 7px;
+    }
+
+    .bar-line {
+      display: grid;
+      grid-template-columns: 1fr 3.7em;
+      gap: 2%;
+      align-items: center;
+      color: var(--muted);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(9px, .82vw, 13px);
+      text-align: right;
+    }
+
+    .bar-track {
+      height: 10px;
+      overflow: hidden;
+      background: rgba(255,255,255,.05);
+    }
+
+    .bar-fill {
+      width: calc(var(--score) * 1%);
+      height: 100%;
+      background: #66758f;
+    }
+
+    .bar-line.workflow {
+      color: var(--cyan);
+      font-weight: 820;
+    }
+
+    .bar-line.workflow .bar-fill {
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      box-shadow: 0 0 18px rgba(56,213,239,.18);
+    }
+
+    /* Slide 6 */
+    .growth-layout {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 7%;
+      align-items: start;
+    }
+
+    .growth-path {
+      position: relative;
+      margin-top: 2%;
+    }
+
+    .growth-path::before {
+      content: "";
+      position: absolute;
+      left: 3.4%;
+      top: 4%;
+      bottom: 5%;
+      width: 2px;
+      background: linear-gradient(var(--cyan), var(--blue), var(--coral));
+    }
+
+    .growth-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 8% 30% 1fr;
+      align-items: center;
+      min-height: 64px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .growth-step .dot {
+      width: 12px;
+      height: 12px;
+      margin-left: 31%;
+      border: 3px solid var(--navy);
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 0 2px rgba(56,213,239,.5);
+    }
+
+    .growth-step:nth-child(4) .dot,
+    .growth-step:nth-child(5) .dot { background: var(--coral); box-shadow: 0 0 0 2px rgba(255,111,143,.45); }
+
+    .growth-step strong {
+      font-size: clamp(15px, 1.5vw, 24px);
+    }
+
+    .growth-step span {
+      color: var(--muted);
+      font-size: clamp(11px, 1.08vw, 17px);
+    }
+
+    .revenue {
+      padding-left: 8%;
+      border-left: 1px solid var(--line);
+    }
+
+    .revenue h3 { color: var(--cyan); }
+
+    .revenue ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .revenue li {
+      padding: 5.2% 0;
+      border-bottom: 1px solid var(--line);
+      color: #d5deec;
+      font-size: clamp(15px, 1.45vw, 23px);
+      font-weight: 690;
+    }
+
+    .revenue li small {
+      display: block;
+      margin-top: .35em;
+      color: var(--muted);
+      font-size: .67em;
+      font-weight: 520;
+    }
+
+    .platform-line {
+      position: absolute;
+      right: 6.4%;
+      bottom: 6.2%;
+      margin: 0;
+      color: var(--amber);
+      font-size: clamp(13px, 1.2vw, 19px);
+      font-weight: 760;
+      text-align: right;
+    }
+
+    /* Slide 7 */
+    .funding {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 6%;
+      align-items: stretch;
+    }
+
+    .ask-number {
+      padding-right: 7%;
+      border-right: 1px solid var(--line);
+    }
+
+    .ask-number .label {
+      color: var(--muted);
+      font-size: clamp(12px, 1.12vw, 18px);
+      letter-spacing: .1em;
+    }
+
+    .ask-number .amount {
+      margin: .18em 0;
+      color: var(--cyan);
+      font-size: clamp(48px, 6.2vw, 100px);
+      font-weight: 880;
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .ask-number .unit {
+      color: #cbd6e8;
+      font-size: clamp(18px, 1.8vw, 29px);
+      font-weight: 720;
+    }
+
+    .ask-number .runway {
+      margin-top: 12%;
+      padding-top: 8%;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: clamp(14px, 1.3vw, 21px);
+      line-height: 1.5;
+    }
+
+    .milestones {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4%;
+      align-items: stretch;
+    }
+
+    .milestone {
+      position: relative;
+      min-height: 250px;
+      padding: 6.5% 0 0;
+      border-top: 4px solid var(--cyan);
+    }
+
+    .milestone:nth-child(2) { border-color: var(--blue); }
+    .milestone:nth-child(3) { border-color: var(--coral); }
+
+    .milestone .num {
+      color: var(--dim);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(11px, 1vw, 16px);
+      font-weight: 760;
+    }
+
+    .milestone h3 {
+      margin: .7em 0 .8em;
+      font-size: clamp(20px, 2vw, 32px);
+    }
+
+    .milestone p {
+      color: var(--muted);
+      font-size: clamp(13px, 1.18vw, 19px);
+      line-height: 1.55;
+    }
+
+    .risk-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3%;
+      margin-top: 4.6%;
+      padding-top: 2.5%;
+      border-top: 1px solid var(--line);
+      color: #c7d2e4;
+      font-size: clamp(12px, 1.08vw, 17px);
+    }
+
+    .risk-row b { color: var(--amber); }
+
+    /* Slide 8 */
+    .s8 {
+      background:
+        radial-gradient(circle at 84% 70%, rgba(255,111,143,.12), transparent 25%),
+        radial-gradient(circle at 25% 15%, rgba(56,213,239,.11), transparent 25%),
+        linear-gradient(135deg, #07111f, #0c1d37 58%, #081324);
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0;
+      margin: 2% 0 4.3%;
+      padding: 0;
+      counter-reset: timeline-step;
+    }
+
+    .phase {
+      position: relative;
+      min-width: 0;
+      min-height: 154px;
+      padding: 66px 8% 0 6%;
+      counter-increment: timeline-step;
+    }
+
+    .phase::before {
+      content: "0" counter(timeline-step);
+      position: absolute;
+      z-index: 2;
+      left: 6%;
+      top: 9px;
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--cyan);
+      border-radius: 50%;
+      color: var(--cyan);
+      background: #09192d;
+      box-shadow: 0 0 0 5px #0a1a2f, 0 0 20px rgba(56,213,239,.2);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .82vw, 13px);
+      font-weight: 850;
+      letter-spacing: -.03em;
+    }
+
+    .phase:last-child {
+      background: linear-gradient(180deg, transparent 37%, rgba(255,111,143,.075));
+    }
+
+    .phase:last-child::before {
+      border-color: var(--coral);
+      color: #ff94aa;
+      box-shadow: 0 0 0 5px #111b32, 0 0 22px rgba(255,111,143,.28);
+    }
+
+    .phase .month {
+      position: absolute;
+      top: 18px;
+      left: calc(6% + 55px);
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(11px, .98vw, 16px);
+      font-weight: 820;
+      letter-spacing: .04em;
+    }
+
+    .phase:last-child .month { color: #ff94aa; }
+
+    .phase h3 {
+      margin: 0 0 .45em;
+      color: #f2f6fc;
+      font-size: clamp(18px, 1.72vw, 28px);
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .phase p {
+      color: var(--muted);
+      font-size: clamp(11px, .94vw, 15px);
+      line-height: 1.5;
+      max-width: 95%;
+    }
+
+    .phase:last-child h3 { color: #fff; }
+    .phase:last-child p { color: #bdc8db; }
+
+    .closing {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 7%;
+      align-items: end;
+      padding-top: 3%;
+    }
+
+    .closing-claim {
+      margin: 0;
+      color: #e7edf6;
+      font-size: clamp(22px, 2.45vw, 39px);
+      line-height: 1.38;
+      font-weight: 760;
+      letter-spacing: -.025em;
+    }
+
+    .closing-claim strong { color: var(--cyan); }
+
+    .asks {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #cbd5e7;
+      font-size: clamp(13px, 1.22vw, 19px);
+      line-height: 1.55;
+    }
+
+    .asks::before {
+      content: "我们希望连接";
+      display: block;
+      margin-bottom: .55em;
+      color: var(--coral);
+      font-family: ui-monospace, monospace;
+      font-size: .76em;
+      font-weight: 850;
+      letter-spacing: .12em;
+    }
+
+    .asks li::before {
+      content: "↗";
+      margin-right: .7em;
+      color: var(--coral);
+    }
+
+    /* Appendix 1 */
+    .s-appendix {
+      padding: 0;
+      background: #f4f7fb;
+    }
+
+    .s-appendix::before,
+    .s-appendix::after { display: none; }
+
+    .s-appendix .appendix-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .appendix-tag {
+      position: absolute;
+      left: 2.4%;
+      top: 2.7%;
+      z-index: 3;
+      padding: .65% 1%;
+      color: #fff;
+      background: rgba(7,17,31,.9);
+      border-left: 4px solid var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .9vw, 15px);
+      font-weight: 850;
+      letter-spacing: .1em;
+    }
+
+    .s-appendix .slide-no {
+      top: 2.8%;
+      right: 2.7%;
+      bottom: auto;
+      color: #4e5d77;
+    }
+
+    /* Presenter chrome */
+    #progress {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      z-index: 30;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue), var(--coral));
+      transition: width .3s ease;
+    }
+
+    .nav {
+      position: fixed;
+      top: 50%;
+      z-index: 40;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 64px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 8px;
+      color: rgba(255,255,255,.66);
+      background: rgba(5,13,25,.65);
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-50%);
+      transition: opacity .2s ease, background .2s ease;
+    }
+
+    body.ui-visible .nav, .nav:focus-visible { opacity: 1; pointer-events: auto; }
+    .nav:hover { background: rgba(15,34,63,.92); }
+    .nav.prev { left: 14px; }
+    .nav.next { right: 14px; }
+
+    #toolbar {
+      position: fixed;
+      right: 18px;
+      top: 16px;
+      z-index: 40;
+      display: flex;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+    }
+
+    body.ui-visible #toolbar, #toolbar:focus-within { opacity: 1; pointer-events: auto; }
+
+    #toolbar button {
+      min-width: 38px;
+      height: 34px;
+      padding: 0 11px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 7px;
+      color: rgba(255,255,255,.72);
+      background: rgba(5,13,25,.7);
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+    }
+
+    #toolbar button:hover { color: #fff; background: rgba(15,34,63,.94); }
+
+    #timer {
+      min-width: 76px !important;
+      font-family: ui-monospace, monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #notes-panel {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 50;
+      display: none;
+      width: min(560px, 42vw);
+      max-height: 78vh;
+      overflow: auto;
+      padding: 22px 24px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 12px;
+      background: rgba(4,12,23,.94);
+      box-shadow: 0 24px 80px rgba(0,0,0,.55);
+      backdrop-filter: blur(18px);
+    }
+
+    #notes-panel.show { display: block; }
+
+    #notes-panel h3 {
+      margin: 0 0 12px;
+      color: var(--cyan);
+      font-size: 18px;
+    }
+
+    #notes-panel .meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    #notes-panel .note-body {
+      color: #d3dceb;
+      font-size: 14px;
+      line-height: 1.72;
+    }
+
+    #notes-panel .note-body p { margin: 0 0 .8em; }
+
+    #notes-panel .note-body ul {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    #help {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: none;
+      place-items: center;
+      background: rgba(1,5,10,.76);
+      backdrop-filter: blur(10px);
+    }
+
+    #help.show { display: grid; }
+
+    .help-card {
+      width: min(620px, 86vw);
+      padding: 32px 36px;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 16px;
+      background: #0a172b;
+      box-shadow: 0 28px 90px rgba(0,0,0,.55);
+    }
+
+    .help-card h3 { color: var(--cyan); }
+
+    .key-grid {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 12px 22px;
+      color: #cbd5e6;
+      font-size: 15px;
+    }
+
+    kbd {
+      display: inline-block;
+      min-width: 31px;
+      padding: 3px 8px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 5px;
+      color: #fff;
+      background: rgba(255,255,255,.06);
+      font-family: ui-monospace, monospace;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      #notes-panel { width: calc(100vw - 36px); max-height: 54vh; }
+      .nav { width: 34px; height: 48px; }
+    }
+
+    @media print {
+      html, body { width: auto; height: auto; overflow: visible; background: #fff; }
+      #stage { position: static; display: block; background: #fff; }
+      #deck { width: auto; height: auto; box-shadow: none; overflow: visible; }
+      .slide, .slide.active {
+        position: relative;
+        display: block !important;
+        width: 1600px;
+        height: 900px;
+        break-after: page;
+        animation: none;
+      }
+      .nav, #toolbar, #progress, #notes-panel, #help { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main id="stage">
+    <div id="deck" aria-live="polite">
+      <section class="slide s1 active" data-duration="20" data-label="开场定位">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">智极松 · 线下路演</span></div>
+        <div class="orbit" aria-hidden="true"></div>
+        <div class="hero">
+          <div class="kicker">Executable Clinical Intelligence</div>
+          <h1>Medical Skill Hub<br>医疗临床专科<br><em>辅助多智能体架构</em></h1>
+          <p class="lead">以指南 Skill 与相似病例知识库，为医生生成有依据、可追溯、可复核的高准确性临床决策链。</p>
+        </div>
+        <p class="thesis"><b>不是另一个医疗问答模型</b>而是一个可执行、可复核的临床智能基础设施。</p>
+        <div class="source">内容依据：<a href="./%E7%AC%AC%E5%9B%9B%E9%A1%B5%20%E6%8A%80%E6%9C%AF%E5%88%9B%E6%96%B0%E7%82%B9.md">第四页 技术创新点.md</a>；<a href="./grade_scale.md">grade_scale.md</a></div>
+        <div class="slide-no">01 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>20 秒。</b>医疗 AI 已经会回答医学问题，但临床真正需要的不是一个听起来合理的答案，而是有患者证据、有指南依据、能够被医生复核的决策过程。</p>
+          <p>Medical Skill Hub 将权威指南编译成可执行的 Clinical Skill，同时把历史病例转化为医生的外置经验库，共同生成可追溯的临床决策链。</p>
+          <p><b>转场：</b>为什么这项能力必须尽快进入临床？因为百亿级诊疗需求与优质诊断资源不足正在同时发生。</p>
+          <p><b>[Sources]</b> 第四页 技术创新点.md；grade_scale.md（演示闭环与验证重点）。</p>
+        </aside>
+      </section>
+
+      <section class="slide s2" data-duration="45" data-label="医疗背景与实际痛点">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">01 · 医疗背景与痛点</span></div>
+        <div class="kicker">Healthcare Context</div>
+        <h2>百亿级诊疗需求下，<br><span class="accent">优质诊断能力仍稀缺且集中</span></h2>
+        <div class="problem-layout">
+          <div class="demand-field">
+            <div class="metric-label">2025 · 全国医疗服务总量</div>
+            <div class="demand-number">105.8<small>亿人次</small></div>
+            <p>全国医疗卫生机构全年总诊疗达到百亿量级；同期执业（助理）医师为 <b>529 万人</b>。</p>
+          </div>
+          <div class="scarcity-stack">
+            <div class="scarcity-item">
+              <div class="scarcity-number">529 万</div>
+              <div class="scarcity-copy"><strong>现有执业（助理）医师</strong><span>高需求与专业人才不足并存，诊断供给难以覆盖基层。</span></div>
+            </div>
+            <div class="scarcity-item">
+              <div class="scarcity-number">≈80%</div>
+              <div class="scarcity-copy"><strong>集中于一线城市三甲医院</strong><span>优质医疗资源分布不均，“跨省看病”仍是现实痛点。</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="policy-note">
+          <div class="signal">POLICY SIGNAL<br>基层 + 智能辅助</div>
+          <p>《国民健康“十五五”规划》继续推动基层诊疗智能辅助应用——<b>用 AI 把可信诊断能力下沉到县域</b>，正是需要被解决的行业命题。</p>
+        </div>
+        <div class="source">信息来源：<a href="./%E7%AC%AC%E4%BA%8C%E9%A1%B5%20%E5%8C%BB%E7%96%97%E8%83%8C%E6%99%AF%26%E5%AE%9E%E9%99%85%E7%97%9B%E7%82%B9%E9%98%90%E8%BF%B0.md">第二页 医疗背景&amp;实际痛点阐述.md</a>；《中华人民共和国2025年国民经济和社会发展统计公报》；新华网；《国民健康“十五五”规划》</div>
+        <div class="slide-no">02 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>45 秒。</b>2025 年，全国医疗卫生机构总诊疗达到 105.8 亿人次，面对的是百亿量级的真实医疗需求。但专业诊断资源并没有同步下沉：行业统计显示，病理医生缺口超过 14 万，约八成病理医生仍集中在一线城市三甲医院。</p>
+          <p>因此，患者“跨省寻病理”、基层机构诊断能力不足，并不只是效率问题，而是优质医疗资源能否被公平获得的问题。《国民健康“十五五”规划》继续推动基层医疗建设与诊疗智能辅助应用，也给出了明确方向。</p>
+          <p><b>转场：</b>我们要解决的，就是如何用 AI 把可信、可验证的临床能力下沉到县域，而不只是再做一个医院里的问答工具。</p>
+        </aside>
+      </section>
+
+      <section class="slide s3" data-duration="55" data-label="市场产品与医院部署">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">02 · 市场与部署现状</span></div>
+        <div class="kicker">Market Reality</div>
+        <h2>医疗 AI 已经进入医院，<br><span class="accent">竞争焦点转向专科垂域医生工作流</span></h2>
+        <div class="market-layout">
+          <div class="market-scale">
+            <div class="period">CHINA AI + HEALTHCARE SOFTWARE</div>
+            <div class="growth-numbers">
+              <strong>35.4<small>亿元 · 2025</small></strong>
+              <i>→</i>
+              <strong>140<small>亿元 · 2030E</small></strong>
+            </div>
+            <div class="penetration"><b>44.7%</b><span>预计 2030 年<br>医疗应用软件渗透率</span></div>
+          </div>
+          <div class="deployment-lanes">
+            <div class="market-lane">
+              <div class="lane-name">大厂医疗产品</div>
+              <div><p class="examples">讯飞医疗 · 京东健康 · 百度健康 · 迈瑞启元 · 腾讯医疗</p><p class="reality">模型与 Agent 整体能力强，但临床诊断细分场景仍缺少公开、可复核的真实数据支撑。</p></div>
+            </div>
+            <div class="market-lane">
+              <div class="lane-name">医院部署模型</div>
+              <div><p class="examples">北京协和医院 太初（罕见病）· 四川华西医院 黉医 (诊断) · 上海瑞金 RuiPath（病理）等医院</p><p class="reality">应用已覆盖鉴别诊断、病历分析、病理与影像，但多数仍以 LLM + RAG 或单点系统切入，工作流尚未完全贯通。</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="policy-note">
+          <div class="signal">POLICY SIGNAL<br>临床专科垂直应用</div>
+          <p>《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》——<b>2027 年：形成一批临床专病专科垂直大模型和智能体应用</b>，推动基层诊疗智能辅助和专科专病诊疗智能辅助决策广泛应用。</p>
+        </div>
+        <!-- <div class="workflow-thesis">
+          <div class="thesis-label">THE WINNING LOGIC<br>不止模型跑分</div>
+          <div class="workflow-chain"><span>读取真实病例</span><i>→</i><span>选择指南与工具</span><i>→</i><span>形成循证诊断</span><i>→</i><b>进入工作流 · 医生确认</b></div>
+        </div> -->
+
+        <div class="source">信息来源：<a href="./%E7%AC%AC%E4%B8%89%E9%A1%B5%20%E5%BD%93%E6%97%B6%E5%B8%82%E5%9C%BA%E4%BA%A7%E5%93%81%E5%92%8C%E5%8C%BB%E9%99%A2%E5%AE%9E%E9%99%85%E9%83%A8%E7%BD%B2.md">第三页 当时市场产品和医院实际部署.md</a>；IDC（2026）</div>
+        <div class="slide-no">03 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>55 秒。</b>医疗 AI 已经不是一个概念市场。IDC 数据显示，2025 年中国 AI+医疗应用软件市场约 35.4 亿元，预计 2030 年达到 140 亿元，渗透率约 44.7%。讯飞、京东、百度、迈瑞、腾讯等大厂都已入场。</p>
+          <p>医院侧也出现大量真实部署：协和的罕见病大模型、北医三院接入医生工作站的 DeepSeek、瑞金的多模态病理模型，以及多家医院的 CT 辅助诊断系统。市场已经验证了需求，但当前产品多从 LLM 加 RAG 或单点诊断系统切入，临床逻辑容易在切块中断裂，完整工作流仍未打通。</p>
+          <p>所以未来真正决定赢家的，不是 MedQA 或 MedBench 多几分，而是能否读取真实病例、选择正确指南和工具、形成循证诊断，最终进入医生工作流并由医生确认。这也是 Agent 架构比单纯 Chatbot 更有商业价值的原因。</p>
+          <p><b>转场：</b>下面用一条真实病例链路，直接证明我们如何穿过这条工作流。</p>
+          <p><b>[Sources]</b> 第三页 当时市场产品和医院实际部署.md；IDC（2026，市场规模与竞争趋势）。</p>
+        </aside>
+      </section>
+
+      <section class="slide s4" data-duration="65" data-label="技术创新点">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">03 · 技术创新</span></div>
+        <div class="kicker">Two Core Innovations</div>
+        <h2>两大创新，让指南与病例经验<br>成为<span class="accent">可执行的临床能力</span></h2>
+        <div class="two-innovations">
+          <div class="innovation-block guideline">
+            <div class="innovation-num">01</div>
+            <div class="innovation-title"><strong>指南 Skill 知识库</strong><span>Guideline as Knowledge → Guideline as Skill</span></div>
+            <div>
+              <p class="innovation-description">将指南转化为 Agent <strong>可调用、可执行、可组合</strong>的临床能力单元，而不是普通知识切块。</p>
+              <div class="guideline-fields">适用人群 · 临床条件 · 推荐意见与强度 · 证据等级 · 禁忌条件 · 检查建议 · 决策逻辑</div>
+              <p class="who-note"><b>与世卫组织 WHO SMART Guidelines 方向一致：</b>指南数字化数据、决策支持逻辑与机器可读组件。</p>
+            </div>
+          </div>
+          <div class="innovation-block case">
+            <div class="innovation-num">02</div>
+            <div class="innovation-title"><strong>相似病例知识库</strong><span>把历史病例转化为外置经验</span></div>
+            <div><p class="innovation-mainline">患者关键信息 → 相似病例匹配 → <b>历史诊疗路径参考</b></p><p class="innovation-description">辅助医生快速参考既往诊疗经验，提升复杂病例判断准确率，缓解诊疗经验/医疗资源分布不均。</p></div>
+          </div>
+        </div>
+        <div class="innovation-footer">
+          <div class="patent-progress"><span>IP PROGRESS</span><strong>核心工作流专利申请已提交</strong><small>申请中</small></div>
+          <div class="innovation-result"><span>降低模型幻觉</span><span>推理过程可追溯</span><span>临床能力可复用</span></div>
+        </div>
+        <div class="source">信息来源：<a href="./%E7%AC%AC%E5%9B%9B%E9%A1%B5%20%E6%8A%80%E6%9C%AF%E5%88%9B%E6%96%B0%E7%82%B9.md">第四页 技术创新点.md</a>；<a href="https://www.who.int/teams/digital-health-and-innovation/smart-guidelines">WHO SMART Guidelines</a></div>
+        <div class="slide-no">04 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>65 秒。</b>我们的技术创新可以归纳为两点。第一是指南 Skill 知识库：把原本只能检索的指南，转化为 Recommendation Card、Clinical Skill 和 Skill Library。适用人群、临床条件、推荐强度、证据等级、禁忌和检查建议都被保留为结构化决策逻辑，供 Agent 调用、执行和组合。</p>
+          <p>这一技术方向与 WHO SMART Guidelines 强调的指南数字化数据、决策支持逻辑和机器可读组件一致。这里强调方向和逻辑一致，不宣称已经完成 WHO 标准认证或符合性验证。</p>
+          <p>第二是相似病例知识库：系统提取患者关键信息并匹配历史病例，把既往诊疗路径转化为医生的外置经验库，帮助医生判断复杂病例，缓解经验分布不均。</p>
+          <p><b>知识产权进展：</b>围绕核心工作流的专利申请已经提交，目前处于申请阶段；现场表述必须与“已获授权”严格区分。</p>
+          <p><b>转场：</b>下一页我们用一条病例，现场验证这套可执行 Skill 如何形成可复核的临床决策闭环。</p>
+          <p><b>[Sources]</b> 第四页 技术创新点.md；WHO SMART Guidelines（数字化指南、决策支持逻辑与机器可读组件方向）；专利申请状态由团队提供。</p>
+        </aside>
+      </section>
+
+      <section class="slide s5" data-duration="120" data-label="现场 Demo">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">04 · 现场 DEMO</span></div>
+        <div class="kicker">Live Clinical Proof</div>
+        <h2>一条病例，跑通<br><span class="accent">可复核的临床决策闭环</span></h2>
+        <div class="demo-stage">
+          <div class="demo-node"><small>01 · INPUT</small><h3>病例输入</h3><p>预载、脱敏的代表性临床病例</p></div>
+          <div class="demo-node"><small>02 · EVIDENCE</small><h3>证据抽取</h3><p>症状、检查、时间线与关键阴性证据</p></div>
+          <div class="demo-node"><small>03 · SKILL</small><h3>Skill 执行</h3><p>匹配适用指南，并执行临床逻辑</p></div>
+          <div class="demo-node"><small>04 · RESULT</small><h3>循证结果</h3><p>鉴别诊断、支持与反对证据、下一步建议</p></div>
+        </div>
+        <div class="demo-proof">
+          <div class="proof-label">DEMO CHECKPOINTS<br>现场只看三件事</div>
+          <div class="proof-items"><span><b>01</b>来源可定位</span><span><b>02</b>证据可展开</span><span><b>03</b>结论可复核</span></div>
+        </div>
+        <div class="source">演示边界：系统提供临床辅助决策，最终判断由医生确认｜信息来源：<a href="./grade_scale.md">grade_scale.md（D2）</a></div>
+        <div class="slide-no">05 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>120 秒。</b>本页只验证一个闭环：系统读取一条预载脱敏病例，抽取患者证据，匹配并执行 Clinical Skill，最后给出带来源的鉴别诊断与下一步建议。</p>
+          <p><b>演示节奏：</b>病例输入 20 秒；证据抽取 30 秒；Skill 与指南依据 30 秒；结果和证据链 40 秒。重点停留在来源定位、支持/反对证据和医生复核三个位置。</p>
+          <p><b>故障切换：</b>现场无响应时直接切换同一病例的离线记录，不刷新、不解释网络。</p>
+          <p><b>转场：</b>现场展示的是一条病例；接下来用 519 种消化内科疾病和 5 个模型的测试结果，看这套工作流是否具有跨模型稳定性。</p>
+          <p><b>[Sources]</b> grade_scale.md（D2，演示闭环与验证重点）。</p>
+        </aside>
+      </section>
+
+      <section class="slide s-results" data-duration="40" data-label="多模型测试结果">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">05 · 多模型测试</span></div>
+        <div class="kicker">Multi-Model Evaluation</div>
+        <h2>519 种消化内科疾病测试中，<br><span class="accent">工作流在 5 个模型上均提升表现</span></h2>
+        <div class="results-layout">
+          <div class="result-summary">
+            <div class="summary-label">AVERAGE LIFT</div>
+            <div class="result-big">+20.0<small>pp</small></div>
+            <p>五个模型的平均测试结果<br>从 <b>51.2%</b> 提升至 <b>71.2%</b></p>
+            <div class="summary-pair"><span><b>5 / 5</b><small>测试模型全部提升</small></span><span><b>83.3%</b><small>最高工作流结果</small></span></div>
+          </div>
+          <div class="model-chart">
+            <div class="chart-legend"><span>纯 LLM</span><span>Skill 工作流</span></div>
+            <div class="model-row"><div class="model-name">Qwen3.5-9B</div><div class="bar-pair"><div class="bar-line"><div class="bar-track"><div class="bar-fill" style="--score:19.3"></div></div><span>19.3%</span></div><div class="bar-line workflow"><div class="bar-track"><div class="bar-fill" style="--score:58.6"></div></div><span>58.6%</span></div></div></div>
+            <div class="model-row"><div class="model-name">Qwen3.5-27B</div><div class="bar-pair"><div class="bar-line"><div class="bar-track"><div class="bar-fill" style="--score:56"></div></div><span>56.0%</span></div><div class="bar-line workflow"><div class="bar-track"><div class="bar-fill" style="--score:64"></div></div><span>64.0%</span></div></div></div>
+            <div class="model-row"><div class="model-name">Qwen3.5-122B-A10B</div><div class="bar-pair"><div class="bar-line"><div class="bar-track"><div class="bar-fill" style="--score:63.3"></div></div><span>63.3%</span></div><div class="bar-line workflow"><div class="bar-track"><div class="bar-fill" style="--score:70"></div></div><span>70.0%</span></div></div></div>
+            <div class="model-row"><div class="model-name">DeepSeek-v4-flash</div><div class="bar-pair"><div class="bar-line"><div class="bar-track"><div class="bar-fill" style="--score:50.7"></div></div><span>50.7%</span></div><div class="bar-line workflow"><div class="bar-track"><div class="bar-fill" style="--score:80"></div></div><span>80.0%</span></div></div></div>
+            <div class="model-row"><div class="model-name">DeepSeek-v4-pro</div><div class="bar-pair"><div class="bar-line"><div class="bar-track"><div class="bar-fill" style="--score:66.7"></div></div><span>66.7%</span></div><div class="bar-line workflow"><div class="bar-track"><div class="bar-fill" style="--score:83.3"></div></div><span>83.3%</span></div></div></div>
+          </div>
+        </div>
+        <div class="source">内部测试结果：<a href="./%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E7%BB%93%E6%9E%9C.md">测试结果结果.md</a>｜平均值与提升百分点根据文件数据计算</div>
+        <div class="slide-no">06 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>40 秒。</b>我们在 519 种消化内科疾病中，对 5 个不同规模与系列的模型进行纯 LLM 和工作流对比。结果显示，5 个模型全部提升，平均结果从 51.2% 提升到 71.2%，平均增加约 20 个百分点。</p>
+          <p>其中 Qwen3.5-9B 的提升最大，从 19.3% 到 58.6%；DeepSeek-v4-pro 的工作流结果最高，达到 83.3%。这说明价值不仅来自更大的底层模型，也来自可复用的临床工作流。</p>
+          <p><b>转场：</b>跨模型获得一致提升，意味着底层模型可替换，平台与 Skill 才是能够持续复制的核心资产。</p>
+          <p><b>[Sources]</b> 测试结果结果.md（519 种消化内科疾病、5 个模型的纯 LLM 与工作流测试结果）；平均值与百分点为根据原始数据计算。</p>
+        </aside>
+      </section>
+
+      <section class="slide s6" data-duration="50" data-label="商业计划与成长">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">06 · 商业计划与成长</span></div>
+        <div class="kicker">Go-to-Market</div>
+        <h2>先做成一个标杆科室，<br>再复制<span class="accent">一个平台 + 多个 Skill Pack</span></h2>
+        <div class="growth-layout">
+          <div class="growth-path">
+            <div class="growth-step"><i class="dot"></i><strong>临床专家验证</strong><span>先证明有效与可用</span></div>
+            <div class="growth-step"><i class="dot"></i><strong>标杆科室</strong><span>形成专科示范场景</span></div>
+            <div class="growth-step"><i class="dot"></i><strong>标杆医院</strong><span>标准化私有部署与实施 SOP</span></div>
+            <div class="growth-step"><i class="dot"></i><strong>同类医院复制</strong><span>复用平台与消化内科 Skill Pack</span></div>
+            <div class="growth-step"><i class="dot"></i><strong>产业渠道放大</strong><span>通过 HIS / EMR / CDSS 进入更多医院</span></div>
+          </div>
+          <div class="revenue">
+            <h3>四层收入结构</h3>
+            <ul>
+              <li>平台授权<small>Medical Skill Hub 私有化部署</small></li>
+              <li>Clinical Skill Pack<small>专科授权与指南持续更新</small></li>
+              <li>部署与系统集成<small>医院接口、实施与培训</small></li>
+              <li>API / SDK / Runtime<small>面向信息化与医疗 AI 企业</small></li>
+            </ul>
+          </div>
+        </div>
+        <div class="source">信息来源：<a href="./Topic%204%20%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B8%8E%E6%88%90%E9%95%BF%E6%80%A7.md">Topic 4 商业计划与成长性.md</a>｜<span class="generated">【生成内容：增长路径与收入结构可视化】</span></div>
+        <div class="slide-no">07 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>50 秒。</b>医疗行业第一家医院最难，所以我们的获客顺序不是先追求规模，而是先获得临床专家验证，做成一个标杆科室，再把部署方案、Skill Pack、培训和评价指标标准化。</p>
+          <p>收入从平台私有部署开始，叠加专科 Skill Pack、部署集成与持续更新；同时通过 API、SDK 或 Runtime 与 HIS、EMR、CDSS 合作。底座不变，新增 Skill 就能跨疾病、跨专科复制。</p>
+          <p><b>转场：</b>因此融资的目的也很清晰——不是堆算力，而是连续跨过产品、临床和商业三次验证。</p>
+        </aside>
+      </section>
+
+      <section class="slide s7" data-duration="45" data-label="投资价值">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">07 · 投资价值</span></div>
+        <div class="kicker">Capital Efficiency</div>
+        <h2>拟融资 300–500 万元，<br>换来<span class="accent">三次风险消除</span></h2>
+        <div class="funding">
+          <div class="ask-number">
+            <div class="label">SEED / ANGEL ROUND</div>
+            <div class="amount">300–500</div>
+            <div class="unit">万元人民币</div>
+            <p class="runway"><b>0-6 个月</b><br>产品化 · 临床验证 · 商业验证</p>
+          </div>
+          <div class="milestones">
+            <div class="milestone"><span class="num">01</span><h3>产品可用</h3><p>V1.0、核心 Skill Library、可部署 Runtime 与稳定性记录。</p></div>
+            <div class="milestone"><span class="num">02</span><h3>临床有效</h3><p>医生评价、样本量与指标口径、可复核的 Clinical Evaluation。</p></div>
+            <div class="milestone"><span class="num">03</span><h3>商业可复制</h3><p>科室试点、标准化私有部署、首批付费或产业合作。</p></div>
+          </div>
+        </div>
+        <div class="risk-row"><span><b>模型风险 →</b> Model-Agnostic</span><span><b>临床风险 →</b> 证据链 + 医生确认</span><span><b>销售风险 →</b> 医院直销 + B2B2H 渠道</span></div>
+        <div class="source">信息来源：<a href="./Topic%205%20%E6%8A%95%E8%B5%84%E4%BB%B7%E5%80%BC.md">Topic 5 投资价值.md</a>｜<span class="generated">【生成内容：三次风险消除框架与页面表述】</span></div>
+        <div class="slide-no">08 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>45 秒。</b>我们拟以 300 到 500 万元种子或天使轮，支持 12 到 18 个月。正式上台前请确认这一融资额仍代表团队真实计划。</p>
+          <p>资金对应三类可验证结果：产品可用、临床有效、商业可复制。核心资产不是某一代模型，而是跨模型复用的 Skill、Compiler 与临床验证数据。</p>
+          <p>我们用 Model-Agnostic 降低模型迭代风险，用证据链和医生确认降低临床接受风险，用医院直销与信息化渠道并行降低销售周期风险。</p>
+          <p><b>转场：</b>赛后 6 个月，我们会用具体交付物把这三次验证真正启动起来。</p>
+        </aside>
+      </section>
+
+      <section class="slide s8" data-duration="40" data-label="落地计划与收束">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">08 · 落地承诺</span></div>
+        <div class="kicker">Execution</div>
+        <h2>6 个月，做成首个<span class="accent">可复制的消化内科示范场景</span></h2>
+        <div class="timeline">
+          <div class="phase"><span class="month">0–1 月</span><h3>产品 V1.0</h3><p>稳定部署 · 医生可测</p></div>
+          <div class="phase"><span class="month">1–2 月</span><h3>医生验证</h3><p>Clinical Evaluation · V1.1</p></div>
+          <div class="phase"><span class="month">2–3 月</span><h3>科室试点</h3><p>真实工作流 · 小规模试用</p></div>
+          <div class="phase"><span class="month">3–4 月</span><h3>标准化部署</h3><p>私有部署 · 接口 · 安全</p></div>
+          <div class="phase"><span class="month">4–6 月</span><h3>合作转化</h3><p>持续试点 / 联合研发 / 产品集成</p></div>
+        </div>
+        <div class="closing">
+          <p class="closing-claim">比赛结束不是终点，而是<strong>临床验证与产业验证</strong>的起点。<br><small>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。</small></p>
+          <ul class="asks"><li>消化内科试点医院与临床医生</li><li>HIS / EMR / CDSS 集成伙伴</li><li>支持产品化与临床验证的产业、投资资源</li></ul>
+        </div>
+        <div class="source">信息来源：<a href="./Topic6%20%E8%90%BD%E5%9C%B0%E6%84%8F%E6%84%BF.md">Topic6 落地意愿.md</a>；<a href="./Topic%204%20%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B8%8E%E6%88%90%E9%95%BF%E6%80%A7.md">Topic 4 商业计划与成长性.md</a>｜<span class="generated">【生成内容：合作诉求与收束表述整合】</span></div>
+        <div class="slide-no">09 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>40 秒。</b>赛后 6 个月，我们不泛化扩张，只集中完成消化内科首个示范：1 个月形成可供医生测试的 V1.0；2 个月完成首轮医生评价；3 个月推进科室试点；4 个月形成标准化私有部署；6 个月至少形成一项持续试点、联合研发或产品集成合作。</p>
+          <p>我们希望连接消化内科试点医院、医疗信息化集成伙伴，以及支持产品化和临床验证的产业与投资资源。</p>
+          <p><b>结尾：</b>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。谢谢各位评委。</p>
+        </aside>
+      </section>
+
+      <section class="slide s-appendix" data-duration="0" data-label="附录 1 · 系统工作流">
+        <div class="appendix-tag">APPENDIX 1 · 系统工作流与项目架构</div>
+        <img class="appendix-image" src="./workflow.png" alt="Medical Skill Hub 消化内科多智能体诊断系统工作流与项目架构" />
+        <div class="slide-no">10 / 10</div>
+        <aside class="speaker-note" hidden>
+          <p><b>附录 1。</b>Medical Skill Hub 消化内科多智能体诊断系统的完整工作流与项目架构，包括接入与模型层、多智能体诊断流水线、结构化结果交付，以及评估与技术底座。</p>
+          <p><b>[Sources]</b> workflow.png（团队提供的项目架构图）。</p>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <button class="nav prev" type="button" aria-label="上一页">‹</button>
+  <button class="nav next" type="button" aria-label="下一页">›</button>
+  <div id="toolbar" aria-label="演示工具栏">
+    <button id="timer" type="button" title="开始/暂停计时（T）">00:00</button>
+    <button id="notes-toggle" type="button" title="讲者备注（N）">N</button>
+    <button id="fullscreen" type="button" title="全屏（F）">⛶</button>
+    <button id="help-toggle" type="button" title="快捷键（?）">?</button>
+  </div>
+  <div id="progress" aria-hidden="true"></div>
+
+  <aside id="notes-panel" aria-label="讲者备注">
+    <h3 id="note-title"></h3>
+    <div class="meta"><span id="note-page"></span><span id="note-time"></span></div>
+    <div id="note-body" class="note-body"></div>
+  </aside>
+
+  <div id="help" role="dialog" aria-modal="true" aria-label="快捷键帮助">
+    <div class="help-card">
+      <h3>演示快捷键</h3>
+      <div class="key-grid">
+        <span><kbd>←</kbd> <kbd>→</kbd></span><span>上一页 / 下一页</span>
+        <span><kbd>Space</kbd></span><span>下一页</span>
+        <span><kbd>Home</kbd> <kbd>End</kbd></span><span>首页 / 末页</span>
+        <span><kbd>N</kbd></span><span>显示 / 隐藏讲者备注</span>
+        <span><kbd>T</kbd></span><span>开始 / 暂停 7 分钟计时</span>
+        <span><kbd>R</kbd></span><span>计时归零</span>
+        <span><kbd>F</kbd></span><span>进入 / 退出全屏</span>
+        <span><kbd>?</kbd> <kbd>Esc</kbd></span><span>打开 / 关闭帮助</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll('.slide')];
+      const progress = document.getElementById('progress');
+      const notesPanel = document.getElementById('notes-panel');
+      const noteTitle = document.getElementById('note-title');
+      const notePage = document.getElementById('note-page');
+      const noteTime = document.getElementById('note-time');
+      const noteBody = document.getElementById('note-body');
+      const timerButton = document.getElementById('timer');
+      const help = document.getElementById('help');
+      let index = 0;
+      let elapsed = 0;
+      let timerId = null;
+      let uiTimerId = null;
+
+      const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
+      const formatTime = (seconds) => {
+        const sign = seconds < 0 ? '−' : '';
+        const abs = Math.abs(seconds);
+        const m = Math.floor(abs / 60).toString().padStart(2, '0');
+        const s = Math.floor(abs % 60).toString().padStart(2, '0');
+        return `${sign}${m}:${s}`;
+      };
+
+      const renderTimer = () => {
+        timerButton.textContent = formatTime(elapsed);
+        timerButton.style.color = elapsed > 420 ? 'var(--coral)' : '';
+      };
+
+      const updateNotes = () => {
+        const slide = slides[index];
+        const note = slide.querySelector('.speaker-note');
+        const duration = Number(slide.dataset.duration || 0);
+        noteTitle.textContent = slide.dataset.label || `第 ${index + 1} 页`;
+        notePage.textContent = `${index + 1} / ${slides.length}`;
+        noteTime.textContent = `建议 ${duration} 秒`;
+        noteBody.innerHTML = note ? note.innerHTML : '<p>暂无讲者备注。</p>';
+      };
+
+      const show = (nextIndex, pushHash = true) => {
+        index = clamp(nextIndex, 0, slides.length - 1);
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+        progress.style.width = `${((index + 1) / slides.length) * 100}%`;
+        updateNotes();
+        if (pushHash) history.replaceState(null, '', `#${index + 1}`);
+        document.title = `${String(index + 1).padStart(2, '0')}｜${slides[index].dataset.label}｜Medical Skill Hub`;
+      };
+
+      const toggleTimer = () => {
+        if (timerId) {
+          clearInterval(timerId);
+          timerId = null;
+          timerButton.title = '继续计时（T）';
+        } else {
+          timerId = setInterval(() => { elapsed += 1; renderTimer(); }, 1000);
+          timerButton.title = '暂停计时（T）';
+        }
+      };
+
+      const resetTimer = () => {
+        clearInterval(timerId);
+        timerId = null;
+        elapsed = 0;
+        renderTimer();
+        timerButton.title = '开始计时（T）';
+      };
+
+      const toggleFullscreen = async () => {
+        try {
+          if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+          else await document.exitFullscreen();
+        } catch (_) {}
+      };
+
+      const revealUi = () => {
+        document.body.classList.add('ui-visible');
+        clearTimeout(uiTimerId);
+        uiTimerId = setTimeout(() => document.body.classList.remove('ui-visible'), 1400);
+      };
+
+      document.querySelector('.prev').addEventListener('click', () => show(index - 1));
+      document.querySelector('.next').addEventListener('click', () => show(index + 1));
+      document.getElementById('notes-toggle').addEventListener('click', () => notesPanel.classList.toggle('show'));
+      document.getElementById('fullscreen').addEventListener('click', toggleFullscreen);
+      document.getElementById('help-toggle').addEventListener('click', () => help.classList.toggle('show'));
+      timerButton.addEventListener('click', toggleTimer);
+      help.addEventListener('click', (event) => { if (event.target === help) help.classList.remove('show'); });
+      document.addEventListener('mousemove', revealUi, { passive: true });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+          event.preventDefault();
+          show(index + 1);
+        } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+          event.preventDefault();
+          show(index - 1);
+        } else if (event.key === 'Home') {
+          event.preventDefault();
+          show(0);
+        } else if (event.key === 'End') {
+          event.preventDefault();
+          show(slides.length - 1);
+        } else if (event.key.toLowerCase() === 'n') {
+          notesPanel.classList.toggle('show');
+        } else if (event.key.toLowerCase() === 't') {
+          toggleTimer();
+        } else if (event.key.toLowerCase() === 'r') {
+          resetTimer();
+        } else if (event.key.toLowerCase() === 'f') {
+          toggleFullscreen();
+        } else if (event.key === '?') {
+          help.classList.toggle('show');
+        } else if (event.key === 'Escape') {
+          help.classList.remove('show');
+          notesPanel.classList.remove('show');
+        }
+      });
+
+      let touchStartX = null;
+      document.addEventListener('touchstart', (event) => { touchStartX = event.changedTouches[0].screenX; }, { passive: true });
+      document.addEventListener('touchend', (event) => {
+        if (touchStartX == null) return;
+        const delta = event.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(delta) > 55) show(index + (delta < 0 ? 1 : -1));
+        touchStartX = null;
+      }, { passive: true });
+
+      const fromHash = Number(location.hash.replace('#', '')) - 1;
+      show(Number.isFinite(fromHash) ? fromHash : 0, false);
+      renderTimer();
+    })();
+  </script>
+</body>
+</html>
