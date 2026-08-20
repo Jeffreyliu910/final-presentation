@@ -1582,90 +1582,6 @@
 
     .workflow-chain b { color: var(--cyan); }
 
-    .clinical-gaps {
-      position: absolute;
-      left: 6.4%;
-      right: 6.4%;
-      bottom: 7.2%;
-      min-height: 19%;
-      padding: 1.35% 1.4% 1.15%;
-      border-top: 2px solid rgba(56,213,239,.52);
-      background: linear-gradient(90deg, rgba(56,213,239,.055), rgba(79,140,255,.035) 52%, rgba(183,121,255,.045));
-      box-sizing: border-box;
-    }
-
-    .gaps-heading {
-      display: flex;
-      align-items: baseline;
-      gap: 1.1em;
-      margin-bottom: 1.15%;
-    }
-
-    .gaps-heading span {
-      color: var(--cyan);
-      font-family: ui-monospace, monospace;
-      font-size: clamp(10px, .82vw, 13px);
-      font-weight: 850;
-      letter-spacing: .13em;
-    }
-
-    .gaps-heading strong {
-      color: #dce5f2;
-      font-size: clamp(17px, 1.38vw, 22px);
-      font-weight: 850;
-    }
-
-    .clinical-gap-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      border-top: 1px solid rgba(203,218,244,.13);
-      border-bottom: 1px solid rgba(203,218,244,.13);
-    }
-
-    .clinical-gap {
-      display: block;
-      min-width: 0;
-      min-height: 7.2vh;
-      padding: 1.2% 2.4% 1.35%;
-      border-left: 1px solid rgba(203,218,244,.14);
-      box-sizing: border-box;
-    }
-
-    .clinical-gap:first-child {
-      padding-left: 0;
-      border-left: 0;
-    }
-
-    .clinical-gap b {
-      display: block;
-      margin-bottom: .55em;
-      color: var(--coral);
-      font-size: clamp(13px, 1.08vw, 17px);
-      font-weight: 880;
-      white-space: nowrap;
-    }
-
-    .clinical-gap p {
-      margin: 0;
-      color: #dce5f2;
-      font-size: clamp(13px, 1.08vw, 17px);
-      font-weight: 720;
-      line-height: 1.42;
-    }
-
-    .clinical-position {
-      margin: 1.2% 0 0;
-      color: #cbd5e8;
-      font-size: clamp(16px, 1.36vw, 22px);
-      font-weight: 760;
-      line-height: 1.35;
-    }
-
-    .clinical-position b {
-      color: var(--cyan);
-      font-weight: 880;
-    }
-
     /* Slide 4 */
     .s4 {
       background:
@@ -2379,7 +2295,8 @@
       top: -.6em;
       color: var(--dim);
       font-family: ui-monospace, monospace;
-      font-size: clamp(8px, .68vw, 11px);
+      font-size: clamp(10px, .78vw, 13px);
+      font-weight: 720;
       font-style: normal;
     }
 
@@ -2420,7 +2337,8 @@
       transform: translateX(-50%);
       color: #b5c0d1;
       font-family: ui-monospace, monospace;
-      font-size: clamp(8px, .66vw, 11px);
+      font-size: clamp(11px, .9vw, 15px);
+      font-weight: 820;
       line-height: 1;
       white-space: nowrap;
     }
@@ -2433,7 +2351,7 @@
       right: -7%;
       bottom: -43px;
       color: #c7d0df;
-      font-size: clamp(8px, .72vw, 12px);
+      font-size: 14px;
       font-weight: 700;
       line-height: 1.22;
       text-align: center;
@@ -2455,7 +2373,7 @@
     .comparison-vertical .vertical-group > span {
       left: -15%;
       right: -15%;
-      font-size: clamp(8px, .69vw, 11px);
+      font-size: 14px;
       line-height: 1.18;
     }
 
@@ -2716,96 +2634,182 @@
       line-height: 1.4;
     }
 
-    /* Slide 7 */
-    .funding {
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: 6%;
-      align-items: stretch;
+    /* Slide 7 · Deployment cost and tiered pricing */
+    .s7 h2 {
+      max-width: none;
+      margin-bottom: 1.05%;
+      font-size: clamp(31px, 3.35vw, 54px);
     }
 
-    .ask-number {
-      padding-right: 7%;
-      border-right: 1px solid var(--line);
-    }
-
-    .ask-number .label {
+    .pricing-evidence {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 3%;
+      margin-bottom: 1.2%;
       color: var(--muted);
-      font-size: clamp(12px, 1.12vw, 18px);
-      letter-spacing: .1em;
+      font-size: clamp(11px, .88vw, 14px);
     }
 
-    .ask-number .amount {
-      margin: .18em 0;
-      color: var(--cyan);
-      font-size: clamp(48px, 6.2vw, 100px);
-      font-weight: 880;
-      line-height: 1;
-      letter-spacing: -.06em;
-    }
-
-    .ask-number .unit {
-      color: #cbd6e8;
-      font-size: clamp(18px, 1.8vw, 29px);
-      font-weight: 720;
-    }
-
-    .ask-number .runway {
-      margin-top: 12%;
-      padding-top: 8%;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: clamp(14px, 1.3vw, 21px);
-      line-height: 1.5;
-    }
-
-    .milestones {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4%;
-      align-items: stretch;
-    }
-
-    .milestone {
-      position: relative;
-      min-height: 250px;
-      padding: 6.5% 0 0;
-      border-top: 4px solid var(--cyan);
-    }
-
-    .milestone:nth-child(2) { border-color: var(--blue); }
-    .milestone:nth-child(3) { border-color: var(--coral); }
-
-    .milestone .num {
-      color: var(--dim);
+    .pricing-evidence span:first-child {
+      color: var(--amber);
       font-family: ui-monospace, monospace;
-      font-size: clamp(11px, 1vw, 16px);
+      font-weight: 820;
+      letter-spacing: .08em;
+    }
+
+    .pricing-evidence b { color: #dfe7f3; }
+
+    .pricing-table-head,
+    .pricing-tier {
+      display: grid;
+      grid-template-columns: 1.02fr 1.72fr 1.43fr 1.28fr .98fr;
+      column-gap: 2.15%;
+      align-items: center;
+    }
+
+    .pricing-table-head {
+      padding: .3% 0 .72% 1.85%;
+      color: var(--dim);
+      font-size: clamp(9px, .74vw, 12px);
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .pricing-table-head span:last-child { text-align: right; }
+
+    .pricing-tier {
+      position: relative;
+      min-height: 126px;
+      padding: 1.15% 0 1.15% 1.85%;
+      border-top: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(56,213,239,.035), transparent 42%);
+    }
+
+    .pricing-tier:last-of-type { border-bottom: 1px solid var(--line); }
+
+    .pricing-tier::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 15%;
+      bottom: 15%;
+      width: 4px;
+      border-radius: 999px;
+      background: var(--cyan);
+    }
+
+    .pricing-tier.department {
+      background: linear-gradient(90deg, rgba(79,140,255,.045), transparent 42%);
+    }
+
+    .pricing-tier.enterprise {
+      background: linear-gradient(90deg, rgba(255,111,143,.045), transparent 42%);
+    }
+
+    .pricing-tier.department::before { background: var(--blue); }
+    .pricing-tier.enterprise::before { background: var(--coral); }
+
+    .tier-name small {
+      display: block;
+      margin-bottom: .34em;
+      color: var(--dim);
+      font-size: clamp(8px, .66vw, 10.5px);
+      font-family: ui-monospace, monospace;
+      font-weight: 790;
+      letter-spacing: .07em;
+    }
+
+    .tier-name strong {
+      display: block;
+      font-size: clamp(17px, 1.44vw, 23px);
+      line-height: 1.16;
+    }
+
+    .tier-name span {
+      display: block;
+      margin-top: .38em;
+      color: var(--muted);
+      font-size: clamp(10px, .8vw, 13px);
+    }
+
+    .tier-copy,
+    .tier-stack,
+    .tier-service {
+      color: var(--muted);
+      font-size: clamp(11px, .91vw, 14.6px);
+      line-height: 1.43;
+    }
+
+    .tier-copy strong,
+    .tier-stack strong,
+    .tier-service strong {
+      display: block;
+      margin-bottom: .27em;
+      color: #e7edf6;
+      font-size: 1.08em;
       font-weight: 760;
     }
 
-    .milestone h3 {
-      margin: .7em 0 .8em;
-      font-size: clamp(20px, 2vw, 32px);
+    .tier-stack b {
+      color: var(--cyan);
+      font-weight: 820;
     }
 
-    .milestone p {
-      color: var(--muted);
-      font-size: clamp(13px, 1.18vw, 19px);
-      line-height: 1.55;
+    .department .tier-stack b { color: #83aaff; }
+    .enterprise .tier-stack b { color: #ff8ca6; }
+
+    .tier-price {
+      text-align: right;
+      white-space: nowrap;
     }
 
-    .risk-row {
+    .tier-price span {
+      display: block;
+      color: var(--dim);
+      font-size: clamp(8px, .64vw, 10px);
+      letter-spacing: .04em;
+    }
+
+    .tier-price strong {
+      display: block;
+      margin: .2em 0 .38em;
+      color: var(--cyan);
+      font-size: clamp(18px, 1.58vw, 25px);
+      line-height: 1.06;
+    }
+
+    .department .tier-price strong { color: #83aaff; }
+    .enterprise .tier-price strong { color: #ff8ca6; }
+
+    .tier-price b {
+      display: block;
+      color: #d7e0ed;
+      font-size: clamp(11px, .88vw, 14px);
+      font-weight: 720;
+    }
+
+    .payment-strip {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3%;
-      margin-top: 4.6%;
-      padding-top: 2.5%;
-      border-top: 1px solid var(--line);
-      color: #c7d2e4;
-      font-size: clamp(12px, 1.08vw, 17px);
+      grid-template-columns: auto 1fr auto;
+      gap: 2.5%;
+      align-items: center;
+      margin-top: 1.15%;
+      padding: 1.08% 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: clamp(10px, .84vw, 13.5px);
     }
 
-    .risk-row b { color: var(--amber); }
+    .payment-strip .payment-label {
+      color: var(--amber);
+      font-weight: 850;
+      letter-spacing: .08em;
+    }
+
+    .payment-strip strong { color: #e6edf7; }
+    .payment-strip .payment-rule { text-align: right; }
 
     /* Slide 8 */
     .s8 {
@@ -3184,7 +3188,7 @@
         <div class="hero">
           <div class="kicker">Executable Clinical Intelligence</div>
           <h1>Medical Skill Hub<br>医疗临床专科<br><em>辅助多智能体架构</em></h1>
-          <p class="lead">为区县医院等不同医疗机构提升临床疾病诊断能力，解决<strong class="lead-highlight">医疗资源不均</strong>、<strong class="lead-highlight">AI诊断缺乏可信依据</strong>、<strong class="lead-highlight">权威指南应用性差</strong>等问题，在真实病例测试上<strong class="lead-proof">与三甲医院医生诊断匹配率<span>超 90%</span></strong>。</p>
+          <p class="lead">以指南 Skill 与相似病例知识库，为医生生成有依据、可追溯、可复核的高准确性临床决策链。</p>
         </div>
         <p class="thesis"><b>不是另一个医疗问答模型</b>而是一个可执行、可复核的临床智能基础设施。</p>
         <div class="slide-no">01 / 12</div>
@@ -3368,6 +3372,23 @@
             </div>
           </div>
         </div>
+        <div class="policy-note">
+          <div class="signal">
+            <span class="signal-index">POLICY SIGNAL</span>
+            <strong>临床专科<br>垂直应用</strong>
+            <i class="signal-orbit" aria-hidden="true"></i>
+          </div>
+          <div class="policy-year">
+            <span>目标节点</span>
+            <strong>2027</strong>
+            <em>形成一批</em>
+          </div>
+          <div class="policy-content">
+            <div class="policy-doc-title">《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》</div>
+            <p>形成一批<b>临床专病专科垂直大模型和智能体应用</b>，推动智能辅助决策广泛应用</p>
+            <div class="policy-outcomes"><span>基层诊疗智能辅助</span><i>+</i><span>专科专病辅助决策</span></div>
+          </div>
+        </div>
         <!-- <div class="workflow-thesis">
           <div class="thesis-label">THE WINNING LOGIC<br>不止模型跑分</div>
           <div class="workflow-chain"><span>读取真实病例</span><i>→</i><span>选择指南与工具</span><i>→</i><span>形成循证诊断</span><i>→</i><b>进入工作流 · 医生确认</b></div>
@@ -3548,7 +3569,6 @@
           <div class="results-chart comparison">
             <div class="results-chart-head">
               <h3>真实临床测试</h3>
-              <p>抽选实际临床病例，仅作参考</p>
             </div>
             <div class="vertical-chart comparison-vertical" aria-label="五个模型工作流准确率与临床医生准确率竖向柱状图">
               <div class="vertical-grid"><i data-value="100"></i><i data-value="80"></i><i data-value="60"></i><i data-value="40"></i><i data-value="20"></i></div>
@@ -3597,56 +3617,64 @@
           </div>
         </div>
         <div class="source">信息来源：<a href="./Topic%204%20%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B8%8E%E6%88%90%E9%95%BF%E6%80%A7.md">Topic 4 商业计划与成长性.md</a>；<a href="./%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E7%BB%93%E6%9E%9C.md">测试结果结果.md</a>｜临床专家反馈与内部测试结果</div>
-        <div class="slide-no">09 / 12</div>
+        <div class="slide-no">08 / 11</div>
         <aside class="speaker-note" hidden>
           <p><b>50 秒。</b>临床专家验证已经完成，接下来的落地路线从标杆科室开始：先进入真实工作流形成消化内科示范，随后转化首个付费用户、验证真实付费意愿，再扩展为完成私有部署与院级验证的标杆医院。</p>
           <p>临床专家对三项核心能力给予了正向反馈：第一，系统的思考逻辑符合医生从病例信息、鉴别诊断到证据复核的真实诊疗链路；第二，相似病例与历史诊疗路径能够为复杂病例判断提供有效参考；第三，工作流在五个模型上均提升准确率，最高达到 84.8%，验证结果具有说服力。</p>
           <p>首个付费用户跑通商业闭环后，继续推进标杆医院；标杆医院完成验证后，复用 Skill Pack 与标准化实施 SOP 进入同类医院，最终通过新增专科 Skill Pack 实现跨专科扩展。</p>
-          <p><b>转场：</b>下一页说明这笔融资如何把已有验证转化为可复制交付和商业结果。</p>
+          <p><b>转场：</b>下一页具体回答：医院部署一套需要多少钱，我们又如何形成持续收入。</p>
           <p><b>[Sources]</b> Topic 4 商业计划与成长性.md（客户增长路径与跨专科复制）；测试结果结果.md（五模型工作流准确率）；临床专家正向反馈与首个付费用户阶段由团队提供。</p>
         </aside>
       </section>
 
-      <section class="slide s7" data-duration="45" data-label="投资价值">
-        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">07 · 投资价值</span></div>
-        <div class="kicker">Capital Efficiency</div>
-        <h2>拟融资 300–500 万元，<br>换来<span class="accent">三次风险消除</span></h2>
-        <div class="funding">
-          <div class="ask-number">
-            <div class="label">SEED / ANGEL ROUND</div>
-            <div class="amount">300–500</div>
-            <div class="unit">万元人民币</div>
-            <p class="runway"><b>0-6 个月</b><br>产品化 · 临床验证 · 商业验证</p>
-          </div>
-          <div class="milestones">
-            <div class="milestone"><span class="num">01</span><h3>产品可用</h3><p>V1.0、核心 Skill Library、可部署 Runtime 与稳定性记录。</p></div>
-            <div class="milestone"><span class="num">02</span><h3>临床有效</h3><p>医生评价、样本量与指标口径、可复核的 Clinical Evaluation。</p></div>
-            <div class="milestone"><span class="num">03</span><h3>商业可复制</h3><p>科室试点、标准化私有部署、首批付费或产业合作。</p></div>
-          </div>
+      <section class="slide s7" data-duration="45" data-label="部署成本与分级付费">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">07 · 部署成本与付费模式</span></div>
+        <div class="kicker">Deployment Tiers · Evidence Based</div>
+        <h2>按医院能力，<span class="accent">交付三种可采购版本</span></h2>
+        <div class="pricing-evidence">
+          <span>PUBLIC PROCUREMENT ANCHORS</span>
+          <span>基层平台 <b>24.9 万</b>｜CDSS 样本中位数 <b>95.18 万</b>｜医院大模型专项 <b>245.8 万</b></span>
+        </div>
+        <div class="pricing-table-head"><span>产品版本</span><span>核心交付</span><span>硬件 · 模型</span><span>实施服务</span><span>首期预算</span></div>
+        <div class="pricing-tier pilot">
+          <div class="tier-name"><small>01 · COUNTY SHARED</small><strong>基层共享版</strong><span>乡镇卫生院 · 社区中心</span></div>
+          <div class="tier-copy"><strong>常见病判断 · 危险征象 · 转诊建议</strong>1 个基础 Skill Pack · 1 个标准接口<br>县域中心统一管理 · 基层浏览器使用</div>
+          <div class="tier-stack"><strong><b>1×48GB</b> 县域共享节点</strong>7B–14B 本地模型 <br>基层终端无需 GPU</div>
+          <div class="tier-service"><strong>标准部署 · 2 次培训</strong>8×5 远程支持<br>季度知识更新</div>
+          <div class="tier-price"><span>软件 + 首期服务</span><strong>25–40 万</strong><b>总预算 25–75 万</b></div>
+        </div>
+        <div class="pricing-tier department">
+          <div class="tier-name"><small>02 · HOSPITAL PRO</small><strong>专科进阶版</strong><span>县级 / 二级医院 · 专科中心</span></div>
+          <div class="tier-copy"><strong>专科推理 · 证据链 · 质量评测</strong>1–3 个专科 Skill Pack · 1–3 个接口<br>院内私有部署 · 科室级上线验收</div>
+          <div class="tier-stack"><strong><b>2×48GB</b> 或 1×80/96GB</strong>14B 快模型 + 32B 推理模型<br>目标并发 10–20 路</div>
+          <div class="tier-service"><strong>驻场联调 · 3 次培训</strong>7×12 支持 · 季度回归评测<br>可含 3 年基础维保</div>
+          <div class="tier-price"><span>软件 + 首期服务</span><strong>70–120 万</strong><b>总预算 105–220 万</b></div>
         </div>
         <div class="risk-row"><span><b>模型风险 →</b> Model-Agnostic</span><span><b>临床风险 →</b> 证据链 + 医生确认</span><span><b>销售风险 →</b> 医院直销 + B2B2H 渠道</span></div>
         <div class="source">信息来源：<a href="./Topic%205%20%E6%8A%95%E8%B5%84%E4%BB%B7%E5%80%BC.md">Topic 5 投资价值.md</a>｜<span class="generated">【生成内容：三次风险消除框架与页面表述】</span></div>
-        <div class="slide-no">10 / 12</div>
+        <div class="slide-no">09 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>45 秒。</b>我们拟以 300 到 500 万元种子或天使轮，支持 12 到 18 个月。正式上台前请确认这一融资额仍代表团队真实计划。</p>
-          <p>资金对应三类可验证结果：产品可用、临床有效、商业可复制。核心资产不是某一代模型，而是跨模型复用的 Skill、Compiler 与临床验证数据。</p>
-          <p>我们用 Model-Agnostic 降低模型迭代风险，用证据链和医生确认降低临床接受风险，用医院直销与信息化渠道并行降低销售周期风险。</p>
-          <p><b>转场：</b>下一页，我们直接提出把这些目标转化为真实落地所需要的合作资源。</p>
+          <p><b>45 秒。</b>我们不让不同等级的医院购买同一套昂贵方案，而是提供三个可采购版本。</p>
+          <p>乡镇医院采用基层共享版，算力放在县域中心，基层只用浏览器，交付常见病辅助判断、危险征象和转诊提醒，软件服务 25 到 40 万元。县级和二级医院采用专科进阶版，院内私有部署 1 到 3 个专科，接入核心系统，软件服务 70 到 120 万元。大型三甲采用院级旗舰版，交付多专科、多模型、高可用和统一评测治理，软件服务 180 万元起。</p>
+          <p>硬件根据模型和并发单列。基层用 7B 到 14B 模型，专科版以 14B 和 32B 路由为主，旗舰版才按效果需要引入 70B。首期购买平台、部署和首个 Skill Pack，后续通过新增专科、指南更新、接口和扩容形成持续收入。</p>
+          <p><b>表述边界：</b>以上是基于公开采购与内部人月测算的建议报价，不是已经成交的客单价；公开项目范围不同，不称为统一行业均价。</p>
+          <p><b>转场：</b>下一页，我们直接提出把这套分级交付模式推进到真实科室所需要的合作资源。</p>
+          <p><b>[Sources]</b> 国家卫健委《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》；宁陕县医疗人工智能能力平台（24.9 万元）；怀化县域人工智能辅助诊断服务（79 万元 / 3 年）；绵阳、泉州、中牟、苍溪、阿克苏 CDSS 采购（中位数 95.18 万元）；江苏省人民医院宿迁医院医保大模型系统（245.8 万元）；北京协和医院 8×L20 AI 硬件（66.5 万元 / 台）；Qwen3-32B 与 DeepSeek-R1 官方模型资料；国家统计局 2024 年工资数据；第九页部署成本与分级付费模式.md（完整计算与链接）。</p>
         </aside>
       </section>
 
       <section class="slide s8" data-duration="40" data-label="合作诉求与收束">
         <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">08 · 合作诉求</span></div>
         <div class="kicker">Execution Partnership</div>
-        <h2>让已验证的临床能力，<br><span class="accent">真正进入医院工作流</span></h2>
+        <h2>以 AI 缩小医疗能力鸿沟，<br><span class="accent">让优质医疗触手可及</span></h2>
         <div class="closing closing-only">
           <p class="closing-claim">从专家验证走向<strong>真实科室试点与产业合作</strong>。<br><small>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。</small></p>
           <ul class="asks"><li>消化内科试点医院与临床医生</li><li>HIS / EMR / CDSS 集成伙伴</li><li>支持产品化与临床验证的产业、投资资源</li></ul>
         </div>
         <div class="source">信息来源：<a href="./Topic6%20%E8%90%BD%E5%9C%B0%E6%84%8F%E6%84%BF.md">Topic6 落地意愿.md</a>｜<span class="generated">【生成内容：合作诉求与收束表述整合】</span></div>
-        <div class="slide-no">11 / 12</div>
+        <div class="slide-no">10 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>40 秒。</b>前一页已经给出了从标杆科室、首个付费用户、标杆医院到同类医院复制和跨专科扩展的落地路径。最后，我们希望把已经完成的专家验证推进为真实科室试点与产业合作。</p>
+          <p><b>40 秒。</b>前一页已经给出了从基层共享版、专科进阶版到院级旗舰版的分级交付与付费路径。最后，我们希望把已经完成的专家验证推进为真实科室试点与产业合作。</p>
           <p>我们希望连接消化内科试点医院和临床医生、医疗信息化集成伙伴，以及支持产品化与临床验证的产业和投资资源。</p>
           <p><b>结尾：</b>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。谢谢各位评委。</p>
           <p><b>[Sources]</b> Topic6 落地意愿.md（试点医院、临床医生、信息化企业与产业合作诉求）。</p>
@@ -3656,10 +3684,10 @@
       <section class="slide s-appendix" data-duration="0" data-label="附录 1 · 系统工作流">
         <div class="appendix-tag">APPENDIX 1 · 系统工作流与项目架构</div>
         <img class="appendix-image" src="./workflow.png" alt="Medical Skill Hub 消化内科多智能体诊断系统工作流与项目架构" />
-        <div class="slide-no">12 / 12</div>
+        <div class="slide-no">11 / 11</div>
         <aside class="speaker-note" hidden>
           <p><b>附录 1。</b>Medical Skill Hub 消化内科多智能体诊断系统的完整工作流与项目架构，包括接入与模型层、多智能体诊断流水线、结构化结果交付，以及评估与技术底座。</p>
-          <p><b>[Sources]</b> workflow.png（团队提供的项目架构图）。</p>
+          <p><b>[Sources]</b> workflow.jpg（团队提供的项目架构图）。</p>
         </aside>
       </section>
     </div>
