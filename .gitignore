@@ -1,3 +1,4 @@
 .DS_Store
+*.inetloc
 .tmp/
 .tmp_google_slides_edit/
