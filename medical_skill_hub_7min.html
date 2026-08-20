@@ -2622,42 +2622,55 @@
 
     /* Slide 7 · Deployment cost and tiered pricing */
     .s7 h2 {
-      max-width: 95%;
-      margin-bottom: 2.1%;
-      font-size: clamp(31px, 3.65vw, 59px);
+      max-width: none;
+      margin-bottom: 1.05%;
+      font-size: clamp(31px, 3.35vw, 54px);
     }
 
-    .pricing-layout {
-      display: grid;
-      grid-template-columns: 1.62fr .88fr;
-      gap: 4.4%;
-      align-items: start;
+    .pricing-evidence {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 3%;
+      margin-bottom: 1.2%;
+      color: var(--muted);
+      font-size: clamp(11px, .88vw, 14px);
     }
+
+    .pricing-evidence span:first-child {
+      color: var(--amber);
+      font-family: ui-monospace, monospace;
+      font-weight: 820;
+      letter-spacing: .08em;
+    }
+
+    .pricing-evidence b { color: #dfe7f3; }
 
     .pricing-table-head,
     .pricing-tier {
       display: grid;
-      grid-template-columns: 1.02fr 1.55fr .72fr .82fr;
-      column-gap: 2.3%;
+      grid-template-columns: 1.02fr 1.72fr 1.43fr 1.28fr .98fr;
+      column-gap: 2.15%;
       align-items: center;
     }
 
     .pricing-table-head {
-      padding: 0 0 1.1%;
+      padding: .3% 0 .72% 1.85%;
       color: var(--dim);
-      font-size: clamp(9px, .75vw, 12px);
-      font-weight: 780;
-      letter-spacing: .1em;
+      font-size: clamp(9px, .74vw, 12px);
+      font-weight: 800;
+      letter-spacing: .09em;
       text-transform: uppercase;
     }
 
-    .pricing-table-head span:nth-child(n+3) { text-align: right; }
+    .pricing-table-head span:last-child { text-align: right; }
 
     .pricing-tier {
       position: relative;
-      min-height: 91px;
-      padding: 1.7% 0 1.65% 2.4%;
+      min-height: 126px;
+      padding: 1.15% 0 1.15% 1.85%;
       border-top: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(56,213,239,.035), transparent 42%);
     }
 
     .pricing-tier:last-of-type { border-bottom: 1px solid var(--line); }
@@ -2666,11 +2679,19 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 16%;
-      bottom: 16%;
+      top: 15%;
+      bottom: 15%;
       width: 4px;
       border-radius: 999px;
       background: var(--cyan);
+    }
+
+    .pricing-tier.department {
+      background: linear-gradient(90deg, rgba(79,140,255,.045), transparent 42%);
+    }
+
+    .pricing-tier.enterprise {
+      background: linear-gradient(90deg, rgba(255,111,143,.045), transparent 42%);
     }
 
     .pricing-tier.department::before { background: var(--blue); }
@@ -2678,142 +2699,103 @@
 
     .tier-name small {
       display: block;
-      margin-bottom: .28em;
+      margin-bottom: .34em;
       color: var(--dim);
-      font-size: clamp(9px, .72vw, 12px);
+      font-size: clamp(8px, .66vw, 10.5px);
       font-family: ui-monospace, monospace;
-      letter-spacing: .08em;
+      font-weight: 790;
+      letter-spacing: .07em;
     }
 
     .tier-name strong {
       display: block;
-      font-size: clamp(16px, 1.42vw, 23px);
-      line-height: 1.18;
+      font-size: clamp(17px, 1.44vw, 23px);
+      line-height: 1.16;
     }
 
-    .tier-scope {
+    .tier-name span {
+      display: block;
+      margin-top: .38em;
       color: var(--muted);
-      font-size: clamp(11px, .93vw, 15px);
-      line-height: 1.45;
+      font-size: clamp(10px, .8vw, 13px);
     }
 
-    .tier-metric {
+    .tier-copy,
+    .tier-stack,
+    .tier-service {
+      color: var(--muted);
+      font-size: clamp(11px, .91vw, 14.6px);
+      line-height: 1.43;
+    }
+
+    .tier-copy strong,
+    .tier-stack strong,
+    .tier-service strong {
+      display: block;
+      margin-bottom: .27em;
+      color: #e7edf6;
+      font-size: 1.08em;
+      font-weight: 760;
+    }
+
+    .tier-stack b {
+      color: var(--cyan);
+      font-weight: 820;
+    }
+
+    .department .tier-stack b { color: #83aaff; }
+    .enterprise .tier-stack b { color: #ff8ca6; }
+
+    .tier-price {
       text-align: right;
       white-space: nowrap;
     }
 
-    .tier-metric span {
+    .tier-price span {
       display: block;
       color: var(--dim);
-      font-size: clamp(8px, .65vw, 11px);
+      font-size: clamp(8px, .64vw, 10px);
       letter-spacing: .04em;
     }
 
-    .tier-metric strong {
+    .tier-price strong {
       display: block;
-      margin-top: .28em;
-      color: #d8e1ef;
-      font-size: clamp(14px, 1.2vw, 19px);
-      line-height: 1.1;
-    }
-
-    .tier-metric.quote strong {
+      margin: .2em 0 .38em;
       color: var(--cyan);
-      font-size: clamp(17px, 1.5vw, 24px);
+      font-size: clamp(18px, 1.58vw, 25px);
+      line-height: 1.06;
     }
 
-    .department .tier-metric.quote strong { color: #83aaff; }
-    .enterprise .tier-metric.quote strong { color: #ff8ca6; }
+    .department .tier-price strong { color: #83aaff; }
+    .enterprise .tier-price strong { color: #ff8ca6; }
 
-    .market-anchor {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 3%;
-      margin-top: 1.6%;
-      color: var(--muted);
-      font-size: clamp(10px, .87vw, 14px);
+    .tier-price b {
+      display: block;
+      color: #d7e0ed;
+      font-size: clamp(11px, .88vw, 14px);
+      font-weight: 720;
     }
 
-    .market-anchor b {
-      color: var(--amber);
-      font-size: clamp(17px, 1.55vw, 25px);
-    }
-
-    .payment-model {
-      padding-left: 8%;
-      border-left: 1px solid var(--line);
-    }
-
-    .payment-section {
-      padding: 0 0 5.4%;
-      border-top: 3px solid var(--cyan);
-    }
-
-    .payment-section + .payment-section {
-      padding-top: 5.4%;
-      border-top: 1px solid var(--line);
-    }
-
-    .payment-section h3 {
-      margin: .62em 0 .55em;
-      font-size: clamp(18px, 1.55vw, 25px);
-    }
-
-    .payment-section ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .payment-section li {
-      position: relative;
-      margin: .46em 0;
-      padding-left: 1.05em;
-      color: var(--muted);
-      font-size: clamp(11px, .94vw, 15px);
-      line-height: 1.42;
-    }
-
-    .payment-section li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: .56em;
-      width: .42em;
-      height: .42em;
-      border-radius: 50%;
-      background: var(--cyan);
-    }
-
-    .payment-section.recurring li::before { background: var(--coral); }
-    .payment-section strong { color: #f0f4fa; }
-
-    .hardware-strip {
+    .payment-strip {
       display: grid;
       grid-template-columns: auto 1fr auto;
-      gap: 2.4%;
+      gap: 2.5%;
       align-items: center;
-      margin-top: 1.9%;
-      padding: 1.35% 0;
-      border-top: 1px solid var(--line);
+      margin-top: 1.15%;
+      padding: 1.08% 0;
       border-bottom: 1px solid var(--line);
       color: var(--muted);
-      font-size: clamp(10px, .87vw, 14px);
+      font-size: clamp(10px, .84vw, 13.5px);
     }
 
-    .hardware-strip .hardware-label {
+    .payment-strip .payment-label {
       color: var(--amber);
-      font-weight: 820;
+      font-weight: 850;
       letter-spacing: .08em;
     }
 
-    .hardware-strip b {
-      color: #e6edf7;
-      font-size: clamp(14px, 1.2vw, 19px);
-    }
-
-    .hardware-strip .hardware-note { text-align: right; }
+    .payment-strip strong { color: #e6edf7; }
+    .payment-strip .payment-rule { text-align: right; }
 
     /* Slide 8 */
     .s8 {
@@ -3560,72 +3542,55 @@
 
       <section class="slide s7" data-duration="45" data-label="部署成本与分级付费">
         <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">07 · 部署成本与付费模式</span></div>
-        <div class="kicker">Deployment Economics</div>
-        <h2>从临床验证切入，<br><span class="accent">按部署深度形成持续收入</span></h2>
-        <div class="pricing-layout">
-          <div class="pricing-tiers">
-            <div class="pricing-table-head"><span>部署等级</span><span>核心交付</span><span>交付成本</span><span>首期报价</span></div>
-            <div class="pricing-tier pilot">
-              <div class="tier-name"><small>01 · PILOT</small><strong>临床验证版</strong></div>
-              <div class="tier-scope">1 个专科 · 脱敏病例<br>独立环境 · 医生评价报告</div>
-              <div class="tier-metric"><span>内部测算</span><strong>22–28 万</strong></div>
-              <div class="tier-metric quote"><span>建议报价</span><strong>35–50 万</strong></div>
-            </div>
-            <div class="pricing-tier department">
-              <div class="tier-name"><small>02 · PRIVATE</small><strong>科室私有版</strong></div>
-              <div class="tier-scope">院内部署 · 1 个 Skill Pack<br>1–3 个接口 · 权限日志与验收</div>
-              <div class="tier-metric"><span>内部测算</span><strong>45–60 万</strong></div>
-              <div class="tier-metric quote"><span>建议报价</span><strong>70–100 万</strong></div>
-            </div>
-            <div class="pricing-tier enterprise">
-              <div class="tier-name"><small>03 · ENTERPRISE</small><strong>院级平台版</strong></div>
-              <div class="tier-scope">多科室 · 多系统接口<br>统一审计 · API / SDK · 高可用</div>
-              <div class="tier-metric"><span>内部测算</span><strong>100–150 万</strong></div>
-              <div class="tier-metric quote"><span>建议报价</span><strong>150–250 万+</strong></div>
-            </div>
-            <div class="market-anchor"><span>2025–2026 年 5 个可识别 CDSS 公开采购样本</span><b>中位数约 95 万</b></div>
-          </div>
-          <div class="payment-model">
-            <div class="payment-section">
-              <h3>首期项目收入</h3>
-              <ul>
-                <li>平台软件授权</li>
-                <li>私有部署与系统集成</li>
-                <li>首个专科 Skill Pack</li>
-                <li>培训、验收与基础维保</li>
-              </ul>
-            </div>
-            <div class="payment-section recurring">
-              <h3>持续收入</h3>
-              <ul>
-                <li>新增 Skill Pack <strong>15–30 万 / 个</strong></li>
-                <li>指南更新与验证 <strong>8–15 万 / 专科 / 年</strong></li>
-                <li>接口、并发扩容与企业授权另计</li>
-              </ul>
-            </div>
-          </div>
+        <div class="kicker">Deployment Tiers · Evidence Based</div>
+        <h2>按医院能力，<span class="accent">交付三种可采购版本</span></h2>
+        <div class="pricing-evidence">
+          <span>PUBLIC PROCUREMENT ANCHORS</span>
+          <span>基层平台 <b>24.9 万</b>｜CDSS 样本中位数 <b>95.18 万</b>｜医院大模型专项 <b>245.8 万</b></span>
         </div>
-        <div class="hardware-strip">
-          <span class="hardware-label">算力硬件单列</span>
-          <b>已有算力直接复用｜新购约 60–250 万 / 套</b>
-          <span class="hardware-note">按模型、并发与国产化要求配置</span>
+        <div class="pricing-table-head"><span>产品版本</span><span>核心交付</span><span>硬件 · 模型</span><span>实施服务</span><span>首期预算</span></div>
+        <div class="pricing-tier pilot">
+          <div class="tier-name"><small>01 · COUNTY SHARED</small><strong>基层共享版</strong><span>乡镇卫生院 · 社区中心</span></div>
+          <div class="tier-copy"><strong>常见病判断 · 危险征象 · 转诊建议</strong>1 个基础 Skill Pack · 1 个标准接口<br>县域中心统一管理 · 基层浏览器使用</div>
+          <div class="tier-stack"><strong><b>1×48GB</b> 县域共享节点</strong>7B–14B 本地模型 <br>基层终端无需 GPU</div>
+          <div class="tier-service"><strong>标准部署 · 2 次培训</strong>8×5 远程支持<br>季度知识更新</div>
+          <div class="tier-price"><span>软件 + 首期服务</span><strong>25–40 万</strong><b>总预算 25–75 万</b></div>
         </div>
-        <div class="source">依据：<a href="./%E7%AC%AC%E4%B9%9D%E9%A1%B5%20%E9%83%A8%E7%BD%B2%E6%88%90%E6%9C%AC%E4%B8%8E%E5%88%86%E7%BA%A7%E4%BB%98%E8%B4%B9%E6%A8%A1%E5%BC%8F.md">第九页 部署成本与分级付费模式.md</a>｜公开采购锚点 + 约 3 万元 / 人月测算｜建议报价，非已成交价格</div>
+        <div class="pricing-tier department">
+          <div class="tier-name"><small>02 · HOSPITAL PRO</small><strong>专科进阶版</strong><span>县级 / 二级医院 · 专科中心</span></div>
+          <div class="tier-copy"><strong>专科推理 · 证据链 · 质量评测</strong>1–3 个专科 Skill Pack · 1–3 个接口<br>院内私有部署 · 科室级上线验收</div>
+          <div class="tier-stack"><strong><b>2×48GB</b> 或 1×80/96GB</strong>14B 快模型 + 32B 推理模型<br>目标并发 10–20 路</div>
+          <div class="tier-service"><strong>驻场联调 · 3 次培训</strong>7×12 支持 · 季度回归评测<br>可含 3 年基础维保</div>
+          <div class="tier-price"><span>软件 + 首期服务</span><strong>70–120 万</strong><b>总预算 105–220 万</b></div>
+        </div>
+        <div class="pricing-tier enterprise">
+          <div class="tier-name"><small>03 · MEDICAL CENTER</small><strong>院级旗舰版</strong><span>大型三甲 · 多院区医疗集团</span></div>
+          <div class="tier-copy"><strong>多专科 · 多模型 · 高可用</strong>5+ Skill Pack · 5+ 系统接口<br>模型网关 · API / SDK · 院级评测中心</div>
+          <div class="tier-stack"><strong><b>生产双节点</b> · 每节点多卡</strong>4×48GB 或 2×80/96GB / 节点<br>14B / 32B / 70B 模型路由</div>
+          <div class="tier-service"><strong>架构安全 · 灰度发布</strong>7×24 SLA · 月度运营复盘<br>年度容灾演练</div>
+          <div class="tier-price"><span>软件 + 首期服务</span><strong>180–350 万+</strong><b>总预算 330–710 万+</b></div>
+        </div>
+        <div class="payment-strip">
+          <span class="payment-label">持续付费</span>
+          <span>新增 Skill Pack <strong>15–30 万 / 个</strong>｜指南更新与验证 <strong>8–15 万 / 专科 / 年</strong></span>
+          <span class="payment-rule"><strong>算力硬件单列</strong>｜优先复用现有资源，新增接口与扩容另计</span>
+        </div>
+        <div class="source">依据：<a href="./%E7%AC%AC%E4%B9%9D%E9%A1%B5%20%E9%83%A8%E7%BD%B2%E6%88%90%E6%9C%AC%E4%B8%8E%E5%88%86%E7%BA%A7%E4%BB%98%E8%B4%B9%E6%A8%A1%E5%BC%8F.md">第九页 部署成本与分级付费模式.md</a>｜公开采购 + 模型显存 + 约 3 万元 / 人月测算｜含税预算建议，非已成交价格</div>
         <div class="slide-no">09 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>45 秒。</b>我们的收费不按医生账号数计算，而是按照部署深度、专科数量和系统集成复杂度分级。</p>
-          <p>公开采购中，单一专科 AI 或本地化部署项目大约 36 到 50 万元；多个 CDSS 项目落在 45 到 154 万元之间，中位数约 95 万元。因此我们建议先以 35 到 50 万元的临床验证项目切入，科室私有部署报价 70 到 100 万元，院级平台从 150 万元起。</p>
-          <p>算力硬件根据模型和并发量单独采购，不混入软件报价。首期收入来自平台、部署和首个 Skill Pack，后续通过新增专科、指南更新和系统扩容形成持续收入。</p>
+          <p><b>45 秒。</b>我们不让不同等级的医院购买同一套昂贵方案，而是提供三个可采购版本。</p>
+          <p>乡镇医院采用基层共享版，算力放在县域中心，基层只用浏览器，交付常见病辅助判断、危险征象和转诊提醒，软件服务 25 到 40 万元。县级和二级医院采用专科进阶版，院内私有部署 1 到 3 个专科，接入核心系统，软件服务 70 到 120 万元。大型三甲采用院级旗舰版，交付多专科、多模型、高可用和统一评测治理，软件服务 180 万元起。</p>
+          <p>硬件根据模型和并发单列。基层用 7B 到 14B 模型，专科版以 14B 和 32B 路由为主，旗舰版才按效果需要引入 70B。首期购买平台、部署和首个 Skill Pack，后续通过新增专科、指南更新、接口和扩容形成持续收入。</p>
           <p><b>表述边界：</b>以上是基于公开采购与内部人月测算的建议报价，不是已经成交的客单价；公开项目范围不同，不称为统一行业均价。</p>
           <p><b>转场：</b>下一页，我们直接提出把这套分级交付模式推进到真实科室所需要的合作资源。</p>
-          <p><b>[Sources]</b> 国家统计局《2024 年城镇单位就业人员年平均工资情况》；绵阳四〇四医院 CDSS（45 万元）；泉州市儿童医院 CDSS（87.98 万元）；中牟县人民医院 CDSS（95.18 万元）；苍溪县人民医院 CDSS（98.8 万元）；阿克苏地区 DeepSeek 版 CDSS（153.8 万元）；邢台市人民医院医学大模型 AI 服务平台（96.8 万元）；第九页 部署成本与分级付费模式.md（完整计算与来源链接）。</p>
+          <p><b>[Sources]</b> 国家卫健委《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》；宁陕县医疗人工智能能力平台（24.9 万元）；怀化县域人工智能辅助诊断服务（79 万元 / 3 年）；绵阳、泉州、中牟、苍溪、阿克苏 CDSS 采购（中位数 95.18 万元）；江苏省人民医院宿迁医院医保大模型系统（245.8 万元）；北京协和医院 8×L20 AI 硬件（66.5 万元 / 台）；Qwen3-32B 与 DeepSeek-R1 官方模型资料；国家统计局 2024 年工资数据；第九页部署成本与分级付费模式.md（完整计算与链接）。</p>
         </aside>
       </section>
 
       <section class="slide s8" data-duration="40" data-label="合作诉求与收束">
         <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">08 · 合作诉求</span></div>
         <div class="kicker">Execution Partnership</div>
-        <h2>让已验证的临床能力，<br><span class="accent">真正进入医院工作流</span></h2>
+        <h2>让优质临床能力，跨越地域，<br><span class="accent">抵达每一位医生</span></h2>
         <div class="closing closing-only">
           <p class="closing-claim">从专家验证走向<strong>真实科室试点与产业合作</strong>。<br><small>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。</small></p>
           <ul class="asks"><li>消化内科试点医院与临床医生</li><li>HIS / EMR / CDSS 集成伙伴</li><li>支持产品化与临床验证的产业、投资资源</li></ul>
@@ -3633,7 +3598,7 @@
         <div class="source">信息来源：<a href="./Topic6%20%E8%90%BD%E5%9C%B0%E6%84%8F%E6%84%BF.md">Topic6 落地意愿.md</a>｜<span class="generated">【生成内容：合作诉求与收束表述整合】</span></div>
         <div class="slide-no">10 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>40 秒。</b>前一页已经给出了从临床验证版、科室私有部署到院级平台的分级交付与付费路径。最后，我们希望把已经完成的专家验证推进为真实科室试点与产业合作。</p>
+          <p><b>40 秒。</b>前一页已经给出了从基层共享版、专科进阶版到院级旗舰版的分级交付与付费路径。最后，我们希望把已经完成的专家验证推进为真实科室试点与产业合作。</p>
           <p>我们希望连接消化内科试点医院和临床医生、医疗信息化集成伙伴，以及支持产品化与临床验证的产业和投资资源。</p>
           <p><b>结尾：</b>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。谢谢各位评委。</p>
           <p><b>[Sources]</b> Topic6 落地意愿.md（试点医院、临床医生、信息化企业与产业合作诉求）。</p>
