@@ -1564,6 +1564,196 @@
 
     .workflow-chain b { color: var(--cyan); }
 
+    .policy-note {
+      position: relative;
+      display: grid;
+      grid-template-columns: 18% 16% 1fr;
+      gap: 2.2%;
+      align-items: stretch;
+      min-height: 154px;
+      margin-top: 2.35%;
+      padding: 1.3% 1.45%;
+      overflow: hidden;
+      border: 1px solid rgba(56,213,239,.32);
+      border-radius: 12px;
+      background:
+        linear-gradient(105deg, rgba(56,213,239,.12), rgba(79,140,255,.075) 42%, rgba(7,17,31,.58) 74%),
+        rgba(10,25,47,.78);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.045), 0 18px 48px rgba(0,0,0,.12);
+    }
+
+    .policy-note::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--cyan), var(--blue));
+      box-shadow: 0 0 22px rgba(56,213,239,.38);
+    }
+
+    .policy-note::after {
+      content: "";
+      position: absolute;
+      right: -2.2%;
+      top: -28%;
+      width: 21%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(56,213,239,.12);
+      border-radius: 50%;
+      box-shadow: 0 0 0 24px rgba(56,213,239,.018), 0 0 0 48px rgba(79,140,255,.016);
+      pointer-events: none;
+    }
+
+    .policy-note .signal {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 11% 0 7%;
+      border-right: 1px solid rgba(203,218,244,.16);
+    }
+
+    .signal-index {
+      display: block;
+      margin-bottom: .58em;
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(8px, .68vw, 11px);
+      font-weight: 880;
+      letter-spacing: .15em;
+    }
+
+    .policy-note .signal strong {
+      color: #f2f7ff;
+      font-size: clamp(17px, 1.62vw, 26px);
+      line-height: 1.28;
+      letter-spacing: -.025em;
+    }
+
+    .signal-orbit {
+      position: absolute;
+      right: 8%;
+      bottom: 5%;
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(56,213,239,.25);
+      border-radius: 50%;
+      opacity: .72;
+    }
+
+    .signal-orbit::before,
+    .signal-orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .signal-orbit::before {
+      inset: 7px;
+      border: 1px solid rgba(79,140,255,.5);
+    }
+
+    .signal-orbit::after {
+      width: 5px;
+      height: 5px;
+      right: -2px;
+      top: 5px;
+      background: var(--cyan);
+      box-shadow: 0 0 10px rgba(56,213,239,.8);
+    }
+
+    .policy-year {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 11%;
+      border-right: 1px solid rgba(203,218,244,.16);
+    }
+
+    .policy-year span {
+      color: var(--muted);
+      font-size: clamp(9px, .72vw, 11.5px);
+      font-weight: 760;
+      letter-spacing: .12em;
+    }
+
+    .policy-year strong {
+      margin: .06em 0 .05em;
+      color: var(--cyan);
+      font-size: clamp(38px, 4vw, 64px);
+      font-weight: 890;
+      line-height: 1;
+      letter-spacing: -.06em;
+      text-shadow: 0 0 26px rgba(56,213,239,.18);
+    }
+
+    .policy-year em {
+      align-self: flex-start;
+      padding: .28em .58em;
+      border: 1px solid rgba(56,213,239,.23);
+      border-radius: 999px;
+      color: #bfeef6;
+      background: rgba(56,213,239,.07);
+      font-size: clamp(8px, .64vw, 10px);
+      font-style: normal;
+      font-weight: 760;
+      letter-spacing: .08em;
+    }
+
+    .policy-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .policy-doc-title {
+      margin-bottom: .42em;
+      color: #8fa0b9;
+      font-size: clamp(8px, .68vw, 11px);
+      font-weight: 730;
+      letter-spacing: .04em;
+    }
+
+    .policy-content p {
+      margin: 0;
+      color: #dce5f1;
+      font-size: clamp(13px, 1.22vw, 19.5px);
+      font-weight: 670;
+      line-height: 1.46;
+      letter-spacing: -.01em;
+    }
+
+    .policy-content p b {
+      color: #fff;
+      font-weight: 830;
+    }
+
+    .policy-outcomes {
+      display: flex;
+      align-items: center;
+      gap: .7em;
+      margin-top: .65em;
+      color: #bfcadd;
+      font-size: clamp(9px, .78vw, 12.5px);
+      font-weight: 720;
+    }
+
+    .policy-outcomes span {
+      padding: .28em .62em;
+      border: 1px solid rgba(203,218,244,.14);
+      border-radius: 5px;
+      background: rgba(7,17,31,.4);
+    }
+
+    .policy-outcomes i {
+      color: var(--cyan);
+      font-style: normal;
+    }
+
     /* Slide 4 */
     .s4 {
       background:
@@ -2430,96 +2620,200 @@
       line-height: 1.4;
     }
 
-    /* Slide 7 */
-    .funding {
+    /* Slide 7 · Deployment cost and tiered pricing */
+    .s7 h2 {
+      max-width: 95%;
+      margin-bottom: 2.1%;
+      font-size: clamp(31px, 3.65vw, 59px);
+    }
+
+    .pricing-layout {
       display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: 6%;
-      align-items: stretch;
+      grid-template-columns: 1.62fr .88fr;
+      gap: 4.4%;
+      align-items: start;
     }
 
-    .ask-number {
-      padding-right: 7%;
-      border-right: 1px solid var(--line);
-    }
-
-    .ask-number .label {
-      color: var(--muted);
-      font-size: clamp(12px, 1.12vw, 18px);
-      letter-spacing: .1em;
-    }
-
-    .ask-number .amount {
-      margin: .18em 0;
-      color: var(--cyan);
-      font-size: clamp(48px, 6.2vw, 100px);
-      font-weight: 880;
-      line-height: 1;
-      letter-spacing: -.06em;
-    }
-
-    .ask-number .unit {
-      color: #cbd6e8;
-      font-size: clamp(18px, 1.8vw, 29px);
-      font-weight: 720;
-    }
-
-    .ask-number .runway {
-      margin-top: 12%;
-      padding-top: 8%;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: clamp(14px, 1.3vw, 21px);
-      line-height: 1.5;
-    }
-
-    .milestones {
+    .pricing-table-head,
+    .pricing-tier {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4%;
-      align-items: stretch;
+      grid-template-columns: 1.02fr 1.55fr .72fr .82fr;
+      column-gap: 2.3%;
+      align-items: center;
     }
 
-    .milestone {
-      position: relative;
-      min-height: 250px;
-      padding: 6.5% 0 0;
-      border-top: 4px solid var(--cyan);
-    }
-
-    .milestone:nth-child(2) { border-color: var(--blue); }
-    .milestone:nth-child(3) { border-color: var(--coral); }
-
-    .milestone .num {
+    .pricing-table-head {
+      padding: 0 0 1.1%;
       color: var(--dim);
-      font-family: ui-monospace, monospace;
-      font-size: clamp(11px, 1vw, 16px);
-      font-weight: 760;
+      font-size: clamp(9px, .75vw, 12px);
+      font-weight: 780;
+      letter-spacing: .1em;
+      text-transform: uppercase;
     }
 
-    .milestone h3 {
-      margin: .7em 0 .8em;
-      font-size: clamp(20px, 2vw, 32px);
-    }
+    .pricing-table-head span:nth-child(n+3) { text-align: right; }
 
-    .milestone p {
-      color: var(--muted);
-      font-size: clamp(13px, 1.18vw, 19px);
-      line-height: 1.55;
-    }
-
-    .risk-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3%;
-      margin-top: 4.6%;
-      padding-top: 2.5%;
+    .pricing-tier {
+      position: relative;
+      min-height: 91px;
+      padding: 1.7% 0 1.65% 2.4%;
       border-top: 1px solid var(--line);
-      color: #c7d2e4;
-      font-size: clamp(12px, 1.08vw, 17px);
     }
 
-    .risk-row b { color: var(--amber); }
+    .pricing-tier:last-of-type { border-bottom: 1px solid var(--line); }
+
+    .pricing-tier::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 16%;
+      bottom: 16%;
+      width: 4px;
+      border-radius: 999px;
+      background: var(--cyan);
+    }
+
+    .pricing-tier.department::before { background: var(--blue); }
+    .pricing-tier.enterprise::before { background: var(--coral); }
+
+    .tier-name small {
+      display: block;
+      margin-bottom: .28em;
+      color: var(--dim);
+      font-size: clamp(9px, .72vw, 12px);
+      font-family: ui-monospace, monospace;
+      letter-spacing: .08em;
+    }
+
+    .tier-name strong {
+      display: block;
+      font-size: clamp(16px, 1.42vw, 23px);
+      line-height: 1.18;
+    }
+
+    .tier-scope {
+      color: var(--muted);
+      font-size: clamp(11px, .93vw, 15px);
+      line-height: 1.45;
+    }
+
+    .tier-metric {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .tier-metric span {
+      display: block;
+      color: var(--dim);
+      font-size: clamp(8px, .65vw, 11px);
+      letter-spacing: .04em;
+    }
+
+    .tier-metric strong {
+      display: block;
+      margin-top: .28em;
+      color: #d8e1ef;
+      font-size: clamp(14px, 1.2vw, 19px);
+      line-height: 1.1;
+    }
+
+    .tier-metric.quote strong {
+      color: var(--cyan);
+      font-size: clamp(17px, 1.5vw, 24px);
+    }
+
+    .department .tier-metric.quote strong { color: #83aaff; }
+    .enterprise .tier-metric.quote strong { color: #ff8ca6; }
+
+    .market-anchor {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 3%;
+      margin-top: 1.6%;
+      color: var(--muted);
+      font-size: clamp(10px, .87vw, 14px);
+    }
+
+    .market-anchor b {
+      color: var(--amber);
+      font-size: clamp(17px, 1.55vw, 25px);
+    }
+
+    .payment-model {
+      padding-left: 8%;
+      border-left: 1px solid var(--line);
+    }
+
+    .payment-section {
+      padding: 0 0 5.4%;
+      border-top: 3px solid var(--cyan);
+    }
+
+    .payment-section + .payment-section {
+      padding-top: 5.4%;
+      border-top: 1px solid var(--line);
+    }
+
+    .payment-section h3 {
+      margin: .62em 0 .55em;
+      font-size: clamp(18px, 1.55vw, 25px);
+    }
+
+    .payment-section ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .payment-section li {
+      position: relative;
+      margin: .46em 0;
+      padding-left: 1.05em;
+      color: var(--muted);
+      font-size: clamp(11px, .94vw, 15px);
+      line-height: 1.42;
+    }
+
+    .payment-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .56em;
+      width: .42em;
+      height: .42em;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+
+    .payment-section.recurring li::before { background: var(--coral); }
+    .payment-section strong { color: #f0f4fa; }
+
+    .hardware-strip {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 2.4%;
+      align-items: center;
+      margin-top: 1.9%;
+      padding: 1.35% 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: clamp(10px, .87vw, 14px);
+    }
+
+    .hardware-strip .hardware-label {
+      color: var(--amber);
+      font-weight: 820;
+      letter-spacing: .08em;
+    }
+
+    .hardware-strip b {
+      color: #e6edf7;
+      font-size: clamp(14px, 1.2vw, 19px);
+    }
+
+    .hardware-strip .hardware-note { text-align: right; }
 
     /* Slide 8 */
     .s8 {
@@ -2897,7 +3191,7 @@
         <div class="orbit" aria-hidden="true"></div>
         <div class="hero">
           <div class="kicker">Executable Clinical Intelligence</div>
-          <h1>Medical Skill Hub<br>医疗临床专科<br><em>辅助多智能体架构</em></h1>
+          <h1>Medical Skill Hub<br>医疗临床专科<br><em>辅助多智能体系统</em></h1>
           <p class="lead">以指南 Skill 与相似病例知识库，为医生生成有依据、可追溯、可复核的高准确性临床决策链。</p>
         </div>
         <p class="thesis"><b>不是另一个医疗问答模型</b>而是一个可执行、可复核的临床智能基础设施。</p>
@@ -3082,6 +3376,23 @@
             </div>
           </div>
         </div>
+        <div class="policy-note">
+          <div class="signal">
+            <span class="signal-index">POLICY SIGNAL</span>
+            <strong>临床专科<br>垂直应用</strong>
+            <i class="signal-orbit" aria-hidden="true"></i>
+          </div>
+          <div class="policy-year">
+            <span>目标节点</span>
+            <strong>2027</strong>
+            <em>形成一批</em>
+          </div>
+          <div class="policy-content">
+            <div class="policy-doc-title">《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》</div>
+            <p>形成一批<b>临床专病专科垂直大模型和智能体应用</b>，推动智能辅助决策广泛应用</p>
+            <div class="policy-outcomes"><span>基层诊疗智能辅助</span><i>+</i><span>专科专病辅助决策</span></div>
+          </div>
+        </div>
         <!-- <div class="workflow-thesis">
           <div class="thesis-label">THE WINNING LOGIC<br>不止模型跑分</div>
           <div class="workflow-chain"><span>读取真实病例</span><i>→</i><span>选择指南与工具</span><i>→</i><span>形成循证诊断</span><i>→</i><b>进入工作流 · 医生确认</b></div>
@@ -3242,36 +3553,72 @@
           <p><b>50 秒。</b>临床专家验证已经完成，接下来的落地路线从标杆科室开始：先进入真实工作流形成消化内科示范，随后转化首个付费用户、验证真实付费意愿，再扩展为完成私有部署与院级验证的标杆医院。</p>
           <p>临床专家对三项核心能力给予了正向反馈：第一，系统的思考逻辑符合医生从病例信息、鉴别诊断到证据复核的真实诊疗链路；第二，相似病例与历史诊疗路径能够为复杂病例判断提供有效参考；第三，工作流在五个模型上均提升准确率，最高达到 84.8%，验证结果具有说服力。</p>
           <p>首个付费用户跑通商业闭环后，继续推进标杆医院；标杆医院完成验证后，复用 Skill Pack 与标准化实施 SOP 进入同类医院，最终通过新增专科 Skill Pack 实现跨专科扩展。</p>
-          <p><b>转场：</b>下一页说明这笔融资如何把已有验证转化为可复制交付和商业结果。</p>
+          <p><b>转场：</b>下一页具体回答：医院部署一套需要多少钱，我们又如何形成持续收入。</p>
           <p><b>[Sources]</b> Topic 4 商业计划与成长性.md（客户增长路径与跨专科复制）；测试结果结果.md（五模型工作流准确率）；临床专家正向反馈与首个付费用户阶段由团队提供。</p>
         </aside>
       </section>
 
-      <section class="slide s7" data-duration="45" data-label="投资价值">
-        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">07 · 投资价值</span></div>
-        <div class="kicker">Capital Efficiency</div>
-        <h2>拟融资 300–500 万元，<br>换来<span class="accent">三次风险消除</span></h2>
-        <div class="funding">
-          <div class="ask-number">
-            <div class="label">SEED / ANGEL ROUND</div>
-            <div class="amount">300–500</div>
-            <div class="unit">万元人民币</div>
-            <p class="runway"><b>0-6 个月</b><br>产品化 · 临床验证 · 商业验证</p>
+      <section class="slide s7" data-duration="45" data-label="部署成本与分级付费">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">07 · 部署成本与付费模式</span></div>
+        <div class="kicker">Deployment Economics</div>
+        <h2>从临床验证切入，<br><span class="accent">按部署深度形成持续收入</span></h2>
+        <div class="pricing-layout">
+          <div class="pricing-tiers">
+            <div class="pricing-table-head"><span>部署等级</span><span>核心交付</span><span>交付成本</span><span>首期报价</span></div>
+            <div class="pricing-tier pilot">
+              <div class="tier-name"><small>01 · PILOT</small><strong>临床验证版</strong></div>
+              <div class="tier-scope">1 个专科 · 脱敏病例<br>独立环境 · 医生评价报告</div>
+              <div class="tier-metric"><span>内部测算</span><strong>22–28 万</strong></div>
+              <div class="tier-metric quote"><span>建议报价</span><strong>35–50 万</strong></div>
+            </div>
+            <div class="pricing-tier department">
+              <div class="tier-name"><small>02 · PRIVATE</small><strong>科室私有版</strong></div>
+              <div class="tier-scope">院内部署 · 1 个 Skill Pack<br>1–3 个接口 · 权限日志与验收</div>
+              <div class="tier-metric"><span>内部测算</span><strong>45–60 万</strong></div>
+              <div class="tier-metric quote"><span>建议报价</span><strong>70–100 万</strong></div>
+            </div>
+            <div class="pricing-tier enterprise">
+              <div class="tier-name"><small>03 · ENTERPRISE</small><strong>院级平台版</strong></div>
+              <div class="tier-scope">多科室 · 多系统接口<br>统一审计 · API / SDK · 高可用</div>
+              <div class="tier-metric"><span>内部测算</span><strong>100–150 万</strong></div>
+              <div class="tier-metric quote"><span>建议报价</span><strong>150–250 万+</strong></div>
+            </div>
+            <div class="market-anchor"><span>2025–2026 年 5 个可识别 CDSS 公开采购样本</span><b>中位数约 95 万</b></div>
           </div>
-          <div class="milestones">
-            <div class="milestone"><span class="num">01</span><h3>产品可用</h3><p>V1.0、核心 Skill Library、可部署 Runtime 与稳定性记录。</p></div>
-            <div class="milestone"><span class="num">02</span><h3>临床有效</h3><p>医生评价、样本量与指标口径、可复核的 Clinical Evaluation。</p></div>
-            <div class="milestone"><span class="num">03</span><h3>商业可复制</h3><p>科室试点、标准化私有部署、首批付费或产业合作。</p></div>
+          <div class="payment-model">
+            <div class="payment-section">
+              <h3>首期项目收入</h3>
+              <ul>
+                <li>平台软件授权</li>
+                <li>私有部署与系统集成</li>
+                <li>首个专科 Skill Pack</li>
+                <li>培训、验收与基础维保</li>
+              </ul>
+            </div>
+            <div class="payment-section recurring">
+              <h3>持续收入</h3>
+              <ul>
+                <li>新增 Skill Pack <strong>15–30 万 / 个</strong></li>
+                <li>指南更新与验证 <strong>8–15 万 / 专科 / 年</strong></li>
+                <li>接口、并发扩容与企业授权另计</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="risk-row"><span><b>模型风险 →</b> Model-Agnostic</span><span><b>临床风险 →</b> 证据链 + 医生确认</span><span><b>销售风险 →</b> 医院直销 + B2B2H 渠道</span></div>
-        <div class="source">信息来源：<a href="./Topic%205%20%E6%8A%95%E8%B5%84%E4%BB%B7%E5%80%BC.md">Topic 5 投资价值.md</a>｜<span class="generated">【生成内容：三次风险消除框架与页面表述】</span></div>
+        <div class="hardware-strip">
+          <span class="hardware-label">算力硬件单列</span>
+          <b>已有算力直接复用｜新购约 60–250 万 / 套</b>
+          <span class="hardware-note">按模型、并发与国产化要求配置</span>
+        </div>
+        <div class="source">依据：<a href="./%E7%AC%AC%E4%B9%9D%E9%A1%B5%20%E9%83%A8%E7%BD%B2%E6%88%90%E6%9C%AC%E4%B8%8E%E5%88%86%E7%BA%A7%E4%BB%98%E8%B4%B9%E6%A8%A1%E5%BC%8F.md">第九页 部署成本与分级付费模式.md</a>｜公开采购锚点 + 约 3 万元 / 人月测算｜建议报价，非已成交价格</div>
         <div class="slide-no">09 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>45 秒。</b>我们拟以 300 到 500 万元种子或天使轮，支持 12 到 18 个月。正式上台前请确认这一融资额仍代表团队真实计划。</p>
-          <p>资金对应三类可验证结果：产品可用、临床有效、商业可复制。核心资产不是某一代模型，而是跨模型复用的 Skill、Compiler 与临床验证数据。</p>
-          <p>我们用 Model-Agnostic 降低模型迭代风险，用证据链和医生确认降低临床接受风险，用医院直销与信息化渠道并行降低销售周期风险。</p>
-          <p><b>转场：</b>下一页，我们直接提出把这些目标转化为真实落地所需要的合作资源。</p>
+          <p><b>45 秒。</b>我们的收费不按医生账号数计算，而是按照部署深度、专科数量和系统集成复杂度分级。</p>
+          <p>公开采购中，单一专科 AI 或本地化部署项目大约 36 到 50 万元；多个 CDSS 项目落在 45 到 154 万元之间，中位数约 95 万元。因此我们建议先以 35 到 50 万元的临床验证项目切入，科室私有部署报价 70 到 100 万元，院级平台从 150 万元起。</p>
+          <p>算力硬件根据模型和并发量单独采购，不混入软件报价。首期收入来自平台、部署和首个 Skill Pack，后续通过新增专科、指南更新和系统扩容形成持续收入。</p>
+          <p><b>表述边界：</b>以上是基于公开采购与内部人月测算的建议报价，不是已经成交的客单价；公开项目范围不同，不称为统一行业均价。</p>
+          <p><b>转场：</b>下一页，我们直接提出把这套分级交付模式推进到真实科室所需要的合作资源。</p>
+          <p><b>[Sources]</b> 国家统计局《2024 年城镇单位就业人员年平均工资情况》；绵阳四〇四医院 CDSS（45 万元）；泉州市儿童医院 CDSS（87.98 万元）；中牟县人民医院 CDSS（95.18 万元）；苍溪县人民医院 CDSS（98.8 万元）；阿克苏地区 DeepSeek 版 CDSS（153.8 万元）；邢台市人民医院医学大模型 AI 服务平台（96.8 万元）；第九页 部署成本与分级付费模式.md（完整计算与来源链接）。</p>
         </aside>
       </section>
 
@@ -3286,7 +3633,7 @@
         <div class="source">信息来源：<a href="./Topic6%20%E8%90%BD%E5%9C%B0%E6%84%8F%E6%84%BF.md">Topic6 落地意愿.md</a>｜<span class="generated">【生成内容：合作诉求与收束表述整合】</span></div>
         <div class="slide-no">10 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>40 秒。</b>前一页已经给出了从标杆科室、首个付费用户、标杆医院到同类医院复制和跨专科扩展的落地路径。最后，我们希望把已经完成的专家验证推进为真实科室试点与产业合作。</p>
+          <p><b>40 秒。</b>前一页已经给出了从临床验证版、科室私有部署到院级平台的分级交付与付费路径。最后，我们希望把已经完成的专家验证推进为真实科室试点与产业合作。</p>
           <p>我们希望连接消化内科试点医院和临床医生、医疗信息化集成伙伴，以及支持产品化与临床验证的产业和投资资源。</p>
           <p><b>结尾：</b>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。谢谢各位评委。</p>
           <p><b>[Sources]</b> Topic6 落地意愿.md（试点医院、临床医生、信息化企业与产业合作诉求）。</p>
