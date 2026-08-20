@@ -1645,6 +1645,162 @@
       text-align: right;
     }
 
+    .execution-layout {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 5%;
+      align-items: stretch;
+    }
+
+    .execution-roadmap,
+    .clinical-feedback {
+      min-width: 0;
+      padding-top: 2%;
+      border-top: 3px solid var(--cyan);
+    }
+
+    .clinical-feedback {
+      padding-left: 7%;
+      border-top-color: var(--coral);
+      border-left: 1px solid var(--line);
+    }
+
+    .execution-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 4%;
+      margin-bottom: 1.5%;
+    }
+
+    .execution-head h3,
+    .clinical-feedback h3 {
+      margin: 0;
+      font-size: clamp(18px, 1.72vw, 28px);
+    }
+
+    .execution-head span,
+    .feedback-context {
+      color: var(--muted);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(9px, .75vw, 12px);
+      letter-spacing: .04em;
+    }
+
+    .roadmap-list {
+      position: relative;
+    }
+
+    .roadmap-list::before {
+      content: "";
+      position: absolute;
+      left: 21.5%;
+      top: 8%;
+      bottom: 8%;
+      width: 2px;
+      background: linear-gradient(var(--cyan), var(--blue), var(--coral));
+    }
+
+    .roadmap-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 18% 1fr;
+      gap: 10%;
+      align-items: center;
+      min-height: 60px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .roadmap-step::before {
+      content: "";
+      position: absolute;
+      left: calc(21.5% - 5px);
+      width: 12px;
+      height: 12px;
+      border: 3px solid var(--navy);
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 0 2px rgba(56,213,239,.45);
+    }
+
+    .roadmap-step:nth-child(4)::before,
+    .roadmap-step:nth-child(5)::before {
+      background: var(--coral);
+      box-shadow: 0 0 0 2px rgba(255,111,143,.42);
+    }
+
+    .roadmap-step .stage-index {
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(11px, .95vw, 15px);
+      font-weight: 830;
+      text-align: right;
+    }
+
+    .roadmap-step:nth-child(4) .stage-index,
+    .roadmap-step:nth-child(5) .stage-index { color: var(--coral); }
+
+    .roadmap-step div {
+      display: grid;
+      grid-template-columns: 38% 1fr;
+      gap: 4%;
+      align-items: baseline;
+    }
+
+    .roadmap-step strong {
+      color: var(--ink);
+      font-size: clamp(15px, 1.35vw, 22px);
+    }
+
+    .roadmap-step small {
+      color: var(--muted);
+      font-size: clamp(10px, .88vw, 14px);
+      line-height: 1.35;
+    }
+
+    .feedback-context {
+      display: block;
+      margin: .45em 0 1.1em;
+    }
+
+    .feedback-item {
+      position: relative;
+      min-height: 74px;
+      padding: 3.5% 0 3.5% 14%;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .feedback-item b {
+      position: absolute;
+      left: 0;
+      top: 19%;
+      color: var(--coral);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(11px, .9vw, 15px);
+    }
+
+    .feedback-item strong {
+      display: block;
+      margin-bottom: .3em;
+      color: #edf2f9;
+      font-size: clamp(15px, 1.35vw, 22px);
+    }
+
+    .feedback-item span {
+      display: block;
+      color: var(--muted);
+      font-size: clamp(10px, .9vw, 15px);
+      line-height: 1.4;
+    }
+
+    .scale-line {
+      margin: 4% 0 0;
+      color: var(--amber);
+      font-size: clamp(10px, .88vw, 14px);
+      font-weight: 760;
+      line-height: 1.4;
+    }
+
     /* Slide 7 */
     .funding {
       display: grid;
@@ -1867,6 +2023,21 @@
       content: "↗";
       margin-right: .7em;
       color: var(--coral);
+    }
+
+    .s8 .closing-only {
+      margin-top: 7%;
+      padding-top: 4%;
+      border-top: 1px solid rgba(56,213,239,.28);
+      align-items: center;
+    }
+
+    .s8 .closing-only .closing-claim {
+      font-size: clamp(27px, 3.05vw, 49px);
+    }
+
+    .s8 .closing-only .asks {
+      font-size: clamp(15px, 1.4vw, 22px);
     }
 
     /* Appendix 1 */
@@ -2368,32 +2539,35 @@
 
       <section class="slide s6" data-duration="50" data-label="商业计划与成长">
         <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">06 · 商业计划与成长</span></div>
-        <div class="kicker">Go-to-Market</div>
-        <h2>先做成一个标杆科室，<br>再复制<span class="accent">一个平台 + 多个 Skill Pack</span></h2>
-        <div class="growth-layout">
-          <div class="growth-path">
-            <div class="growth-step"><i class="dot"></i><strong>临床专家验证</strong><span>先证明有效与可用</span></div>
-            <div class="growth-step"><i class="dot"></i><strong>标杆科室</strong><span>形成专科示范场景</span></div>
-            <div class="growth-step"><i class="dot"></i><strong>标杆医院</strong><span>标准化私有部署与实施 SOP</span></div>
-            <div class="growth-step"><i class="dot"></i><strong>同类医院复制</strong><span>复用平台与消化内科 Skill Pack</span></div>
-            <div class="growth-step"><i class="dot"></i><strong>产业渠道放大</strong><span>通过 HIS / EMR / CDSS 进入更多医院</span></div>
+        <div class="kicker">Go-to-Market · Expert Validated</div>
+        <h2>临床专家验证已经完成，<br><span class="accent">从标杆科室走向跨专科复制</span></h2>
+        <div class="execution-layout">
+          <div class="execution-roadmap">
+            <div class="execution-head"><h3>落地路线</h3><span>SCALE PATH</span></div>
+            <div class="roadmap-list">
+              <div class="roadmap-step"><span class="stage-index">01</span><div><strong>标杆科室</strong><small>进入真实工作流，形成消化内科示范</small></div></div>
+              <div class="roadmap-step"><span class="stage-index">02</span><div><strong>首个付费场景</strong><small>完成首单商业转化，验证真实付费意愿</small></div></div>
+              <div class="roadmap-step"><span class="stage-index">03</span><div><strong>标杆医院</strong><small>完成私有部署与院级验证</small></div></div>
+              <div class="roadmap-step"><span class="stage-index">04</span><div><strong>同类医院复制</strong><small>复用 Skill Pack 与标准化实施 SOP</small></div></div>
+              <div class="roadmap-step"><span class="stage-index">05</span><div><strong>跨专科扩展</strong><small>复用平台底座，新增专科 Skill Pack</small></div></div>
+            </div>
           </div>
-          <div class="revenue">
-            <h3>四层收入结构</h3>
-            <ul>
-              <li>平台授权<small>Medical Skill Hub 私有化部署</small></li>
-              <li>Clinical Skill Pack<small>专科授权与指南持续更新</small></li>
-              <li>部署与系统集成<small>医院接口、实施与培训</small></li>
-              <li>API / SDK / Runtime<small>面向信息化与医疗 AI 企业</small></li>
-            </ul>
+          <div class="clinical-feedback">
+            <h3>临床专家正向反馈</h3>
+            <span class="feedback-context">核心能力获得认可</span>
+            <div class="feedback-item"><b>01</b><strong>思考逻辑符合真实诊疗链路</strong><span>从病例信息提取、鉴别诊断到证据复核，符合医生实际判断顺序。</span></div>
+            <div class="feedback-item"><b>02</b><strong>链接真实病历，能迅速帮助医生参考鉴别</strong><span>历史病例与诊疗路径形成外置经验，辅助复杂病例快速对照。</span></div>
+            <div class="feedback-item"><b>03</b><strong>最终准确率较高，基本符合临床结果</strong><span>五个模型接入工作流后全部提升，最高准确率达到 84.8%。</span></div>
           </div>
         </div>
-        <div class="source">信息来源：<a href="./Topic%204%20%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B8%8E%E6%88%90%E9%95%BF%E6%80%A7.md">Topic 4 商业计划与成长性.md</a>｜<span class="generated">【生成内容：增长路径与收入结构可视化】</span></div>
+        <div class="source">信息来源：<a href="./Topic%204%20%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B8%8E%E6%88%90%E9%95%BF%E6%80%A7.md">Topic 4 商业计划与成长性.md</a>；<a href="./%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E7%BB%93%E6%9E%9C.md">测试结果结果.md</a>｜临床专家反馈与内部测试结果</div>
         <div class="slide-no">08 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>50 秒。</b>医疗行业第一家医院最难，所以我们的获客顺序不是先追求规模，而是先获得临床专家验证，做成一个标杆科室，再把部署方案、Skill Pack、培训和评价指标标准化。</p>
-          <p>收入从平台私有部署开始，叠加专科 Skill Pack、部署集成与持续更新；同时通过 API、SDK 或 Runtime 与 HIS、EMR、CDSS 合作。底座不变，新增 Skill 就能跨疾病、跨专科复制。</p>
-          <p><b>转场：</b>因此融资的目的也很清晰——不是堆算力，而是连续跨过产品、临床和商业三次验证。</p>
+          <p><b>50 秒。</b>临床专家验证已经完成，接下来的落地路线从标杆科室开始：先进入真实工作流形成消化内科示范，随后转化首个付费用户、验证真实付费意愿，再扩展为完成私有部署与院级验证的标杆医院。</p>
+          <p>临床专家对三项核心能力给予了正向反馈：第一，系统的思考逻辑符合医生从病例信息、鉴别诊断到证据复核的真实诊疗链路；第二，相似病例与历史诊疗路径能够为复杂病例判断提供有效参考；第三，工作流在五个模型上均提升准确率，最高达到 84.8%，验证结果具有说服力。</p>
+          <p>首个付费用户跑通商业闭环后，继续推进标杆医院；标杆医院完成验证后，复用 Skill Pack 与标准化实施 SOP 进入同类医院，最终通过新增专科 Skill Pack 实现跨专科扩展。</p>
+          <p><b>转场：</b>下一页说明这笔融资如何把已有验证转化为可复制交付和商业结果。</p>
+          <p><b>[Sources]</b> Topic 4 商业计划与成长性.md（客户增长路径与跨专科复制）；测试结果结果.md（五模型工作流准确率）；临床专家正向反馈与首个付费用户阶段由团队提供。</p>
         </aside>
       </section>
 
@@ -2421,31 +2595,25 @@
           <p><b>45 秒。</b>我们拟以 300 到 500 万元种子或天使轮，支持 12 到 18 个月。正式上台前请确认这一融资额仍代表团队真实计划。</p>
           <p>资金对应三类可验证结果：产品可用、临床有效、商业可复制。核心资产不是某一代模型，而是跨模型复用的 Skill、Compiler 与临床验证数据。</p>
           <p>我们用 Model-Agnostic 降低模型迭代风险，用证据链和医生确认降低临床接受风险，用医院直销与信息化渠道并行降低销售周期风险。</p>
-          <p><b>转场：</b>赛后 6 个月，我们会用具体交付物把这三次验证真正启动起来。</p>
+          <p><b>转场：</b>下一页，我们直接提出把这些目标转化为真实落地所需要的合作资源。</p>
         </aside>
       </section>
 
-      <section class="slide s8" data-duration="40" data-label="落地计划与收束">
-        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">08 · 落地承诺</span></div>
-        <div class="kicker">Execution</div>
-        <h2>6 个月，做成首个<span class="accent">可复制的消化内科示范场景</span></h2>
-        <div class="timeline">
-          <div class="phase"><span class="month">0–1 月</span><h3>产品 V1.0</h3><p>稳定部署 · 医生可测</p></div>
-          <div class="phase"><span class="month">1–2 月</span><h3>医生验证</h3><p>Clinical Evaluation · V1.1</p></div>
-          <div class="phase"><span class="month">2–3 月</span><h3>科室试点</h3><p>真实工作流 · 小规模试用</p></div>
-          <div class="phase"><span class="month">3–4 月</span><h3>标准化部署</h3><p>私有部署 · 接口 · 安全</p></div>
-          <div class="phase"><span class="month">4–6 月</span><h3>合作转化</h3><p>持续试点 / 联合研发 / 产品集成</p></div>
-        </div>
-        <div class="closing">
-          <p class="closing-claim">比赛结束不是终点，而是<strong>临床验证与产业验证</strong>的起点。<br><small>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。</small></p>
+      <section class="slide s8" data-duration="40" data-label="合作诉求与收束">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">08 · 合作诉求</span></div>
+        <div class="kicker">Execution Partnership</div>
+        <h2>让已验证的临床能力，<br><span class="accent">真正进入医院工作流</span></h2>
+        <div class="closing closing-only">
+          <p class="closing-claim">从专家验证走向<strong>真实科室试点与产业合作</strong>。<br><small>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。</small></p>
           <ul class="asks"><li>消化内科试点医院与临床医生</li><li>HIS / EMR / CDSS 集成伙伴</li><li>支持产品化与临床验证的产业、投资资源</li></ul>
         </div>
-        <div class="source">信息来源：<a href="./Topic6%20%E8%90%BD%E5%9C%B0%E6%84%8F%E6%84%BF.md">Topic6 落地意愿.md</a>；<a href="./Topic%204%20%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B8%8E%E6%88%90%E9%95%BF%E6%80%A7.md">Topic 4 商业计划与成长性.md</a>｜<span class="generated">【生成内容：合作诉求与收束表述整合】</span></div>
+        <div class="source">信息来源：<a href="./Topic6%20%E8%90%BD%E5%9C%B0%E6%84%8F%E6%84%BF.md">Topic6 落地意愿.md</a>｜<span class="generated">【生成内容：合作诉求与收束表述整合】</span></div>
         <div class="slide-no">10 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>40 秒。</b>赛后 6 个月，我们不泛化扩张，只集中完成消化内科首个示范：1 个月形成可供医生测试的 V1.0；2 个月完成首轮医生评价；3 个月推进科室试点；4 个月形成标准化私有部署；6 个月至少形成一项持续试点、联合研发或产品集成合作。</p>
-          <p>我们希望连接消化内科试点医院、医疗信息化集成伙伴，以及支持产品化和临床验证的产业与投资资源。</p>
+          <p><b>40 秒。</b>前一页已经给出了从标杆科室、首个付费用户、标杆医院到同类医院复制和跨专科扩展的落地路径。最后，我们希望把已经完成的专家验证推进为真实科室试点与产业合作。</p>
+          <p>我们希望连接消化内科试点医院和临床医生、医疗信息化集成伙伴，以及支持产品化与临床验证的产业和投资资源。</p>
           <p><b>结尾：</b>让每一条权威指南，成为 AI 可执行、医生可验证的临床能力。谢谢各位评委。</p>
+          <p><b>[Sources]</b> Topic6 落地意愿.md（试点医院、临床医生、信息化企业与产业合作诉求）。</p>
         </aside>
       </section>
 
