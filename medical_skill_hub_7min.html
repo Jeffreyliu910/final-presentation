@@ -329,7 +329,7 @@
     .team-origin {
       position: relative;
       min-height: 154px;
-      padding: 1.35% 1.6%;
+      padding: 1.2% 1.6% 1.35%;
       overflow: hidden;
       border: 1px solid rgba(203,218,244,.14);
       border-left: 4px solid var(--cyan);
@@ -337,24 +337,48 @@
       background: linear-gradient(145deg, rgba(16,36,69,.84), rgba(7,17,31,.72));
     }
 
-    .origin-label {
-      margin-bottom: 2.1%;
-      color: var(--cyan);
-      font-family: ui-monospace, monospace;
-      font-size: clamp(8px, .66vw, 10.5px);
-      font-weight: 850;
-      letter-spacing: .13em;
-      text-transform: uppercase;
+    .team-origin:nth-child(2) {
+      border-left-color: #76a5ff;
     }
 
-    .team-origin p {
+    .origin-label {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 1.6%;
+      padding: .34em .7em;
+      border: 1px solid rgba(56,213,239,.22);
+      border-radius: 999px;
+      color: var(--cyan);
+      background: rgba(56,213,239,.07);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(9px, .7vw, 11px);
+      font-weight: 850;
+      letter-spacing: .08em;
+    }
+
+    .team-origin:nth-child(2) .origin-label {
+      border-color: rgba(118,165,255,.24);
+      color: #76a5ff;
+      background: rgba(79,140,255,.08);
+    }
+
+    .team-name {
+      margin: 0 0 .3em;
+      color: var(--ink);
+      font-size: clamp(15px, 1.18vw, 19px);
+      font-weight: 820;
+      line-height: 1.25;
+      letter-spacing: -.015em;
+    }
+
+    .team-description {
+      max-width: 96%;
       margin: 0;
       color: #cbd5e7;
-      font-size: clamp(12px, 1vw, 16px);
-      line-height: 1.5;
+      font-size: clamp(11px, .88vw, 14px);
+      font-weight: 500;
+      line-height: 1.55;
     }
-
-    .team-origin p b { color: var(--ink); }
 
     .team-core {
       display: flex;
@@ -539,43 +563,122 @@
     }
 
     .person-copy h3 {
-      margin: 0 0 1.4%;
+      margin: 0 0 2.2%;
       color: var(--ink);
       font-size: clamp(23px, 2vw, 32px);
       letter-spacing: -.035em;
     }
 
-    .person-school {
-      margin: 0 0 4.4%;
-      color: #dbe4f1;
-      font-size: clamp(13px, 1.08vw, 17.5px);
-      font-weight: 740;
-      line-height: 1.4;
+    .education-block {
+      display: grid;
+      gap: .2em;
     }
 
-    .person-school span {
-      display: block;
-      margin-top: .16em;
-      color: var(--muted);
-      font-size: .88em;
-      font-weight: 650;
+    .person-school {
+      margin: 0;
+      color: #dbe4f1;
+      font-size: clamp(13px, 1.08vw, 17.5px);
+      font-weight: 780;
+      line-height: 1.3;
     }
 
     .person-degree {
-      margin: auto 0 0;
-      padding-top: 4.5%;
-      border-top: 1px solid rgba(203,218,244,.15);
+      margin: 0;
       color: var(--muted);
       font-size: clamp(9px, .72vw, 11.5px);
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     .person-degree b {
       display: block;
-      margin-bottom: .1em;
+      margin-bottom: .02em;
       color: var(--ink);
-      font-size: 1.16em;
-      font-weight: 760;
+      font-size: 1.18em;
+      font-weight: 720;
+    }
+
+    .project-profile {
+      display: grid;
+      gap: .62em;
+      margin-top: 3.8%;
+      padding-top: 3.3%;
+      border-top: 1px solid rgba(203,218,244,.15);
+    }
+
+    .project-role {
+      display: grid;
+      grid-template-columns: 4.9em minmax(0, 1fr);
+      gap: .8em;
+      align-items: center;
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(12px, .92vw, 14.8px);
+      line-height: 1.35;
+    }
+
+    .project-profile > p > span,
+    .core-contributions > span {
+      flex: 0 0 auto;
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(9px, .64vw, 10.2px);
+      font-weight: 850;
+      letter-spacing: .1em;
+    }
+
+    .person-card:nth-child(2) .project-profile > p > span,
+    .person-card:nth-child(2) .core-contributions > span {
+      color: #76a5ff;
+    }
+
+    .project-role strong {
+      font-weight: 820;
+      letter-spacing: -.01em;
+    }
+
+    .core-contributions {
+      display: grid;
+      grid-template-columns: 4.9em minmax(0, 1fr);
+      gap: .8em;
+      align-items: start;
+    }
+
+    .core-contributions > span {
+      padding-top: .22em;
+    }
+
+    .core-contributions ul {
+      display: grid;
+      gap: .28em;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .core-contributions li {
+      position: relative;
+      padding-left: .9em;
+      color: #dbe4f1;
+      font-size: clamp(11px, .82vw, 13px);
+      font-weight: 560;
+      line-height: 1.38;
+    }
+
+    .core-contributions li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .58em;
+      width: .34em;
+      height: .34em;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px rgba(56,213,239,.42);
+    }
+
+    .person-card:nth-child(2) .core-contributions li::before {
+      background: #76a5ff;
+      box-shadow: 0 0 8px rgba(79,140,255,.42);
     }
 
     /* Slide 2 */
@@ -586,7 +689,7 @@
 
     .pain-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.25%;
       align-items: stretch;
     }
@@ -618,8 +721,17 @@
     .pain-card.experience { border-top-color: var(--coral); }
     .pain-card.standard { border-top-color: var(--amber); }
 
+    .pain-card.pressure {
+      grid-column: auto;
+      padding: 1.65% 1.7% 1.45%;
+      border-top-color: var(--cyan);
+      background:
+        radial-gradient(circle at 78% 28%, rgba(79,140,255,.1), transparent 28%),
+        linear-gradient(145deg, rgba(16,36,69,.92), rgba(7,17,31,.78));
+    }
+
     .pain-card.concentration::after { border-color: rgba(79,140,255,.13); }
-    .pain-card.experience::after { border-color: rgba(255,111,143,.13); }
+    .pain-card.experience::after { border-color: rgba(255,111,143,.065); }
     .pain-card.standard::after { border-color: rgba(255,189,100,.13); }
 
     .pain-card .card-tag {
@@ -638,6 +750,18 @@
     .pain-card.concentration .card-tag { color: #72a3ff; }
     .pain-card.experience .card-tag { color: var(--coral); }
     .pain-card.standard .card-tag { color: var(--amber); }
+
+    .pain-card.standard .card-tag {
+      margin-bottom: 4.2%;
+    }
+
+    .pain-card.experience .card-tag {
+      margin-bottom: 4.1%;
+    }
+
+    .pain-card.pressure .card-tag {
+      margin-bottom: 4.2%;
+    }
 
     .pain-card .card-tag i {
       color: #66758f;
@@ -677,6 +801,124 @@
     .pain-card.concentration .pain-metric b { color: #72a3ff; }
     .pain-card.experience .pain-metric b { color: var(--coral); }
 
+    .experience-indicator {
+      margin-bottom: .45em;
+      color: #aebbd0;
+      font-size: clamp(9px, .66vw, 10.5px);
+      font-weight: 760;
+      letter-spacing: .035em;
+    }
+
+    .pain-card.experience .pain-metric {
+      min-height: auto;
+      margin: 0;
+      font-size: clamp(29px, 2.35vw, 38px);
+    }
+
+    .pain-card.experience .experience-metric {
+      display: grid;
+      grid-template-columns: 28% 8% 28% 8% 28%;
+      gap: 0;
+      align-items: baseline;
+      width: 100%;
+    }
+
+    .experience-metric .metric-start,
+    .experience-metric .metric-mid,
+    .experience-metric .metric-end {
+      display: block;
+      font-size: 1em;
+      font-weight: 880;
+      line-height: 1;
+      letter-spacing: -.045em;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .experience-metric .metric-start {
+      color: #f1f4f9;
+    }
+
+    .pain-card.experience .experience-metric .metric-mid {
+      color: #f3a0b5;
+    }
+
+    .pain-card.experience .experience-metric .metric-end {
+      color: var(--coral);
+    }
+
+    .experience-metric i {
+      color: #8f9db3;
+      font-size: .58em;
+      font-style: normal;
+      font-weight: 850;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .experience-levels {
+      display: grid;
+      grid-template-columns: 28% 8% 28% 8% 28%;
+      gap: 0;
+      align-items: center;
+      margin-top: .34em;
+      color: #9faec4;
+      font-size: clamp(9px, .65vw, 10.5px);
+      font-weight: 700;
+    }
+
+    .experience-levels span {
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .experience-levels span:nth-of-type(2) {
+      color: #d9a0af;
+    }
+
+    .experience-levels span:last-child {
+      color: #f3a0b5;
+      text-align: center;
+    }
+
+    .experience-levels i {
+      width: auto;
+    }
+
+    .experience-delta {
+      display: flex;
+      width: max-content;
+      margin-top: .55em;
+      margin-left: auto;
+      padding: .28em .62em;
+      border: 1px solid rgba(255,111,143,.25);
+      border-radius: 999px;
+      color: var(--coral);
+      background: rgba(255,111,143,.075);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(8px, .58vw, 9.5px);
+      font-weight: 850;
+      letter-spacing: .06em;
+    }
+
+    .pain-card.experience h3 {
+      margin: 3.2% 0 1.5%;
+      font-size: clamp(16px, 1.34vw, 21.5px);
+      line-height: 1.22;
+    }
+
+    .pain-card.experience p {
+      min-height: auto;
+      font-size: clamp(9.5px, .7vw, 11.2px);
+      line-height: 1.38;
+    }
+
+    .pain-card.experience .need {
+      bottom: 4.8%;
+      padding-top: 3.1%;
+      font-size: clamp(9px, .72vw, 11.5px);
+    }
+
     .pain-card.demand .pain-metric {
       gap: .16em;
       font-size: clamp(27px, 2.75vw, 44px);
@@ -695,6 +937,207 @@
       color: var(--amber);
       font-size: .48em;
       letter-spacing: .05em;
+    }
+
+    .guideline-compare {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 100%;
+    }
+
+    .compare-head,
+    .compare-row {
+      display: grid;
+      grid-template-columns: minmax(0, 44%) 10% minmax(0, 46%);
+      column-gap: 0;
+      align-items: center;
+    }
+
+    .compare-head {
+      min-height: 22px;
+      margin-bottom: .2em;
+      color: #8f9db3;
+      font-family: ui-monospace, monospace;
+      font-size: clamp(8.5px, .62vw, 10px);
+      font-weight: 850;
+      letter-spacing: .1em;
+    }
+
+    .compare-head span:first-child {
+      color: #b9c7db;
+    }
+
+    .compare-head span:last-child {
+      color: var(--amber);
+    }
+
+    .compare-head span:last-child,
+    .compare-row p {
+      padding-left: .35em;
+    }
+
+    .compare-row {
+      min-height: 52px;
+      padding: .52em 0;
+      border-top: 1px solid rgba(203,218,244,.11);
+    }
+
+    .compare-row strong,
+    .compare-row p {
+      min-height: auto;
+      margin: 0;
+      font-size: clamp(10px, .72vw, 11.5px);
+      line-height: 1.4;
+    }
+
+    .compare-row strong {
+      color: #e5ebf5;
+      font-weight: 720;
+    }
+
+    .pain-card.standard .compare-row p {
+      min-height: auto;
+      margin: 0;
+      padding-left: .35em;
+      color: #c2cee0;
+      font-size: clamp(10px, .72vw, 11.5px);
+      font-weight: 650;
+      line-height: 1.4;
+    }
+
+    .compare-row i {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      color: var(--amber);
+      font-size: clamp(11px, .82vw, 13px);
+      font-style: normal;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .pain-card.standard .need {
+      left: 6.8%;
+      right: 6.8%;
+      bottom: 4.8%;
+      padding-top: 3.1%;
+      font-size: clamp(9px, .72vw, 11.5px);
+    }
+
+    .pressure-evidence {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: .55em;
+      align-items: stretch;
+    }
+
+    .pressure-block {
+      display: block;
+      min-width: 0;
+    }
+
+    .pressure-block + .pressure-block {
+      padding-top: .65em;
+      padding-left: 0;
+      border-top: 1px solid rgba(203,218,244,.13);
+      border-left: 0;
+    }
+
+    .pressure-label {
+      margin: 0;
+      color: #aebbd0;
+      font-size: clamp(10px, .75vw, 12px);
+      font-weight: 820;
+      line-height: 1.42;
+      letter-spacing: .02em;
+    }
+
+    .doctor-equation {
+      display: flex;
+      align-items: baseline;
+      gap: .22em;
+      color: var(--ink);
+      font-size: clamp(25px, 2.25vw, 36px);
+      font-weight: 880;
+      line-height: 1;
+      letter-spacing: -.045em;
+      white-space: nowrap;
+    }
+
+    .doctor-equation span {
+      color: var(--dim);
+      font-size: .58em;
+      font-weight: 720;
+    }
+
+    .doctor-equation strong:last-child {
+      color: var(--cyan);
+    }
+
+    .doctor-result {
+      display: flex;
+      align-items: baseline;
+      gap: .55em;
+      margin-top: .72em;
+      color: #c8d3e5;
+      font-size: clamp(10px, .78vw, 12.5px);
+    }
+
+    .doctor-result b {
+      color: var(--cyan);
+      font-size: clamp(18px, 1.5vw, 24px);
+      font-weight: 860;
+      letter-spacing: -.025em;
+    }
+
+    .hospital-chain {
+      display: block;
+      color: #c8d3e5;
+      font-size: clamp(10.5px, .78vw, 12.5px);
+      font-weight: 640;
+      line-height: 1.6;
+      letter-spacing: 0;
+      text-align: left;
+    }
+
+    .hospital-chain strong,
+    .hospital-labels strong {
+      color: var(--cyan);
+      font-size: clamp(20px, 1.55vw, 25px);
+      font-weight: 880;
+      line-height: 1;
+      letter-spacing: -.025em;
+      white-space: nowrap;
+      text-shadow: 0 0 16px rgba(56,213,239,.16);
+    }
+
+    .hospital-chain strong:nth-of-type(even) {
+      color: #87aef7;
+    }
+
+    .hospital-chain span {
+      color: var(--dim);
+      font-size: .6em;
+      font-weight: 720;
+    }
+
+    .hospital-labels {
+      display: block;
+      margin: 0;
+      color: #c8d3e5;
+      font-size: clamp(10.5px, .78vw, 12.5px);
+      font-weight: 640;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .pain-card.pressure .need {
+      left: 6.8%;
+      right: 6.8%;
+      bottom: 4.8%;
+      padding-top: 3.1%;
+      font-size: clamp(9px, .72vw, 11.5px);
     }
 
     .pain-card h3 {
@@ -863,10 +1306,12 @@
 
     .growth-numbers strong {
       color: var(--ink);
-      font-size: clamp(36px, 4.2vw, 68px);
+      flex: 0 0 auto;
+      font-size: clamp(36px, 3.1vw, 50px);
       font-weight: 880;
       line-height: .95;
       letter-spacing: -.055em;
+      white-space: nowrap;
     }
 
     .growth-numbers strong:last-child { color: var(--cyan); }
@@ -878,6 +1323,17 @@
       font-size: .25em;
       font-weight: 650;
       letter-spacing: .02em;
+    }
+
+    .growth-numbers strong:last-child small:last-child {
+      display: inline;
+      margin: 0 0 0 .35em;
+      color: #718099;
+      font-size: .22em;
+      font-weight: 750;
+      line-height: 0;
+      letter-spacing: 0;
+      vertical-align: super;
     }
 
     .growth-numbers i {
@@ -943,6 +1399,135 @@
       line-height: 1.5;
     }
 
+    .market-lane.vendor-lane {
+      align-items: stretch;
+      padding: 2.1% 0 2.35%;
+    }
+
+    .vendor-lane .lane-name {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: .65em;
+      min-height: 100%;
+    }
+
+    .vendor-lane .lane-name small {
+      color: var(--dim);
+      font-family: ui-monospace, monospace;
+      font-size: .46em;
+      font-weight: 820;
+      letter-spacing: .12em;
+    }
+
+    .vendor-proof-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 2.6%;
+      min-width: 0;
+    }
+
+    .vendor-group {
+      min-width: 0;
+    }
+
+    .vendor-group + .vendor-group {
+      padding-left: 6%;
+      border-left: 1px solid rgba(203,218,244,.15);
+    }
+
+    .vendor-head {
+      display: flex;
+      align-items: baseline;
+      gap: .65em;
+      margin-bottom: .55em;
+      color: #dbe3f0;
+      font-size: clamp(12px, 1.02vw, 16px);
+      line-height: 1.25;
+    }
+
+    .vendor-head b {
+      color: var(--ink);
+      font-size: 1.12em;
+      font-weight: 850;
+    }
+
+    .vendor-head span {
+      color: var(--muted);
+      font-size: .78em;
+      font-weight: 680;
+    }
+
+    .vendor-primary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5%;
+      align-items: end;
+    }
+
+    .vendor-metric {
+      display: flex;
+      align-items: baseline;
+      gap: .42em;
+      min-width: 0;
+    }
+
+    .vendor-metric strong {
+      color: var(--cyan);
+      font-size: clamp(24px, 2.2vw, 35px);
+      font-weight: 880;
+      line-height: 1;
+      letter-spacing: -.045em;
+      white-space: nowrap;
+    }
+
+    .vendor-group.jd .vendor-metric strong {
+      color: var(--coral);
+    }
+
+    .vendor-group.jd .vendor-primary {
+      grid-template-columns: minmax(0, 1fr);
+      gap: .6em;
+    }
+
+    .vendor-group.jd .vendor-metric strong {
+      font-size: clamp(23px, 1.9vw, 31px);
+    }
+
+    .vendor-group.jd .vendor-metric span {
+      white-space: nowrap;
+    }
+
+    .vendor-metric span {
+      color: #aebbd0;
+      font-size: clamp(8.5px, .67vw, 10.8px);
+      font-weight: 720;
+      line-height: 1.28;
+    }
+
+    .vendor-scale {
+      margin: .72em 0 0;
+      color: #9eacc1;
+      font-size: clamp(8.5px, .68vw, 11px);
+      font-weight: 620;
+      line-height: 1.45;
+    }
+
+    .vendor-scale b {
+      color: #dce5f2;
+      font-weight: 820;
+    }
+
+    .vendor-others {
+      grid-column: 1 / -1;
+      margin: .68em 0 0;
+      padding-top: .55em;
+      border-top: 1px solid rgba(203,218,244,.11);
+      color: #718099;
+      font-size: clamp(8px, .62vw, 10px);
+      line-height: 1.35;
+    }
+
     .workflow-thesis {
       display: grid;
       grid-template-columns: 22% 1fr;
@@ -1004,6 +1589,13 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .innovation-block.guideline {
+      grid-template-columns: 7% 22% minmax(0, .82fr) minmax(0, 1.35fr);
+      gap: 2%;
+      align-items: center;
+      padding: 1.45% 0 1.55%;
+    }
+
     .innovation-block .innovation-num {
       color: var(--cyan);
       font-family: ui-monospace, monospace;
@@ -1028,6 +1620,14 @@
       color: var(--muted);
       font-size: clamp(10px, .9vw, 14px);
       line-height: 1.4;
+    }
+
+    .innovation-highlight {
+      padding: .08em .22em;
+      border-radius: .24em;
+      background: rgba(255, 184, 77, .18);
+      color: #ffd18d;
+      font-weight: 700;
     }
 
     .innovation-mainline {
@@ -1067,6 +1667,35 @@
     }
 
     .who-note b { color: var(--cyan); }
+
+    .smart-figure {
+      align-self: stretch;
+      margin: 0;
+      padding: .42em;
+      overflow: hidden;
+      border: 1px solid rgba(56,213,239,.28);
+      border-radius: 8px;
+      background: rgba(238,242,245,.98);
+      box-shadow: 0 14px 34px rgba(0,0,0,.18);
+    }
+
+    .smart-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 3px;
+    }
+
+    .smart-figure figcaption {
+      padding: .48em .28em .08em;
+      color: #425168;
+      font-family: ui-monospace, monospace;
+      font-size: clamp(7.5px, .56vw, 9px);
+      font-weight: 760;
+      line-height: 1.3;
+      letter-spacing: .04em;
+      text-align: right;
+    }
 
     .innovation-footer {
       display: grid;
@@ -2290,29 +2919,55 @@
             <div class="portrait zhao"><img src="./zhao.jpg" alt="赵文韬个人照片" /></div>
             <div class="person-copy">
               <h3>赵文韬</h3>
-              <h4 class="person-school">香港理工大学 <span>工程学院 · 电机及电子工程学系</span></h4>
-              <p class="person-degree"><b>电子及资讯工程理学硕士</b>MSc in Electronic and Information Engineering</p>
+              <div class="education-block">
+                <h4 class="person-school">香港理工大学</h4>
+                <p class="person-degree"><b>电子及资讯工程理学硕士</b></p>
+              </div>
+              <div class="project-profile">
+                <p class="project-role"><span>项目角色</span><strong>核心研发成员 / 医疗场景调研</strong></p>
+                <div class="core-contributions">
+                  <span>核心贡献</span>
+                  <ul>
+                    <li>Medical Skill Hub总体架构</li>
+                    <li>多智能体系统开发</li>
+                    <li>医疗痛点挖掘与分析</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </article>
           <article class="person-card">
             <div class="portrait jeff"><img src="./Jeff.jpg" alt="刘臻睿个人照片" /></div>
             <div class="person-copy">
               <h3>刘臻睿</h3>
-              <p class="person-school">加拿大滑铁卢大学 <span>工程学院 · 电气与计算机工程系</span></p>
-              <p class="person-degree"><b>电气与计算机工程硕士</b>MEng in Electrical and Computer Engineering</p>
+              <div class="education-block">
+                <p class="person-school">加拿大滑铁卢大学</p>
+                <p class="person-degree"><b>电气与计算机工程硕士</b></p>
+              </div>
+              <div class="project-profile">
+                <p class="project-role"><span>项目角色</span><strong>核心研发成员 / 商务规划落地</strong></p>
+                <div class="core-contributions">
+                  <span>核心贡献</span>
+                  <ul>
+                    <li>模型部署与推理优化</li>
+                    <li>系统工程与算法实现</li>
+                    <li>商务规划与落地执行</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </article>
         </div>
         <div class="team-summary">
           <article class="team-origin">
             <div class="origin-label">AI科研支持团队</div>
-            <p><b>上海交大可信智能团队</b></p>
-            <p>可信AI · 大模型智能体 · 系统研发</p>
+            <p class="team-name">上海交大可信智能团队</p>
+            <p class="team-description">依托上海交通大学计算机学院与上海人工智能研究院的交叉创新土壤，持续推动可信AI走向真实世界。</p>
           </article>
           <article class="team-origin">
             <div class="origin-label">临床医学合作团队</div>
-            <p><b>中南大学湘雅三医院</b></p>
-            <p>临床需求 · 医学知识 · 指南与诊断评估</p>
+            <p class="team-name">中南大学湘雅三医院</p>
+            <p class="team-description">依托中南大学湘雅三医院临床专家团队的一线诊疗经验与专业指导，持续推动临床需求、医学知识与AI辅助诊断深度融合。</p>
           </article>
         </div>
         <div class="source">内容依据：<a href="./%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D.md">个人介绍.md</a>；成员照片：zhao.jpg、Jeff.jpg</div>
@@ -2328,55 +2983,59 @@
       <section class="slide s2" data-duration="45" data-label="医疗背景与实际痛点">
         <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">01 · 医疗背景与痛点</span></div>
         <div class="kicker">Healthcare Context</div>
-        <h2>百亿级需求下，<span class="accent">诊疗能力仍受资源与经验约束</span></h2>
+        <h2>百亿级诊疗需求下，<span class="accent">诊疗能力仍受资源与经验约束</span></h2>
         <div class="pain-grid">
-          <article class="pain-card demand">
-            <div class="card-tag"><span>01 · 规模</span><i>EFFICIENCY</i></div>
-            <div class="pain-metric">105.8亿<span>vs</span><b>529万</b></div>
-            <h3>百亿级需求持续承压</h3>
-            <p>2025 年总诊疗人次<br>对比执业（助理）医师总数</p>
-            <div class="need"><b>需求</b> · 提升医生效率</div>
-          </article>
-          <article class="pain-card concentration">
-            <div class="card-tag"><span>02 · 集中</span><i>ACCESS</i></div>
-            <div class="pain-metric">10.6%<span>→</span><b>63.8%</b></div>
-            <h3>优质资源高度集中</h3>
-            <p>三级医院数量占比<br>→ 医院诊疗量占比</p>
-            <div class="need"><b>需求</b> · 优质能力向基层复制</div>
+          <article class="pain-card pressure">
+            <div class="card-tag"><span>01 · 医疗资源极度紧张</span><i>CAPACITY PRESSURE</i></div>
+            <div class="pressure-evidence">
+              <section class="pressure-block">
+                <div class="hospital-labels">2025年全国医疗机构总计105.8亿诊疗人次，执业（助理）医师仅529万人。</div>
+                <div class="hospital-labels">按总量粗略折算，<strong>医生年平均诊疗人次约2000人</strong>[1]。</div>
+              </section>
+              <section class="pressure-block">
+                <div class="hospital-chain">三级医院仅占全国医院总数<strong>10.6%</strong>，却集中了<strong>48.0%</strong>的医院床位，并承担了<strong>63.8%</strong>的医院诊疗量和<strong>63.2%</strong>的医院住院量[2]。</div>
+              </section>
+            </div>
+            <div class="need"><b>结论</b> · 医生工作负荷高、三级医院长期承压，基层医疗能力仍有提升空间</div>
           </article>
           <article class="pain-card experience">
-            <div class="card-tag"><span>03 · 经验差</span><i>QUALITY</i></div>
-            <div class="pain-metric">69.8%<span>→</span><b>82.6%</b></div>
-            <h3>相同测试集，表现有梯度</h3>
-            <p>同一胃镜测试集：&lt;5 年 vs ≥15 年<br>准确率相差 12.8 个百分点</p>
-            <div class="need"><b>需求</b> · 推动诊疗能力均质化</div>
+            <div class="card-tag"><span>02 · 医生资历影响诊断结果</span><i>QUALITY GAP</i></div>
+            <div class="experience-indicator">慢性萎缩性胃炎 · 胃镜诊断准确率</div>
+            <div class="pain-metric experience-metric"><strong class="metric-start">69.8%</strong><i>→</i><b class="metric-mid">73.3%</b><i>→</i><b class="metric-end">82.6%</b></div>
+            <div class="experience-levels"><span>＜5 年经验</span><i></i><span>5-10 年经验</span><i></i><span>≥15 年经验</span></div>
+            <h3>相同病例，不同经验医生<br>诊断表现仍存在明显差距</h3>
+            <p>相同胃镜测试集，不同内镜经验组准确率相差 12.8 个百分点[3]</p>
+            <div class="need"><b>结论</b> · 如何让专家诊疗能力可复制、可下沉？</div>
           </article>
           <article class="pain-card standard">
-            <div class="card-tag"><span>04 · 标准化</span><i>TRUST</i></div>
-            <div class="pain-metric">按指南<b>有证据 · 可追溯</b></div>
-            <h3>复杂决策难标准化复制</h3>
-            <p>需同时执行适用人群、禁忌、排除条件与循证证据</p>
-            <div class="need"><b>需求</b> · 决策可解释、可复核</div>
+            <div class="card-tag"><span>03 · 权威指南可应用性弱</span><i>EXECUTION</i></div>
+            <div class="guideline-compare">
+              <div class="compare-head"><span>现状</span><i></i><span>痛点</span></div>
+              <div class="compare-row"><strong>指南是核心诊疗决策依据</strong><i>→</i><p>指南不会自动进入临床决策</p></div>
+              <div class="compare-row"><strong>指南内容专业、复杂</strong><i>→</i><p>医生理解和执行存在差异</p></div>
+              <div class="compare-row"><strong>指南数量多、篇幅长、持续更新</strong><i>→</i><p>医生难以快速检索与调用</p></div>
+            </div>
+            <div class="need"><b>结论</b> · 如何将指南转化为可执行、可调用的临床能力？</div>
           </article>
         </div>
         <div class="policy-timeline">
           <div class="policy-label">POLICY WINDOW<br>规模化落地</div>
-          <div class="policy-step"><strong>2027</strong><span>临床专病专科垂直大模型与智能体广泛应用</span></div>
+          <div class="policy-step"><strong>2027</strong><span>形成一批临床专病专科垂直大模型和智能体应用</span></div>
           <div class="policy-arrow">→</div>
-          <div class="policy-step"><strong>2030</strong><span>基层诊疗智能辅助基本实现全覆盖</span></div>
+          <div class="policy-step"><strong>2030</strong><span>基层诊疗智能辅助应用基本实现[4]</span></div>
           <div class="policy-conclusion"><b>政策窗口已经打开</b>医疗 AI 正走向专科化、基层下沉与规模化应用</div>
         </div>
         <div class="problem-thesis">
           <span>CORE ISSUE</span>
           <p>将专家经验与权威指南转化为 <b>可复制 · 可下沉 · 可追溯</b> 的智能诊疗能力</p>
         </div>
-        <div class="source">信息来源：国家统计局（2025 年数据）｜国家卫健委《2024 年我国卫生健康事业发展统计公报》｜Chen et al., <i>Medical Robotics</i> (2023)｜五部门“人工智能+医疗卫生”实施意见（2025）</div>
+        <div class="source">信息来源：[1]国家统计局《2025 年统计公报》｜[2]国家卫健委《2024 年卫生健康统计公报》｜[3]北京友谊医院等，<i>Medical Review</i>, 2022；DOI: 10.54844/MR.2022.0044｜[4]国家卫健委等五部门，《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》，国卫办规划发〔2025〕30号，2025。</div>
         <div class="slide-no">03 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>45 秒。</b>2025 年全国诊疗 105.8 亿人次，执业（助理）医师 529 万，需求持续承压。更关键的是，三级医院只占医院数量的 10.6%，却承担 63.8% 的医院诊疗量。</p>
-          <p>诊断能力也受经验影响：同一胃镜图像测试中，慢性萎缩性胃炎诊断准确率随经验从 69.8% 升至 82.6%，相差 12.8 个百分点。临床决策还必须正确执行适用人群、禁忌与证据等级，难以标准化复制。</p>
+          <p><b>45 秒。</b>2025 年全国诊疗 105.8 亿人次，执业（助理）医师 529 万，按总量粗略折算约为每名医师每年 2,000 诊疗人次。与此同时，三级医院仅占医院数量的 10.6%，却集中了约 48.0% 的床位并承担 63.8% 的医院诊疗量，医生与高等级医院形成双重承压。</p>
+          <p>胃镜图像诊断表现存在经验梯度：在相同测试病例中，慢性萎缩性胃炎诊断准确率从不足 5 年经验组的 69.8% 上升至 15 年及以上经验组的 82.6%，相差 12.8 个百分点。这说明优质专家经验难以无限复制，而不是对年轻医生整体能力作评价。指南虽然是核心诊疗决策依据，却不会自动进入临床决策；其内容专业复杂、数量多、篇幅长且持续更新，导致医生理解与执行存在差异，也难以在床旁快速检索和调用。</p>
           <p>政策已经给出窗口：2027 年专病专科垂直模型和智能体广泛应用；2030 年基层诊疗智能辅助基本实现全覆盖。我们的机会，就是把专家经验与权威指南转化为可复制、可下沉、可追溯的临床能力。</p>
-          <p><b>口径：</b>63.8% 指三级医院占全部医院诊疗量的比例；69.8% → 82.6% 仅指同一胃镜图像测试场景，不外推为全国医生总体准确率。</p>
+          <p><b>口径：</b>每医师年诊疗量为全国总量的粗略折算；10.6%、48.0% 和 63.8% 分别指三级医院占全部医院数量、床位及诊疗量的比例；69.8% → 82.6% 仅指同一胃镜图像测试场景，不外推为全国医生总体准确率。</p>
           <p><b>转场：</b>需求和政策窗口都已明确，接下来再看市场产品与医院真实部署已经走到哪一步。</p>
           <p><b>[Sources]</b> 第二页_医疗背景与实际痛点.md。</p>
         </aside>
@@ -2390,16 +3049,32 @@
           <div class="market-scale">
             <div class="period">CHINA AI + HEALTHCARE SOFTWARE</div>
             <div class="growth-numbers">
-              <strong>35.4<small>亿元 · 2025</small></strong>
+              <strong><small>2025年</small>35.4亿元</strong>
               <i>→</i>
-              <strong>140<small>亿元 · 2030E</small></strong>
+              <strong><small>2030年</small>140亿元<small>[1]</small></strong>
             </div>
-            <div class="penetration"><b>44.7%</b><span>预计 2030 年<br>医疗应用软件渗透率</span></div>
           </div>
           <div class="deployment-lanes">
-            <div class="market-lane">
-              <div class="lane-name">大厂医疗产品</div>
-              <div><p class="examples">讯飞医疗 · 京东健康 · 百度健康 · 迈瑞启元 · 腾讯医疗</p><p class="reality">模型与 Agent 整体能力强，但临床诊断细分场景仍缺少公开、可复核的真实数据支撑。</p></div>
+            <div class="market-lane vendor-lane">
+              <div class="lane-name">大厂医疗产品<small>PUBLIC SELLING POINTS</small></div>
+              <div class="vendor-proof-grid">
+                <div class="vendor-group iflytek">
+                  <div class="vendor-head"><b>讯飞医疗</b><span>星火医疗大模型 · 海南基层智医助理</span></div>
+                  <div class="vendor-primary">
+                    <div class="vendor-metric"><strong>95.4</strong><span>MedBench<br>综合得分</span></div>
+                    <div class="vendor-metric"><strong>95.76%</strong><span>推荐诊断<br>符合率</span></div>
+                  </div>
+                  <p class="vendor-scale"><b>87 家</b>基层医疗机构 · <b>647 万+次</b> AI 辅助服务 · <b>258 万次</b>推荐诊断</p>
+                </div>
+                <div class="vendor-group jd">
+                  <div class="vendor-head"><b>京东健康</b><span>AI诊疗助手2.0</span></div>
+                  <div class="vendor-primary">
+                    <div class="vendor-metric"><strong>99.5%</strong><span>分诊<br>准确率</span></div>
+                    <div class="vendor-metric"><strong>+120%</strong><span>电子病历<br>书写效率</span></div>
+                  </div>
+                </div>
+                <p class="vendor-others">百度健康 · 迈瑞启元 · 腾讯医疗等大厂持续布局医疗模型与 Agent 产品</p>
+              </div>
             </div>
             <div class="market-lane">
               <div class="lane-name">医院部署模型</div>
@@ -2407,23 +3082,19 @@
             </div>
           </div>
         </div>
-        <div class="policy-note">
-          <div class="signal">POLICY SIGNAL<br>临床专科垂直应用</div>
-          <p>《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》——<b>2027 年：形成一批临床专病专科垂直大模型和智能体应用</b>，推动基层诊疗智能辅助和专科专病诊疗智能辅助决策广泛应用。</p>
-        </div>
         <!-- <div class="workflow-thesis">
           <div class="thesis-label">THE WINNING LOGIC<br>不止模型跑分</div>
           <div class="workflow-chain"><span>读取真实病例</span><i>→</i><span>选择指南与工具</span><i>→</i><span>形成循证诊断</span><i>→</i><b>进入工作流 · 医生确认</b></div>
         </div> -->
 
-        <div class="source">信息来源：<a href="./%E7%AC%AC%E4%B8%89%E9%A1%B5%20%E5%BD%93%E6%97%B6%E5%B8%82%E5%9C%BA%E4%BA%A7%E5%93%81%E5%92%8C%E5%8C%BB%E9%99%A2%E5%AE%9E%E9%99%85%E9%83%A8%E7%BD%B2.md">第三页 当时市场产品和医院实际部署.md</a>；IDC（2026）</div>
+        <div class="source">信息来源：<a href="./%E7%AC%AC%E4%B8%89%E9%A1%B5%20%E5%BD%93%E6%97%B6%E5%B8%82%E5%9C%BA%E4%BA%A7%E5%93%81%E5%92%8C%E5%8C%BB%E9%99%A2%E5%AE%9E%E9%99%85%E9%83%A8%E7%BD%B2.md">第三页 当时市场产品和医院实际部署.md</a>；IDC（2026）；<a href="https://www.xunfeihealthcare.com/news/181/1070.html">讯飞医疗 MedBench</a>；<a href="https://www.xunfeihealthcare.com/news/181/1089.html">讯飞海南基层应用</a>；<a href="https://cont.jd.com/content/14645295">京东健康 AI诊疗助手2.0</a>；<a href="https://www.jjckb.cn/20250113/0c64cdf2803b4410af8fb8359ab37299/c.html">经济参考报</a></div>
         <div class="slide-no">04 / 11</div>
         <aside class="speaker-note" hidden>
-          <p><b>55 秒。</b>医疗 AI 已经不是一个概念市场。IDC 数据显示，2025 年中国 AI+医疗应用软件市场约 35.4 亿元，预计 2030 年达到 140 亿元，渗透率约 44.7%。讯飞、京东、百度、迈瑞、腾讯等大厂都已入场。</p>
+          <p><b>55 秒。</b>医疗 AI 已经不是一个概念市场。IDC 数据显示，2025 年中国 AI+医疗应用软件市场约 35.4 亿元，预计 2030 年达到 140 亿元，渗透率约 44.7%。讯飞、京东、百度、迈瑞、腾讯等大厂都已入场。讯飞星火医疗大模型取得 MedBench 综合得分 95.4；其海南基层智医助理覆盖 87 家基层医疗机构，累计提供 647 万余次 AI 辅助服务、完成 258 万次推荐诊断，推荐诊断符合率为 95.76%。京东健康公开数据显示，AI诊疗助手2.0分诊准确率达到 99.5%，电子病历书写效率提升 120%。</p>
           <p>医院侧也出现大量真实部署：协和的罕见病大模型、北医三院接入医生工作站的 DeepSeek、瑞金的多模态病理模型，以及多家医院的 CT 辅助诊断系统。市场已经验证了需求，但当前产品多从 LLM 加 RAG 或单点诊断系统切入，临床逻辑容易在切块中断裂，完整工作流仍未打通。</p>
-          <p>所以未来真正决定赢家的，不是 MedQA 或 MedBench 多几分，而是能否读取真实病例、选择正确指南和工具、形成循证诊断，最终进入医生工作流并由医生确认。这也是 Agent 架构比单纯 Chatbot 更有商业价值的原因。</p>
+          <p>这些指标分别对应模型基准评测、海南基层推荐诊断符合率、互联网医疗分诊准确率和病历书写效率，口径不可直接横向比较。所以未来真正决定赢家的，不是 MedQA 或 MedBench 多几分，而是能否读取真实病例、选择正确指南和工具、形成循证诊断，最终进入医生工作流并由医生确认。这也是 Agent 架构比单纯 Chatbot 更有商业价值的原因。</p>
           <p><b>转场：</b>下面用一条真实病例链路，直接证明我们如何穿过这条工作流。</p>
-          <p><b>[Sources]</b> 第三页 当时市场产品和医院实际部署.md；IDC（2026，市场规模与竞争趋势）。</p>
+          <p><b>[Sources]</b> 第三页 当时市场产品和医院实际部署.md；IDC（2026，市场规模与竞争趋势）；讯飞医疗官网《讯飞星火医疗大模型登顶MedBench榜单，多项核心能力位居第一》；讯飞医疗官网《海南数字健康高地建设提速，讯飞医疗AI赋能数字医疗新范式》；京东健康官网《全面接入DeepSeek！京东健康旗下“AI京医”率先上线数字医生服务》；经济参考报《京东健康打造业内首个面向医院全场景应用大模型产品》。</p>
         </aside>
       </section>
 
@@ -2434,16 +3105,21 @@
         <div class="two-innovations">
           <div class="innovation-block guideline">
             <div class="innovation-num">01</div>
-            <div class="innovation-title"><strong>指南 Skill 知识库</strong><span>Guideline as Knowledge → Guideline as Skill</span></div>
+            <div class="innovation-title"><strong>指南 Skill 知识库</strong><span>重构临床诊断推理链，<mark class="innovation-highlight">推动指南深度融入诊疗决策</mark></span></div>
             <div>
-              <p class="innovation-description">将指南转化为 Agent <strong>可调用、可执行、可组合</strong>的临床能力单元，而不是普通知识切块。</p>
-              <div class="guideline-fields">适用人群 · 临床条件 · 推荐意见与强度 · 证据等级 · 禁忌条件 · 检查建议 · 决策逻辑</div>
-              <p class="who-note"><b>与世卫组织 WHO SMART Guidelines 方向一致：</b>指南数字化数据、决策支持逻辑与机器可读组件。</p>
+              <p class="innovation-description">将指南转化为 Agent <strong>可调用、可执行、可组合</strong>的临床能力单元，而不是普通知识切块检索。</p>
+              <div class="guideline-fields">医学指南 → 结构化临床规则 → 决策逻辑 → Agent 执行</div>
+              <p class="who-note"><b>与世卫组织 WHO SMART Guidelines[1] 方向一致：</b>从叙事型指南走向机器可读的知识、可计算的决策逻辑与可执行的数字临床能力</p>
+              <div class="guideline-fields">WHO 正在推动指南从“文档”走向“数字化决策组件”；我们进一步将其落地为大模型 Agent 可直接调用的临床 Skill。</div>
             </div>
+            <figure class="smart-figure">
+              <img src="./who-smart-guidelines-layers.jpg" alt="WHO SMART Guidelines 从 L1 叙事型指南到 L5 动态精准健康模型的五层框架" />
+              <figcaption>WHO SMART GUIDELINES · L1 NARRATIVE → L5 DYNAMIC</figcaption>
+            </figure>
           </div>
           <div class="innovation-block case">
             <div class="innovation-num">02</div>
-            <div class="innovation-title"><strong>相似病例知识库</strong><span>把历史病例转化为外置经验</span></div>
+            <div class="innovation-title"><strong>相似病例知识库</strong><span>缩小临床经验差异，<mark class="innovation-highlight">提升诊断准确性与一致性</mark></span></div>
             <div><p class="innovation-mainline">患者关键信息 → 相似病例匹配 → <b>历史诊疗路径参考</b></p><p class="innovation-description">辅助医生快速参考既往诊疗经验，提升复杂病例判断准确率，缓解诊疗经验/医疗资源分布不均。</p></div>
           </div>
         </div>
@@ -2451,7 +3127,7 @@
           <div class="patent-progress"><span>IP PROGRESS</span><strong>核心工作流专利申请已提交</strong><small>申请中</small></div>
           <div class="innovation-result"><span>降低模型幻觉</span><span>推理过程可追溯</span><span>临床能力可复用</span></div>
         </div>
-        <div class="source">信息来源：<a href="./%E7%AC%AC%E5%9B%9B%E9%A1%B5%20%E6%8A%80%E6%9C%AF%E5%88%9B%E6%96%B0%E7%82%B9.md">第四页 技术创新点.md</a>；<a href="https://www.who.int/teams/digital-health-and-innovation/smart-guidelines">WHO SMART Guidelines</a></div>
+        <div class="source">信息来源：WHO SMART Guidelines[1]</a></div>
         <div class="slide-no">05 / 11</div>
         <aside class="speaker-note" hidden>
           <p><b>65 秒。</b>我们的技术创新可以归纳为两点。第一是指南 Skill 知识库：把原本只能检索的指南，转化为 Recommendation Card、Clinical Skill 和 Skill Library。适用人群、临床条件、推荐强度、证据等级、禁忌和检查建议都被保留为结构化决策逻辑，供 Agent 调用、执行和组合。</p>
@@ -2459,7 +3135,7 @@
           <p>第二是相似病例知识库：系统提取患者关键信息并匹配历史病例，把既往诊疗路径转化为医生的外置经验库，帮助医生判断复杂病例，缓解经验分布不均。</p>
           <p><b>知识产权进展：</b>围绕核心工作流的专利申请已经提交，目前处于申请阶段；现场表述必须与“已获授权”严格区分。</p>
           <p><b>转场：</b>下一页我们用一条病例，现场验证这套可执行 Skill 如何形成可复核的临床决策闭环。</p>
-          <p><b>[Sources]</b> 第四页 技术创新点.md；WHO SMART Guidelines（数字化指南、决策支持逻辑与机器可读组件方向）；专利申请状态由团队提供。</p>
+          <p><b>[Sources]</b> 第四页 技术创新点.md；WHO SMART Guidelines（数字化指南、决策支持逻辑与机器可读组件方向）；WHO SMART Guidelines Layers 官方图示：https://smart.who.int/assets/img/SMART%20Guidelines%20Layers.jpg；专利申请状态由团队提供。</p>
         </aside>
       </section>
 
