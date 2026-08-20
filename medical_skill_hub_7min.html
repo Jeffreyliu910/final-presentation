@@ -252,6 +252,24 @@
       margin-bottom: 0;
     }
 
+    .s1 .lead-highlight {
+      color: var(--cyan);
+      font-weight: 850;
+    }
+
+    .s1 .lead-proof {
+      color: #d8b7ff;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .s1 .lead-proof span {
+      color: var(--coral);
+      font-size: 1.08em;
+      font-weight: 950;
+      text-shadow: 0 0 18px rgba(255, 113, 133, .24);
+    }
+
     .s1 .thesis {
       position: absolute;
       right: 6.4%;
@@ -684,7 +702,7 @@
     /* Slide 2 */
     .s2 h2 {
       max-width: 100%;
-      margin-bottom: 2.15%;
+      margin-bottom: 1.85%;
     }
 
     .pain-grid {
@@ -696,8 +714,8 @@
 
     .pain-card {
       position: relative;
-      min-height: 292px;
-      padding: 1.65% 1.7% 1.45%;
+      min-height: 390px;
+      padding: 1.55% 1.65% 1.4%;
       overflow: hidden;
       border: 1px solid rgba(203, 218, 244, .15);
       border-top: 4px solid var(--cyan);
@@ -723,7 +741,7 @@
 
     .pain-card.pressure {
       grid-column: auto;
-      padding: 1.65% 1.7% 1.45%;
+      padding: 1.55% 1.65% 1.4%;
       border-top-color: var(--cyan);
       background:
         radial-gradient(circle at 78% 28%, rgba(79,140,255,.1), transparent 28%),
@@ -741,7 +759,7 @@
       margin-bottom: 7.5%;
       color: var(--cyan);
       font-family: ui-monospace, monospace;
-      font-size: clamp(9px, .76vw, 12px);
+      font-size: clamp(12px, .97vw, 15.5px);
       font-weight: 850;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -804,7 +822,7 @@
     .experience-indicator {
       margin-bottom: .45em;
       color: #aebbd0;
-      font-size: clamp(9px, .66vw, 10.5px);
+      font-size: clamp(12px, .88vw, 14px);
       font-weight: 760;
       letter-spacing: .035em;
     }
@@ -812,7 +830,7 @@
     .pain-card.experience .pain-metric {
       min-height: auto;
       margin: 0;
-      font-size: clamp(29px, 2.35vw, 38px);
+      font-size: clamp(32px, 2.65vw, 42px);
     }
 
     .pain-card.experience .experience-metric {
@@ -863,7 +881,7 @@
       align-items: center;
       margin-top: .34em;
       color: #9faec4;
-      font-size: clamp(9px, .65vw, 10.5px);
+      font-size: clamp(11.5px, .84vw, 13.5px);
       font-weight: 700;
     }
 
@@ -902,21 +920,21 @@
     }
 
     .pain-card.experience h3 {
-      margin: 3.2% 0 1.5%;
-      font-size: clamp(16px, 1.34vw, 21.5px);
+      margin: 4.6% 0 2.2%;
+      font-size: clamp(19px, 1.52vw, 24.5px);
       line-height: 1.22;
     }
 
     .pain-card.experience p {
       min-height: auto;
-      font-size: clamp(9.5px, .7vw, 11.2px);
-      line-height: 1.38;
+      font-size: clamp(12.5px, .92vw, 14.8px);
+      line-height: 1.45;
     }
 
     .pain-card.experience .need {
       bottom: 4.8%;
       padding-top: 3.1%;
-      font-size: clamp(9px, .72vw, 11.5px);
+      font-size: clamp(12px, .91vw, 14.5px);
     }
 
     .pain-card.demand .pain-metric {
@@ -955,11 +973,11 @@
     }
 
     .compare-head {
-      min-height: 22px;
+      min-height: 29px;
       margin-bottom: .2em;
       color: #8f9db3;
       font-family: ui-monospace, monospace;
-      font-size: clamp(8.5px, .62vw, 10px);
+      font-size: clamp(11px, .84vw, 13.5px);
       font-weight: 850;
       letter-spacing: .1em;
     }
@@ -978,7 +996,7 @@
     }
 
     .compare-row {
-      min-height: 52px;
+      min-height: 68px;
       padding: .52em 0;
       border-top: 1px solid rgba(203,218,244,.11);
     }
@@ -987,8 +1005,8 @@
     .compare-row p {
       min-height: auto;
       margin: 0;
-      font-size: clamp(10px, .72vw, 11.5px);
-      line-height: 1.4;
+      font-size: clamp(12.5px, .92vw, 14.8px);
+      line-height: 1.46;
     }
 
     .compare-row strong {
@@ -1001,7 +1019,7 @@
       margin: 0;
       padding-left: .35em;
       color: #c2cee0;
-      font-size: clamp(10px, .72vw, 11.5px);
+      font-size: clamp(12.5px, .92vw, 14.8px);
       font-weight: 650;
       line-height: 1.4;
     }
@@ -1022,7 +1040,7 @@
       right: 6.8%;
       bottom: 4.8%;
       padding-top: 3.1%;
-      font-size: clamp(9px, .72vw, 11.5px);
+      font-size: clamp(12px, .91vw, 14.5px);
     }
 
     .pressure-evidence {
@@ -1094,7 +1112,7 @@
     .hospital-chain {
       display: block;
       color: #c8d3e5;
-      font-size: clamp(10.5px, .78vw, 12.5px);
+      font-size: clamp(13px, .98vw, 15.7px);
       font-weight: 640;
       line-height: 1.6;
       letter-spacing: 0;
@@ -1104,7 +1122,7 @@
     .hospital-chain strong,
     .hospital-labels strong {
       color: var(--cyan);
-      font-size: clamp(20px, 1.55vw, 25px);
+      font-size: clamp(23px, 1.82vw, 29px);
       font-weight: 880;
       line-height: 1;
       letter-spacing: -.025em;
@@ -1126,7 +1144,7 @@
       display: block;
       margin: 0;
       color: #c8d3e5;
-      font-size: clamp(10.5px, .78vw, 12.5px);
+      font-size: clamp(13px, .98vw, 15.7px);
       font-weight: 640;
       line-height: 1.6;
       text-align: left;
@@ -1137,7 +1155,7 @@
       right: 6.8%;
       bottom: 4.8%;
       padding-top: 3.1%;
-      font-size: clamp(9px, .72vw, 11.5px);
+      font-size: clamp(12px, .91vw, 14.5px);
     }
 
     .pain-card h3 {
@@ -1178,9 +1196,9 @@
       grid-template-columns: 13.5% 21.5% 3% 24% 1fr;
       gap: 1.45%;
       align-items: center;
-      min-height: 101px;
-      margin-top: 1.35%;
-      padding: 1.05% 1.4%;
+      min-height: 126px;
+      margin-top: 1.15%;
+      padding: 1.1% 1.4%;
       border: 1px solid rgba(56,213,239,.22);
       border-radius: 9px;
       background: linear-gradient(90deg, rgba(56,213,239,.075), rgba(79,140,255,.055) 55%, rgba(7,17,31,.2));
@@ -1189,7 +1207,7 @@
     .policy-timeline .policy-label {
       color: var(--cyan);
       font-family: ui-monospace, monospace;
-      font-size: clamp(9px, .78vw, 12.5px);
+      font-size: clamp(11px, .9vw, 14.5px);
       font-weight: 850;
       line-height: 1.55;
       letter-spacing: .12em;
@@ -1204,14 +1222,14 @@
 
     .policy-step strong {
       color: var(--ink);
-      font-size: clamp(24px, 2.25vw, 36px);
+      font-size: clamp(28px, 2.5vw, 40px);
       line-height: 1;
       letter-spacing: -.04em;
     }
 
     .policy-step span {
       color: #cbd5e6;
-      font-size: clamp(10px, .88vw, 14px);
+      font-size: clamp(12px, 1vw, 16px);
       font-weight: 650;
       line-height: 1.45;
     }
@@ -1226,7 +1244,7 @@
       padding-left: 6.5%;
       border-left: 1px solid rgba(203,218,244,.16);
       color: #dce5f2;
-      font-size: clamp(11px, 1vw, 16px);
+      font-size: clamp(13px, 1.12vw, 18px);
       font-weight: 680;
       line-height: 1.45;
     }
@@ -1243,15 +1261,15 @@
       grid-template-columns: 13.5% 1fr;
       gap: 2.2%;
       align-items: center;
-      margin-top: 1.3%;
-      padding-top: 1.15%;
+      margin-top: 1.1%;
+      padding-top: 1.05%;
       border-top: 1px solid rgba(203,218,244,.16);
     }
 
     .problem-thesis span {
       color: var(--dim);
       font-family: ui-monospace, monospace;
-      font-size: clamp(9px, .78vw, 12.5px);
+      font-size: clamp(11px, .88vw, 14px);
       font-weight: 850;
       letter-spacing: .12em;
     }
@@ -1259,7 +1277,7 @@
     .problem-thesis p {
       margin: 0;
       color: #dce5f2;
-      font-size: clamp(15px, 1.47vw, 23.5px);
+      font-size: clamp(18px, 1.63vw, 26px);
       font-weight: 710;
       line-height: 1.4;
     }
@@ -1564,6 +1582,90 @@
 
     .workflow-chain b { color: var(--cyan); }
 
+    .clinical-gaps {
+      position: absolute;
+      left: 6.4%;
+      right: 6.4%;
+      bottom: 7.2%;
+      min-height: 19%;
+      padding: 1.35% 1.4% 1.15%;
+      border-top: 2px solid rgba(56,213,239,.52);
+      background: linear-gradient(90deg, rgba(56,213,239,.055), rgba(79,140,255,.035) 52%, rgba(183,121,255,.045));
+      box-sizing: border-box;
+    }
+
+    .gaps-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 1.1em;
+      margin-bottom: 1.15%;
+    }
+
+    .gaps-heading span {
+      color: var(--cyan);
+      font-family: ui-monospace, monospace;
+      font-size: clamp(10px, .82vw, 13px);
+      font-weight: 850;
+      letter-spacing: .13em;
+    }
+
+    .gaps-heading strong {
+      color: #dce5f2;
+      font-size: clamp(17px, 1.38vw, 22px);
+      font-weight: 850;
+    }
+
+    .clinical-gap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid rgba(203,218,244,.13);
+      border-bottom: 1px solid rgba(203,218,244,.13);
+    }
+
+    .clinical-gap {
+      display: block;
+      min-width: 0;
+      min-height: 7.2vh;
+      padding: 1.2% 2.4% 1.35%;
+      border-left: 1px solid rgba(203,218,244,.14);
+      box-sizing: border-box;
+    }
+
+    .clinical-gap:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .clinical-gap b {
+      display: block;
+      margin-bottom: .55em;
+      color: var(--coral);
+      font-size: clamp(13px, 1.08vw, 17px);
+      font-weight: 880;
+      white-space: nowrap;
+    }
+
+    .clinical-gap p {
+      margin: 0;
+      color: #dce5f2;
+      font-size: clamp(13px, 1.08vw, 17px);
+      font-weight: 720;
+      line-height: 1.42;
+    }
+
+    .clinical-position {
+      margin: 1.2% 0 0;
+      color: #cbd5e8;
+      font-size: clamp(16px, 1.36vw, 22px);
+      font-weight: 760;
+      line-height: 1.35;
+    }
+
+    .clinical-position b {
+      color: var(--cyan);
+      font-weight: 880;
+    }
+
     /* Slide 4 */
     .s4 {
       background:
@@ -1742,6 +1844,190 @@
       content: "↳";
       margin-right: .45em;
       color: var(--coral);
+    }
+
+    /* 技术路线迭代与架构壁垒 */
+    .s-roadmap {
+      background:
+        radial-gradient(circle at 76% 28%, rgba(183,121,255,.16), transparent 24%),
+        radial-gradient(circle at 22% 72%, rgba(56,213,239,.13), transparent 26%),
+        linear-gradient(135deg, #06111f, #0c1d37 55%, #091322);
+    }
+
+    .s-roadmap h2 {
+      max-width: 100%;
+      margin-bottom: 2.2%;
+    }
+
+    .roadmap-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 3.8%;
+      min-height: 52vh;
+      margin-top: 1.2%;
+    }
+
+    .roadmap-panel,
+    .barrier-panel {
+      min-width: 0;
+    }
+
+    .barrier-panel {
+      padding-left: 7.2%;
+      border-left: 1px solid rgba(255,255,255,.16);
+    }
+
+    .roadmap-panel-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      min-height: 7.4vh;
+      padding-bottom: 1.5vh;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .roadmap-panel-head small {
+      display: block;
+      margin-bottom: .7vh;
+      color: var(--cyan);
+      font-size: clamp(9px, .66vw, 12px);
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .roadmap-panel-head h3 {
+      margin: 0;
+      color: #f5f8ff;
+      font-size: clamp(20px, 1.72vw, 32px);
+      line-height: 1.15;
+    }
+
+    .roadmap-panel-head p {
+      max-width: 46%;
+      margin: 0 0 .2vh;
+      color: #8fa0b9;
+      font-size: clamp(10px, .72vw, 14px);
+      line-height: 1.45;
+      text-align: right;
+    }
+
+    .roadmap-lanes,
+    .barrier-list {
+      display: grid;
+      gap: 1.5vh;
+      margin-top: 1.5vh;
+    }
+
+    .roadmap-lane {
+      display: grid;
+      grid-template-columns: 9% 1fr 8% 1fr;
+      align-items: center;
+      min-height: 11.6vh;
+      padding: 0 2.8%;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(255,255,255,.025), rgba(255,255,255,.008));
+    }
+
+    .roadmap-index {
+      color: var(--cyan);
+      font: 800 clamp(20px, 2.2vw, 40px)/1 "Arial Narrow", Arial, sans-serif;
+      letter-spacing: -.03em;
+    }
+
+    .roadmap-state small,
+    .roadmap-destination small {
+      display: block;
+      margin-bottom: .7vh;
+      color: #8191aa;
+      font-size: clamp(9px, .66vw, 12px);
+      font-weight: 800;
+      letter-spacing: .15em;
+    }
+
+    .roadmap-state strong,
+    .roadmap-destination strong {
+      display: block;
+      color: #f5f8ff;
+      font-size: clamp(16px, 1.28vw, 24px);
+      line-height: 1.18;
+    }
+
+    .roadmap-destination strong { color: var(--cyan); }
+
+    .roadmap-arrow {
+      color: var(--purple);
+      font-size: clamp(20px, 2vw, 38px);
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .roadmap-detail {
+      grid-column: 2 / 5;
+      margin: 0;
+      padding: 0 0 1.4vh;
+      color: #aebbd0;
+      font-size: clamp(10px, .72vw, 14px);
+      line-height: 1.45;
+    }
+
+    .roadmap-lane.scope .roadmap-destination strong { color: #d8b7ff; }
+    .roadmap-lane.scope .roadmap-index { color: #c99bff; }
+
+    .barrier-item {
+      display: grid;
+      grid-template-columns: 13% 1fr;
+      align-items: center;
+      min-height: 11.6vh;
+      padding: 0 3.2%;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(183,121,255,.045), rgba(255,255,255,.008));
+    }
+
+    .barrier-index {
+      color: #c99bff;
+      font: 800 clamp(20px, 2.2vw, 40px)/1 "Arial Narrow", Arial, sans-serif;
+      letter-spacing: -.03em;
+    }
+
+    .barrier-copy small {
+      display: block;
+      margin-bottom: .7vh;
+      color: #9f83c9;
+      font-size: clamp(9px, .66vw, 12px);
+      font-weight: 800;
+      letter-spacing: .15em;
+    }
+
+    .barrier-copy strong {
+      display: block;
+      margin-bottom: .7vh;
+      color: #f5f8ff;
+      font-size: clamp(16px, 1.28vw, 24px);
+      line-height: 1.18;
+    }
+
+    .barrier-copy p {
+      margin: 0;
+      color: #aebbd0;
+      font-size: clamp(10px, .72vw, 14px);
+      line-height: 1.45;
+    }
+
+    .roadmap-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 2%;
+      color: #8fa0b9;
+      font-size: clamp(10px, .78vw, 14px);
+      letter-spacing: .08em;
+    }
+
+    .roadmap-footer b {
+      color: #f4f7ff;
+      font-size: clamp(12px, 1vw, 18px);
+      letter-spacing: .03em;
     }
 
     /* Slide 5 */
@@ -2898,10 +3184,10 @@
         <div class="hero">
           <div class="kicker">Executable Clinical Intelligence</div>
           <h1>Medical Skill Hub<br>医疗临床专科<br><em>辅助多智能体架构</em></h1>
-          <p class="lead">以指南 Skill 与相似病例知识库，为医生生成有依据、可追溯、可复核的高准确性临床决策链。</p>
+          <p class="lead">为区县医院等不同医疗机构提升临床疾病诊断能力，解决<strong class="lead-highlight">医疗资源不均</strong>、<strong class="lead-highlight">AI诊断缺乏可信依据</strong>、<strong class="lead-highlight">权威指南应用性差</strong>等问题，在真实病例测试上<strong class="lead-proof">与三甲医院医生诊断匹配率<span>超 90%</span></strong>。</p>
         </div>
         <p class="thesis"><b>不是另一个医疗问答模型</b>而是一个可执行、可复核的临床智能基础设施。</p>
-        <div class="slide-no">01 / 11</div>
+        <div class="slide-no">01 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>20 秒。</b>医疗 AI 已经会回答医学问题，但临床真正需要的不是一个听起来合理的答案，而是有患者证据、有指南依据、能够被医生复核的决策过程。</p>
           <p>Medical Skill Hub 将权威指南编译成可执行的 Clinical Skill，同时把历史病例转化为医生的外置经验库，共同生成可追溯的临床决策链。</p>
@@ -2971,7 +3257,7 @@
           </article>
         </div>
         <div class="source">内容依据：<a href="./%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D.md">个人介绍.md</a>；成员照片：zhao.jpg、Jeff.jpg</div>
-        <div class="slide-no">02 / 11</div>
+        <div class="slide-no">02 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>30 秒。</b>赵文韬拥有香港理工大学电子及资讯工程背景；刘臻睿拥有加拿大滑铁卢大学电气与计算机工程背景。两位核心成员以交叉工程训练共同推进可信医疗 AI 的系统构建。</p>
           <p>团队依托上海交通大学计算机学院与上海人工智能研究院的交叉创新环境，核心方向是可信大模型与智能体系统，并沿着“科研突破—工程化落地—规模化应用”的路径，让可信 AI 真正进入现场。</p>
@@ -3030,7 +3316,7 @@
           <p>将专家经验与权威指南转化为 <b>可复制 · 可下沉 · 可追溯</b> 的智能诊疗能力</p>
         </div>
         <div class="source">信息来源：[1]国家统计局《2025 年统计公报》｜[2]国家卫健委《2024 年卫生健康统计公报》｜[3]北京友谊医院等，<i>Medical Review</i>, 2022；DOI: 10.54844/MR.2022.0044｜[4]国家卫健委等五部门，《关于促进和规范“人工智能+医疗卫生”应用发展的实施意见》，国卫办规划发〔2025〕30号，2025。</div>
-        <div class="slide-no">03 / 11</div>
+        <div class="slide-no">03 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>45 秒。</b>2025 年全国诊疗 105.8 亿人次，执业（助理）医师 529 万，按总量粗略折算约为每名医师每年 2,000 诊疗人次。与此同时，三级医院仅占医院数量的 10.6%，却集中了约 48.0% 的床位并承担 63.8% 的医院诊疗量，医生与高等级医院形成双重承压。</p>
           <p>胃镜图像诊断表现存在经验梯度：在相同测试病例中，慢性萎缩性胃炎诊断准确率从不足 5 年经验组的 69.8% 上升至 15 年及以上经验组的 82.6%，相差 12.8 个百分点。这说明优质专家经验难以无限复制，而不是对年轻医生整体能力作评价。指南虽然是核心诊疗决策依据，却不会自动进入临床决策；其内容专业复杂、数量多、篇幅长且持续更新，导致医生理解与执行存在差异，也难以在床旁快速检索和调用。</p>
@@ -3087,12 +3373,23 @@
           <div class="workflow-chain"><span>读取真实病例</span><i>→</i><span>选择指南与工具</span><i>→</i><span>形成循证诊断</span><i>→</i><b>进入工作流 · 医生确认</b></div>
         </div> -->
 
+        <div class="clinical-gaps">
+          <div class="gaps-heading"><span>CLINICAL GAP</span><strong>临床落地仍存在三重断层</strong></div>
+          <div class="clinical-gap-grid">
+            <div class="clinical-gap"><b>专科深度不足</b><p>通用能力强，专科诊疗链条弱</p></div>
+            <div class="clinical-gap"><b>评价指标错位</b><p>Benchmark 高分 ≠ 临床诊断能力</p></div>
+            <div class="clinical-gap"><b>指南落地不足</b><p>“知道指南” ≠ “按指南决策”</p></div>
+          </div>
+          <p class="clinical-position">市场缺的不是另一个医疗大模型，而是面向专科真实诊疗流程的 <b>Clinical AI System。</b></p>
+        </div>
+
         <div class="source">信息来源：<a href="./%E7%AC%AC%E4%B8%89%E9%A1%B5%20%E5%BD%93%E6%97%B6%E5%B8%82%E5%9C%BA%E4%BA%A7%E5%93%81%E5%92%8C%E5%8C%BB%E9%99%A2%E5%AE%9E%E9%99%85%E9%83%A8%E7%BD%B2.md">第三页 当时市场产品和医院实际部署.md</a>；IDC（2026）；<a href="https://www.xunfeihealthcare.com/news/181/1070.html">讯飞医疗 MedBench</a>；<a href="https://www.xunfeihealthcare.com/news/181/1089.html">讯飞海南基层应用</a>；<a href="https://cont.jd.com/content/14645295">京东健康 AI诊疗助手2.0</a>；<a href="https://www.jjckb.cn/20250113/0c64cdf2803b4410af8fb8359ab37299/c.html">经济参考报</a></div>
-        <div class="slide-no">04 / 11</div>
+        <div class="slide-no">04 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>55 秒。</b>医疗 AI 已经不是一个概念市场。IDC 数据显示，2025 年中国 AI+医疗应用软件市场约 35.4 亿元，预计 2030 年达到 140 亿元，渗透率约 44.7%。讯飞、京东、百度、迈瑞、腾讯等大厂都已入场。讯飞星火医疗大模型取得 MedBench 综合得分 95.4；其海南基层智医助理覆盖 87 家基层医疗机构，累计提供 647 万余次 AI 辅助服务、完成 258 万次推荐诊断，推荐诊断符合率为 95.76%。京东健康公开数据显示，AI诊疗助手2.0分诊准确率达到 99.5%，电子病历书写效率提升 120%。</p>
           <p>医院侧也出现大量真实部署：协和的罕见病大模型、北医三院接入医生工作站的 DeepSeek、瑞金的多模态病理模型，以及多家医院的 CT 辅助诊断系统。市场已经验证了需求，但当前产品多从 LLM 加 RAG 或单点诊断系统切入，临床逻辑容易在切块中断裂，完整工作流仍未打通。</p>
           <p>这些指标分别对应模型基准评测、海南基层推荐诊断符合率、互联网医疗分诊准确率和病历书写效率，口径不可直接横向比较。所以未来真正决定赢家的，不是 MedQA 或 MedBench 多几分，而是能否读取真实病例、选择正确指南和工具、形成循证诊断，最终进入医生工作流并由医生确认。这也是 Agent 架构比单纯 Chatbot 更有商业价值的原因。</p>
+          <p><b>三重断层：</b>第一，大厂产品覆盖大量科室和场景，但覆盖广不等于深入某一专科的完整诊断逻辑，通用能力强而专科诊疗链条仍弱。第二，MedBench、医学问答正确率等能够证明模型的医学知识能力，但医院真正关心的是真实病例能否诊对、Top-1 与 Top-3 表现以及漏诊率，Benchmark 高分不等于临床诊断能力。第三，RAG 可以检索指南，但临床使用还需要把适用人群、条件、禁忌、检查建议和决策逻辑嵌入推理流程，“知道指南”不等于“按指南决策”。因此市场缺的不是另一个医疗大模型，而是面向专科真实诊疗流程的 Clinical AI System。</p>
           <p><b>转场：</b>下面用一条真实病例链路，直接证明我们如何穿过这条工作流。</p>
           <p><b>[Sources]</b> 第三页 当时市场产品和医院实际部署.md；IDC（2026，市场规模与竞争趋势）；讯飞医疗官网《讯飞星火医疗大模型登顶MedBench榜单，多项核心能力位居第一》；讯飞医疗官网《海南数字健康高地建设提速，讯飞医疗AI赋能数字医疗新范式》；京东健康官网《全面接入DeepSeek！京东健康旗下“AI京医”率先上线数字医生服务》；经济参考报《京东健康打造业内首个面向医院全场景应用大模型产品》。</p>
         </aside>
@@ -3108,9 +3405,7 @@
             <div class="innovation-title"><strong>指南 Skill 知识库</strong><span>重构临床诊断推理链，<mark class="innovation-highlight">推动指南深度融入诊疗决策</mark></span></div>
             <div>
               <p class="innovation-description">将指南转化为 Agent <strong>可调用、可执行、可组合</strong>的临床能力单元，而不是普通知识切块检索。</p>
-              <div class="guideline-fields">医学指南 → 结构化临床规则 → 决策逻辑 → Agent 执行</div>
               <p class="who-note"><b>与世卫组织 WHO SMART Guidelines[1] 方向一致：</b>从叙事型指南走向机器可读的知识、可计算的决策逻辑与可执行的数字临床能力</p>
-              <div class="guideline-fields">WHO 正在推动指南从“文档”走向“数字化决策组件”；我们进一步将其落地为大模型 Agent 可直接调用的临床 Skill。</div>
             </div>
             <figure class="smart-figure">
               <img src="./who-smart-guidelines-layers.jpg" alt="WHO SMART Guidelines 从 L1 叙事型指南到 L5 动态精准健康模型的五层框架" />
@@ -3128,7 +3423,7 @@
           <div class="innovation-result"><span>降低模型幻觉</span><span>推理过程可追溯</span><span>临床能力可复用</span></div>
         </div>
         <div class="source">信息来源：WHO SMART Guidelines[1]</a></div>
-        <div class="slide-no">05 / 11</div>
+        <div class="slide-no">05 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>65 秒。</b>我们的技术创新可以归纳为两点。第一是指南 Skill 知识库：把原本只能检索的指南，转化为 Recommendation Card、Clinical Skill 和 Skill Library。适用人群、临床条件、推荐强度、证据等级、禁忌和检查建议都被保留为结构化决策逻辑，供 Agent 调用、执行和组合。</p>
           <p>这一技术方向与 WHO SMART Guidelines 强调的指南数字化数据、决策支持逻辑和机器可读组件一致。这里强调方向和逻辑一致，不宣称已经完成 WHO 标准认证或符合性验证。</p>
@@ -3136,6 +3431,71 @@
           <p><b>知识产权进展：</b>围绕核心工作流的专利申请已经提交，目前处于申请阶段；现场表述必须与“已获授权”严格区分。</p>
           <p><b>转场：</b>下一页我们用一条病例，现场验证这套可执行 Skill 如何形成可复核的临床决策闭环。</p>
           <p><b>[Sources]</b> 第四页 技术创新点.md；WHO SMART Guidelines（数字化指南、决策支持逻辑与机器可读组件方向）；WHO SMART Guidelines Layers 官方图示：https://smart.who.int/assets/img/SMART%20Guidelines%20Layers.jpg；专利申请状态由团队提供。</p>
+        </aside>
+      </section>
+
+      <section class="slide s-roadmap" data-duration="30" data-label="技术路线迭代与架构壁垒">
+        <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">03 · 技术路线</span></div>
+        <div class="kicker">Technology Roadmap</div>
+        <h2>技术路线迭代与架构壁垒</h2>
+        <div class="roadmap-split">
+          <div class="roadmap-panel">
+            <div class="roadmap-panel-head">
+              <div><small>01 · Technology Roadmap</small><h3>后期技术路线迭代</h3></div>
+              <p>从诊断闭环走向完整、可扩展的医学能力体系</p>
+            </div>
+            <div class="roadmap-lanes">
+              <div class="roadmap-lane">
+                <div class="roadmap-index">01</div>
+                <div class="roadmap-state"><small>CURRENT</small><strong>纯文本诊断</strong></div>
+                <div class="roadmap-arrow">→</div>
+                <div class="roadmap-destination"><small>NEXT</small><strong>多模态诊断</strong></div>
+                <p class="roadmap-detail">融合影像、内镜、病理等临床数据，形成更完整的患者证据视图。</p>
+              </div>
+              <div class="roadmap-lane">
+                <div class="roadmap-index">02</div>
+                <div class="roadmap-state"><small>CURRENT</small><strong>只做诊断</strong></div>
+                <div class="roadmap-arrow">→</div>
+                <div class="roadmap-destination"><small>NEXT</small><strong>全医疗流程</strong></div>
+                <p class="roadmap-detail">从诊断延伸至检查建议、治疗支持、随访与患者管理。</p>
+              </div>
+              <div class="roadmap-lane scope">
+                <div class="roadmap-index">03</div>
+                <div class="roadmap-state"><small>CURRENT</small><strong>单科室</strong></div>
+                <div class="roadmap-arrow">→</div>
+                <div class="roadmap-destination"><small>NEXT</small><strong>全科室</strong></div>
+                <p class="roadmap-detail">从当前优势专科逐步扩展至覆盖全科室的医学能力体系。</p>
+              </div>
+            </div>
+          </div>
+          <div class="barrier-panel">
+            <div class="roadmap-panel-head">
+              <div><small>02 · Architecture Moat</small><h3>架构壁垒</h3></div>
+              <p>以可信数据、知识产权与国际标准形成长期护城河</p>
+            </div>
+            <div class="barrier-list">
+              <div class="barrier-item">
+                <div class="barrier-index">01</div>
+                <div class="barrier-copy"><small>DATA</small><strong>数据壁垒</strong><p>医疗指南经过三甲医院医生审核，保障医学内容的专业性与可信度。</p></div>
+              </div>
+              <div class="barrier-item">
+                <div class="barrier-index">02</div>
+                <div class="barrier-copy"><small>PATENT</small><strong>专利壁垒</strong><p>当前架构正在申请专利，持续沉淀自主知识产权。</p></div>
+              </div>
+              <div class="barrier-item">
+                <div class="barrier-index">03</div>
+                <div class="barrier-copy"><small>STANDARD &amp; ECOSYSTEM</small><strong>标准与生态壁垒</strong><p>后期可接入 WHO SMART Guidelines 等国际标准，构建开放兼容的医学知识生态。</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="roadmap-footer"><span>能力扩展 × 壁垒沉淀</span><b>从单点诊断能力走向可持续的医学基础设施</b></div>
+        <div class="source">技术路线与壁垒规划｜基于团队当前产品能力、医学审核体系与后续研发方向</div>
+        <div class="slide-no">06 / 12</div>
+        <aside class="speaker-note" hidden>
+          <p><b>30 秒。</b>这一页分为技术路线与架构壁垒两部分。技术路线沿三条方向持续迭代：从纯文本扩展至影像、内镜和病理等多模态诊断；从诊断延伸至检查、治疗、随访和患者管理；从单科室逐步扩展至全科室。与此同时，我们通过三甲医院医生审核的医疗指南形成数据壁垒，通过正在申请的架构专利形成知识产权壁垒，并为后期接入 WHO SMART Guidelines 等国际标准预留能力，构建标准与生态壁垒。</p>
+          <p><b>转场：</b>下面先用当前已经完成的诊断闭环进行现场演示。</p>
+          <p><b>[Sources]</b> 团队提供的后期技术路线、三甲医院医生审核及专利申请状态；WHO SMART Guidelines 官方标准框架。</p>
         </aside>
       </section>
 
@@ -3154,7 +3514,7 @@
           <div class="proof-items"><span><b>01</b>来源可定位</span><span><b>02</b>证据可展开</span><span><b>03</b>结论可复核</span></div>
         </div>
         <div class="source">演示边界：系统提供临床辅助决策，最终判断由医生确认｜信息来源：<a href="./grade_scale.md">grade_scale.md（D2）</a></div>
-        <div class="slide-no">06 / 11</div>
+        <div class="slide-no">07 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>120 秒。</b>本页只验证一个闭环：系统读取一条预载脱敏病例，抽取患者证据，匹配并执行 Clinical Skill，最后给出带来源的鉴别诊断与下一步建议。</p>
           <p><b>演示节奏：</b>病例输入 20 秒；证据抽取 30 秒；Skill 与指南依据 30 秒；结果和证据链 40 秒。重点停留在来源定位、支持/反对证据和医生复核三个位置。</p>
@@ -3204,7 +3564,7 @@
           </div>
         </div>
         <div class="source">内部测试结果｜左图：519 种消化内科疾病库测试；右图：抽选实际临床病例测试</div>
-        <div class="slide-no">07 / 11</div>
+        <div class="slide-no">08 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>40 秒。</b>左图显示，在 519 种消化内科疾病测试中，5 个模型接入工作流后准确率全部提升，平均结果从 51.2% 提升到 71.5%，平均增加约 20.3 个百分点。</p>
           <p>右图展示抽选实际临床病例测试：五个模型的工作流准确率依次为 54.3%、62.0%、71.0%、79.6% 和 82.3%，临床医生为 86.2%。其中 DeepSeek-v4-pro 在模型中最高，与临床医生相差 3.9 个百分点。</p>
@@ -3237,7 +3597,7 @@
           </div>
         </div>
         <div class="source">信息来源：<a href="./Topic%204%20%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B8%8E%E6%88%90%E9%95%BF%E6%80%A7.md">Topic 4 商业计划与成长性.md</a>；<a href="./%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E7%BB%93%E6%9E%9C.md">测试结果结果.md</a>｜临床专家反馈与内部测试结果</div>
-        <div class="slide-no">08 / 11</div>
+        <div class="slide-no">09 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>50 秒。</b>临床专家验证已经完成，接下来的落地路线从标杆科室开始：先进入真实工作流形成消化内科示范，随后转化首个付费用户、验证真实付费意愿，再扩展为完成私有部署与院级验证的标杆医院。</p>
           <p>临床专家对三项核心能力给予了正向反馈：第一，系统的思考逻辑符合医生从病例信息、鉴别诊断到证据复核的真实诊疗链路；第二，相似病例与历史诊疗路径能够为复杂病例判断提供有效参考；第三，工作流在五个模型上均提升准确率，最高达到 84.8%，验证结果具有说服力。</p>
@@ -3266,7 +3626,7 @@
         </div>
         <div class="risk-row"><span><b>模型风险 →</b> Model-Agnostic</span><span><b>临床风险 →</b> 证据链 + 医生确认</span><span><b>销售风险 →</b> 医院直销 + B2B2H 渠道</span></div>
         <div class="source">信息来源：<a href="./Topic%205%20%E6%8A%95%E8%B5%84%E4%BB%B7%E5%80%BC.md">Topic 5 投资价值.md</a>｜<span class="generated">【生成内容：三次风险消除框架与页面表述】</span></div>
-        <div class="slide-no">09 / 11</div>
+        <div class="slide-no">10 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>45 秒。</b>我们拟以 300 到 500 万元种子或天使轮，支持 12 到 18 个月。正式上台前请确认这一融资额仍代表团队真实计划。</p>
           <p>资金对应三类可验证结果：产品可用、临床有效、商业可复制。核心资产不是某一代模型，而是跨模型复用的 Skill、Compiler 与临床验证数据。</p>
@@ -3284,7 +3644,7 @@
           <ul class="asks"><li>消化内科试点医院与临床医生</li><li>HIS / EMR / CDSS 集成伙伴</li><li>支持产品化与临床验证的产业、投资资源</li></ul>
         </div>
         <div class="source">信息来源：<a href="./Topic6%20%E8%90%BD%E5%9C%B0%E6%84%8F%E6%84%BF.md">Topic6 落地意愿.md</a>｜<span class="generated">【生成内容：合作诉求与收束表述整合】</span></div>
-        <div class="slide-no">10 / 11</div>
+        <div class="slide-no">11 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>40 秒。</b>前一页已经给出了从标杆科室、首个付费用户、标杆医院到同类医院复制和跨专科扩展的落地路径。最后，我们希望把已经完成的专家验证推进为真实科室试点与产业合作。</p>
           <p>我们希望连接消化内科试点医院和临床医生、医疗信息化集成伙伴，以及支持产品化与临床验证的产业和投资资源。</p>
@@ -3296,7 +3656,7 @@
       <section class="slide s-appendix" data-duration="0" data-label="附录 1 · 系统工作流">
         <div class="appendix-tag">APPENDIX 1 · 系统工作流与项目架构</div>
         <img class="appendix-image" src="./workflow.png" alt="Medical Skill Hub 消化内科多智能体诊断系统工作流与项目架构" />
-        <div class="slide-no">11 / 11</div>
+        <div class="slide-no">12 / 12</div>
         <aside class="speaker-note" hidden>
           <p><b>附录 1。</b>Medical Skill Hub 消化内科多智能体诊断系统的完整工作流与项目架构，包括接入与模型层、多智能体诊断流水线、结构化结果交付，以及评估与技术底座。</p>
           <p><b>[Sources]</b> workflow.png（团队提供的项目架构图）。</p>
