@@ -699,23 +699,69 @@
       box-shadow: 0 0 8px rgba(79,140,255,.42);
     }
 
+    /* Page 2 readability boost: keep the slide title and member names unchanged. */
+    .s-team .eyebrow {
+      font-size: calc(clamp(10px, 1.05vw, 17px) + 1.5px);
+    }
+
+    .s-team .kicker {
+      font-size: calc(clamp(11px, 1.2vw, 19px) + 1.5px);
+    }
+
+    .s-team .person-school {
+      font-size: calc(clamp(13px, 1.08vw, 17.5px) + 1.5px);
+    }
+
+    .s-team .person-degree {
+      font-size: calc(clamp(9px, .72vw, 11.5px) + 1.5px);
+    }
+
+    .s-team .project-role {
+      font-size: calc(clamp(12px, .92vw, 14.8px) + 1.5px);
+    }
+
+    .s-team .project-profile > p > span,
+    .s-team .core-contributions > span {
+      font-size: calc(clamp(9px, .64vw, 10.2px) + 1.5px);
+    }
+
+    .s-team .core-contributions li {
+      font-size: calc(clamp(11px, .82vw, 13px) + 1.5px);
+    }
+
+    .s-team .origin-label {
+      font-size: calc(clamp(9px, .7vw, 11px) + 1.5px);
+    }
+
+    .s-team .team-name {
+      font-size: calc(clamp(15px, 1.18vw, 19px) + 1.5px);
+    }
+
+    .s-team .team-description {
+      font-size: calc(clamp(11px, .88vw, 14px) + 1.5px);
+    }
+
+    .s-team .slide-no {
+      font-size: calc(clamp(9px, .8vw, 13px) + 1.5px);
+    }
+
     /* Slide 2 */
     .s2 h2 {
       max-width: 100%;
-      margin-bottom: 1.85%;
+      margin-bottom: 1.35%;
     }
 
     .pain-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25%;
+      gap: 1.05%;
       align-items: stretch;
     }
 
     .pain-card {
       position: relative;
-      min-height: 390px;
-      padding: 1.55% 1.65% 1.4%;
+      min-height: clamp(360px, 22.5vw, 390px);
+      padding: 1.45% 1.55% 1.25%;
       overflow: hidden;
       border: 1px solid rgba(203, 218, 244, .15);
       border-top: 4px solid var(--cyan);
@@ -770,15 +816,15 @@
     .pain-card.standard .card-tag { color: var(--amber); }
 
     .pain-card.standard .card-tag {
-      margin-bottom: 4.2%;
+      margin-bottom: 3.5%;
     }
 
     .pain-card.experience .card-tag {
-      margin-bottom: 4.1%;
+      margin-bottom: 3.5%;
     }
 
     .pain-card.pressure .card-tag {
-      margin-bottom: 4.2%;
+      margin-bottom: 3.5%;
     }
 
     .pain-card .card-tag i {
@@ -1056,7 +1102,7 @@
     }
 
     .pressure-block + .pressure-block {
-      padding-top: .65em;
+      padding-top: .5em;
       padding-left: 0;
       border-top: 1px solid rgba(203,218,244,.13);
       border-left: 0;
@@ -1194,11 +1240,11 @@
     .policy-timeline {
       display: grid;
       grid-template-columns: 13.5% 21.5% 3% 24% 1fr;
-      gap: 1.45%;
+      gap: 1.1%;
       align-items: center;
-      min-height: 126px;
-      margin-top: 1.15%;
-      padding: 1.1% 1.4%;
+      min-height: clamp(120px, 6.75vw, 172px);
+      margin-top: .45%;
+      padding: .95% 1.25%;
       border: 1px solid rgba(56,213,239,.22);
       border-radius: 9px;
       background: linear-gradient(90deg, rgba(56,213,239,.075), rgba(79,140,255,.055) 55%, rgba(7,17,31,.2));
@@ -1261,8 +1307,8 @@
       grid-template-columns: 13.5% 1fr;
       gap: 2.2%;
       align-items: center;
-      margin-top: 1.1%;
-      padding-top: 1.05%;
+      margin-top: .5%;
+      padding-top: .6%;
       border-top: 1px solid rgba(203,218,244,.16);
     }
 
@@ -1285,26 +1331,129 @@
     .problem-thesis b { color: var(--cyan); }
 
     .s2 .source {
+      bottom: 1.55%;
       max-width: 83%;
       font-size: clamp(7.5px, .68vw, 11px);
     }
 
-    /* Slide 3 */
+    /* Page 3: tighter spacing and a 1px readability boost for non-title copy. */
+    .s2 .eyebrow {
+      font-size: calc(clamp(10px, 1.05vw, 17px) + 1px);
+    }
+
+    .s2 .kicker {
+      font-size: calc(clamp(11px, 1.2vw, 19px) + 1px);
+    }
+
+    .s2 .pain-card .card-tag {
+      font-size: calc(clamp(12px, .97vw, 15.5px) + 3px);
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .s2 .pain-card .card-tag > span {
+      font-size: calc(1em + 2px);
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+
+    .s2 .pain-card .card-tag i {
+      letter-spacing: .04em;
+    }
+
+    .s2 .experience-indicator {
+      font-size: calc(clamp(12px, .88vw, 14px) + 1px);
+    }
+
+    .s2 .experience-levels {
+      font-size: calc(clamp(11.5px, .84vw, 13.5px) + 1px);
+    }
+
+    .s2 .experience-delta {
+      font-size: calc(clamp(8px, .58vw, 9.5px) + 1px);
+    }
+
+    .s2 .pain-card.experience p,
+    .s2 .compare-row strong,
+    .s2 .compare-row p,
+    .s2 .pain-card.standard .compare-row p {
+      font-size: calc(clamp(12.5px, .92vw, 14.8px) + 1px);
+    }
+
+    .s2 .compare-head {
+      font-size: calc(clamp(11px, .84vw, 13.5px) + 1px);
+    }
+
+    .s2 .pressure-label {
+      font-size: calc(clamp(10px, .75vw, 12px) + 1px);
+    }
+
+    .s2 .doctor-result {
+      font-size: calc(clamp(10px, .78vw, 12.5px) + 1px);
+    }
+
+    .s2 .hospital-chain,
+    .s2 .hospital-labels {
+      font-size: calc(clamp(13px, .98vw, 15.7px) + 1px);
+    }
+
+    .s2 .pain-card .need,
+    .s2 .pain-card.experience .need,
+    .s2 .pain-card.standard .need,
+    .s2 .pain-card.pressure .need {
+      bottom: 6.2%;
+      padding-top: 2.1%;
+      font-size: calc(clamp(12px, .91vw, 14.5px) + 1px);
+    }
+
+    .s2 .policy-timeline .policy-label {
+      font-size: calc(clamp(11px, .9vw, 14.5px) + 1px);
+    }
+
+    .s2 .policy-step span {
+      font-size: calc(clamp(12px, 1vw, 16px) + 1px);
+    }
+
+    .s2 .policy-conclusion {
+      font-size: calc(clamp(13px, 1.12vw, 18px) + 1px);
+    }
+
+    .s2 .problem-thesis span {
+      font-size: calc(clamp(11px, .88vw, 14px) + 1px);
+    }
+
+    .s2 .problem-thesis p {
+      font-size: calc(clamp(18px, 1.63vw, 26px) + 1px);
+    }
+
+    .s2 .source {
+      font-size: calc(clamp(7.5px, .68vw, 11px) + 1px);
+    }
+
+    .s2 .slide-no {
+      bottom: 1.55%;
+      font-size: calc(clamp(9px, .8vw, 13px) + 1px);
+    }
+
+    /* Slide 4 · 市场与部署现状 */
     .s3 h2 {
       max-width: 100%;
-      margin-bottom: 2.6%;
+      margin-bottom: 1.9%;
+      font-size: clamp(31px, 3.65vw, 58px);
     }
 
     .market-layout {
       display: grid;
-      grid-template-columns: .78fr 1.22fr;
-      gap: 5.5%;
+      grid-template-columns: minmax(0, .68fr) minmax(0, 1.46fr) minmax(0, 1fr);
+      gap: 2.7%;
       align-items: stretch;
+      min-height: min(36.5vh, 20.5vw);
     }
 
     .market-scale {
-      padding-top: 3%;
-      border-top: 4px solid var(--cyan);
+      min-width: 0;
+      padding-top: 4.6%;
+      border-top: 3px solid var(--cyan);
     }
 
     .market-scale .period {
@@ -1317,15 +1466,16 @@
 
     .growth-numbers {
       display: flex;
-      align-items: center;
-      gap: 5%;
-      margin: 4.5% 0 5.5%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .52em;
+      margin: 7% 0 0;
     }
 
     .growth-numbers strong {
       color: var(--ink);
       flex: 0 0 auto;
-      font-size: clamp(36px, 3.1vw, 50px);
+      font-size: clamp(34px, 3vw, 48px);
       font-weight: 880;
       line-height: .95;
       letter-spacing: -.055em;
@@ -1356,8 +1506,11 @@
 
     .growth-numbers i {
       color: var(--dim);
-      font-size: clamp(20px, 2vw, 32px);
+      margin-left: 1.35em;
+      font-size: clamp(18px, 1.7vw, 27px);
       font-style: normal;
+      line-height: .7;
+      transform: rotate(90deg);
     }
 
     .penetration {
@@ -1380,27 +1533,27 @@
       line-height: 1.45;
     }
 
-    .deployment-lanes {
-      border-top: 1px solid var(--line);
-    }
-
     .market-lane {
-      display: grid;
-      grid-template-columns: 25% 1fr;
-      gap: 4%;
-      align-items: start;
-      padding: 2.8% 0;
-      border-bottom: 1px solid var(--line);
+      min-width: 0;
+      padding: 2.2% 0 0 5%;
+      border-top: 3px solid rgba(203,218,244,.28);
+      border-left: 1px solid var(--line);
     }
 
     .market-lane .lane-name {
+      display: block;
+      margin-bottom: 1em;
       color: var(--cyan);
-      font-size: clamp(17px, 1.65vw, 26px);
-      font-weight: 800;
+      font-size: clamp(18px, 1.55vw, 25px);
+      font-weight: 850;
       line-height: 1.25;
     }
 
-    .market-lane:nth-child(2) .lane-name { color: var(--coral); }
+    .market-lane.hospital-lane {
+      border-top-color: rgba(255,111,143,.72);
+    }
+
+    .market-lane.hospital-lane .lane-name { color: var(--coral); }
 
     .market-lane .examples {
       margin: 0 0 .35em;
@@ -1417,70 +1570,65 @@
       line-height: 1.5;
     }
 
-    .market-lane.vendor-lane {
-      align-items: stretch;
-      padding: 2.1% 0 2.35%;
-    }
-
-    .vendor-lane .lane-name {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: .65em;
-      min-height: 100%;
-    }
-
-    .vendor-lane .lane-name small {
+    .market-lane .lane-name small {
+      display: block;
+      margin-top: .5em;
       color: var(--dim);
       font-family: ui-monospace, monospace;
-      font-size: .46em;
+      font-size: .44em;
       font-weight: 820;
       letter-spacing: .12em;
     }
 
     .vendor-proof-grid {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 2.6%;
+      grid-template-columns: minmax(0, 1fr);
       min-width: 0;
+      border-top: 1px solid rgba(203,218,244,.15);
     }
 
     .vendor-group {
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: 3%;
+      align-items: center;
       min-width: 0;
+      padding: 2.5% 0;
     }
 
     .vendor-group + .vendor-group {
-      padding-left: 6%;
-      border-left: 1px solid rgba(203,218,244,.15);
+      border-top: 1px solid rgba(203,218,244,.12);
     }
 
     .vendor-head {
-      display: flex;
-      align-items: baseline;
-      gap: .65em;
-      margin-bottom: .55em;
+      display: block;
+      margin: 0;
       color: #dbe3f0;
       font-size: clamp(12px, 1.02vw, 16px);
       line-height: 1.25;
     }
 
     .vendor-head b {
+      display: block;
+      margin-bottom: .3em;
       color: var(--ink);
-      font-size: 1.12em;
+      font-size: 1.2em;
       font-weight: 850;
     }
 
     .vendor-head span {
+      display: block;
       color: var(--muted);
-      font-size: .78em;
+      font-size: .76em;
       font-weight: 680;
+      line-height: 1.4;
     }
 
     .vendor-primary {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 5%;
-      align-items: end;
+      gap: 4%;
+      align-items: center;
     }
 
     .vendor-metric {
@@ -1492,7 +1640,7 @@
 
     .vendor-metric strong {
       color: var(--cyan);
-      font-size: clamp(24px, 2.2vw, 35px);
+      font-size: clamp(22px, 1.75vw, 28px);
       font-weight: 880;
       line-height: 1;
       letter-spacing: -.045em;
@@ -1503,19 +1651,6 @@
       color: var(--coral);
     }
 
-    .vendor-group.jd .vendor-primary {
-      grid-template-columns: minmax(0, 1fr);
-      gap: .6em;
-    }
-
-    .vendor-group.jd .vendor-metric strong {
-      font-size: clamp(23px, 1.9vw, 31px);
-    }
-
-    .vendor-group.jd .vendor-metric span {
-      white-space: nowrap;
-    }
-
     .vendor-metric span {
       color: #aebbd0;
       font-size: clamp(8.5px, .67vw, 10.8px);
@@ -1524,7 +1659,10 @@
     }
 
     .vendor-scale {
-      margin: .72em 0 0;
+      grid-column: 1 / -1;
+      margin: .58em 0 0;
+      padding-top: .48em;
+      border-top: 1px solid rgba(203,218,244,.1);
       color: #9eacc1;
       font-size: clamp(8.5px, .68vw, 11px);
       font-weight: 620;
@@ -1537,13 +1675,57 @@
     }
 
     .vendor-others {
-      grid-column: 1 / -1;
-      margin: .68em 0 0;
-      padding-top: .55em;
+      margin: .45em 0 0;
+      padding-top: .5em;
       border-top: 1px solid rgba(203,218,244,.11);
       color: #718099;
       font-size: clamp(8px, .62vw, 10px);
       line-height: 1.35;
+    }
+
+    .hospital-proof-list {
+      border-top: 1px solid rgba(203,218,244,.15);
+    }
+
+    .hospital-proof {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+      gap: 5%;
+      align-items: baseline;
+      padding: 3.1% 0;
+      border-bottom: 1px solid rgba(203,218,244,.12);
+    }
+
+    .hospital-proof b {
+      color: #edf2f9;
+      font-size: clamp(13px, 1.12vw, 18px);
+      font-weight: 820;
+      line-height: 1.3;
+    }
+
+    .hospital-proof span {
+      color: #ff9cb2;
+      font-size: clamp(11px, .92vw, 15px);
+      font-weight: 740;
+      line-height: 1.35;
+      text-align: right;
+    }
+
+    .hospital-more {
+      margin: .55em 0 0;
+      color: #718099;
+      font-family: ui-monospace, monospace;
+      font-size: clamp(8px, .62vw, 10px);
+      letter-spacing: .08em;
+    }
+
+    .hospital-lane .reality {
+      margin-top: .72em;
+      padding-top: .62em;
+      border-top: 1px solid rgba(255,111,143,.22);
+      color: #b7c3d6;
+      font-size: clamp(10.5px, .86vw, 13.8px);
+      line-height: 1.4;
     }
 
     .workflow-thesis {
@@ -1666,7 +1848,7 @@
       font-weight: 880;
     }
 
-    /* Slide 4 */
+    /* Slide 5 · 技术创新 */
     .s4 {
       background:
         radial-gradient(circle at 50% 58%, rgba(56,213,239,.16), transparent 25%),
@@ -1675,27 +1857,54 @@
 
     .s4 h2 {
       max-width: 100%;
-      margin-bottom: 2.5%;
+      margin-bottom: 0;
+      font-size: clamp(30px, 3.7vw, 59px);
+    }
+
+    .innovation-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+      gap: 4.2%;
+      align-items: start;
+    }
+
+    .innovation-heading {
+      min-width: 0;
+      align-self: center;
     }
 
     .two-innovations {
-      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.7%;
+      margin-top: 1.55%;
     }
 
     .innovation-block {
       display: grid;
-      grid-template-columns: 7% 25% 1fr;
-      gap: 2.5%;
-      align-items: center;
-      padding: 2% 0;
-      border-bottom: 1px solid var(--line);
+      grid-template-columns: 7.5% minmax(0, 1fr);
+      grid-template-rows: auto 1fr;
+      column-gap: 2.2%;
+      row-gap: .85em;
+      align-items: start;
+      align-content: start;
+      min-width: 0;
+      min-height: clamp(245px, 15.8vw, 280px);
+      padding: 1.8% 2.1% 1.9%;
+      border: 1px solid rgba(203,218,244,.17);
+      border-top: 3px solid var(--cyan);
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(56,213,239,.085), rgba(79,140,255,.035));
     }
 
     .innovation-block.guideline {
-      grid-template-columns: 7% 22% minmax(0, .82fr) minmax(0, 1.35fr);
-      gap: 2%;
-      align-items: center;
-      padding: 1.45% 0 1.55%;
+      grid-template-columns: 7.5% minmax(0, 1fr);
+    }
+
+    .innovation-block.case {
+      grid-template-columns: 7.5% minmax(0, 1fr);
+      border-top-color: var(--coral);
+      background: linear-gradient(135deg, rgba(255,111,143,.08), rgba(183,121,255,.035));
     }
 
     .innovation-block .innovation-num {
@@ -1708,6 +1917,10 @@
 
     .innovation-block.case .innovation-num { color: var(--coral); }
 
+    .innovation-title {
+      min-width: 0;
+    }
+
     .innovation-title strong {
       display: block;
       color: var(--ink);
@@ -1718,10 +1931,25 @@
 
     .innovation-title span {
       display: block;
-      margin-top: .45em;
+      margin-top: .3em;
       color: var(--muted);
       font-size: clamp(10px, .9vw, 14px);
       line-height: 1.4;
+    }
+
+    .innovation-content {
+      grid-column: 1 / -1;
+      min-width: 0;
+      padding-top: .8em;
+      border-top: 1px solid rgba(203,218,244,.13);
+    }
+
+    .innovation-block.guideline .innovation-content {
+      border-top-color: rgba(56,213,239,.18);
+    }
+
+    .innovation-block.case .innovation-content {
+      border-top-color: rgba(255,111,143,.17);
     }
 
     .innovation-highlight {
@@ -1747,7 +1975,7 @@
       margin: 0;
       color: var(--muted);
       font-size: clamp(11px, 1vw, 16px);
-      line-height: 1.5;
+      line-height: 1.46;
     }
 
     .innovation-description strong { color: #d8e1ed; }
@@ -1761,7 +1989,7 @@
 
     .who-note {
       margin: 1.4% 0 0;
-      padding-left: 2.2%;
+      padding-left: 1.8%;
       border-left: 3px solid var(--cyan);
       color: #d9e3ef;
       font-size: clamp(10px, .94vw, 15px);
@@ -1771,9 +1999,10 @@
     .who-note b { color: var(--cyan); }
 
     .smart-figure {
-      align-self: stretch;
+      align-self: start;
+      width: 100%;
       margin: 0;
-      padding: .42em;
+      padding: .38em;
       overflow: hidden;
       border: 1px solid rgba(56,213,239,.28);
       border-radius: 8px;
@@ -1789,7 +2018,7 @@
     }
 
     .smart-figure figcaption {
-      padding: .48em .28em .08em;
+      padding: .42em .28em .04em;
       color: #425168;
       font-family: ui-monospace, monospace;
       font-size: clamp(7.5px, .56vw, 9px);
@@ -1804,8 +2033,8 @@
       grid-template-columns: 42% 1fr;
       gap: 4%;
       align-items: center;
-      margin-top: 1.6%;
-      padding-top: 1.25%;
+      margin-top: 1.25%;
+      padding-top: 1.05%;
       border-top: 1px solid rgba(56,213,239,.3);
     }
 
@@ -3287,7 +3516,7 @@
       <section class="slide s-team" data-duration="30" data-label="团队介绍与成员">
         <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">00 · 团队与成员</span></div>
         <div class="kicker">Core TEAM &amp; CLINICAL COLLABORATION</div>
-        <h2>AI研发 × 临床医学，<span class="accent">形成从算法到真实临床场景的闭环</span></h2>
+        <h2>AI研发 × 临床医学，<span class="accent">形成算法到真实临床场景闭环</span></h2>
         <div class="people-grid">
           <article class="person-card">
             <div class="portrait zhao"><img src="./zhao.jpg" alt="赵文韬个人照片" /></div>
@@ -3363,14 +3592,14 @@
             <div class="card-tag"><span>01 · 医疗资源极度紧张</span><i>CAPACITY PRESSURE</i></div>
             <div class="pressure-evidence">
               <section class="pressure-block">
-                <div class="hospital-labels">2025年全国医疗机构总计105.8亿诊疗人次，执业（助理）医师仅529万人。</div>
-                <div class="hospital-labels">按总量粗略折算，<strong>医生年平均诊疗人次约2000人</strong>[1]。</div>
+                <div class="hospital-labels">2025年全国医疗机构总计105.8亿诊疗人次，执业（助理）医师仅529万人。按总量粗略折算，</div>
+                <div class="hospital-labels"><strong>医生年平均诊疗人次约2000人</strong>[1]。</div>
               </section>
               <section class="pressure-block">
                 <div class="hospital-chain">三级医院仅占全国医院总数<strong>10.6%</strong>，却集中了<strong>48.0%</strong>的医院床位，并承担了<strong>63.8%</strong>的医院诊疗量和<strong>63.2%</strong>的医院住院量[2]。</div>
               </section>
             </div>
-            <div class="need"><b>结论</b> · 医生工作负荷高、三级医院长期承压，基层医疗能力仍有提升空间</div>
+            <div class="need"><b>结论</b> · 基层医疗能力仍有提升空间。</div>
           </article>
           <article class="pain-card experience">
             <div class="card-tag"><span>02 · 医生资历影响诊断结果</span><i>QUALITY GAP</i></div>
@@ -3428,32 +3657,36 @@
               <strong><small>2030年</small>140亿元<small>[1]</small></strong>
             </div>
           </div>
-          <div class="deployment-lanes">
-            <div class="market-lane vendor-lane">
-              <div class="lane-name">大厂医疗产品<small>PUBLIC SELLING POINTS</small></div>
-              <div class="vendor-proof-grid">
-                <div class="vendor-group iflytek">
-                  <div class="vendor-head"><b>讯飞医疗</b><span>星火医疗大模型 · 海南基层智医助理</span></div>
-                  <div class="vendor-primary">
-                    <div class="vendor-metric"><strong>95.4</strong><span>MedBench<br>综合得分</span></div>
-                    <div class="vendor-metric"><strong>95.76%</strong><span>推荐诊断<br>符合率</span></div>
-                  </div>
-                  <p class="vendor-scale"><b>87 家</b>基层医疗机构 · <b>647 万+次</b> AI 辅助服务 · <b>258 万次</b>推荐诊断</p>
+          <div class="market-lane vendor-lane">
+            <div class="lane-name">大厂医疗产品<small>PRODUCT PROOF · 公开指标与应用规模</small></div>
+            <div class="vendor-proof-grid">
+              <div class="vendor-group iflytek">
+                <div class="vendor-head"><b>讯飞医疗</b><span>星火医疗大模型 · 海南基层智医助理</span></div>
+                <div class="vendor-primary">
+                  <div class="vendor-metric"><strong>95.4</strong><span>MedBench<br>综合得分</span></div>
+                  <div class="vendor-metric"><strong>95.76%</strong><span>推荐诊断<br>符合率</span></div>
                 </div>
-                <div class="vendor-group jd">
-                  <div class="vendor-head"><b>京东健康</b><span>AI诊疗助手2.0</span></div>
-                  <div class="vendor-primary">
-                    <div class="vendor-metric"><strong>99.5%</strong><span>分诊<br>准确率</span></div>
-                    <div class="vendor-metric"><strong>+120%</strong><span>电子病历<br>书写效率</span></div>
-                  </div>
-                </div>
-                <p class="vendor-others">百度健康 · 迈瑞启元 · 腾讯医疗等大厂持续布局医疗模型与 Agent 产品</p>
+                <p class="vendor-scale"><b>87 家</b>基层医疗机构 · <b>647 万+次</b> AI 辅助服务 · <b>258 万次</b>推荐诊断</p>
               </div>
+              <div class="vendor-group jd">
+                <div class="vendor-head"><b>京东健康</b><span>AI诊疗助手2.0</span></div>
+                <div class="vendor-primary">
+                  <div class="vendor-metric"><strong>99.5%</strong><span>分诊<br>准确率</span></div>
+                  <div class="vendor-metric"><strong>+120%</strong><span>电子病历<br>书写效率</span></div>
+                </div>
+              </div>
+              <p class="vendor-others">百度健康 · 迈瑞启元 · 腾讯医疗等大厂持续布局医疗模型与 Agent 产品</p>
             </div>
-            <div class="market-lane">
-              <div class="lane-name">医院部署模型</div>
-              <div><p class="examples">北京协和医院 太初（罕见病）· 四川华西医院 黉医 (诊断) · 上海瑞金 RuiPath（病理）等医院</p><p class="reality">应用已覆盖鉴别诊断、病历分析、病理与影像，但多数仍以 LLM + RAG 或单点系统切入，工作流尚未完全贯通。</p></div>
+          </div>
+          <div class="market-lane hospital-lane">
+            <div class="lane-name">医院部署模型<small>CLINICAL DEPLOYMENT · 代表性实践</small></div>
+            <div class="hospital-proof-list">
+              <div class="hospital-proof"><b>北京协和医院</b><span>太初 · 罕见病</span></div>
+              <div class="hospital-proof"><b>四川华西医院</b><span>黉医 · 诊断</span></div>
+              <div class="hospital-proof"><b>上海瑞金医院</b><span>RuiPath · 病理</span></div>
             </div>
+            <p class="hospital-more">等医院已开展相关部署</p>
+            <p class="reality">应用已覆盖鉴别诊断、病历分析、病理与影像，但多数仍以 LLM + RAG 或单点系统切入，工作流尚未完全贯通。</p>
           </div>
         </div>
         <!-- <div class="workflow-thesis">
@@ -3485,25 +3718,29 @@
 
       <section class="slide s4" data-duration="65" data-label="技术创新点">
         <div class="eyebrow"><span>MEDICAL SKILL HUB</span><span class="section">03 · 技术创新</span></div>
-        <div class="kicker">Two Core Innovations</div>
-        <h2>两大创新，让指南与病例经验<br>成为<span class="accent">可执行的临床能力</span></h2>
+        <div class="innovation-hero">
+          <div class="innovation-heading">
+            <div class="kicker">Two Core Innovations</div>
+            <h2>两大创新，让指南与病例经验<br>成为<span class="accent">可执行的临床能力</span></h2>
+          </div>
+          <figure class="smart-figure">
+            <img src="./who-smart-guidelines-layers.jpg" alt="WHO SMART Guidelines 从 L1 叙事型指南到 L5 动态精准健康模型的五层框架" />
+            <figcaption>WHO SMART GUIDELINES · L1 NARRATIVE → L5 DYNAMIC</figcaption>
+          </figure>
+        </div>
         <div class="two-innovations">
           <div class="innovation-block guideline">
             <div class="innovation-num">01</div>
             <div class="innovation-title"><strong>指南 Skill 知识库</strong><span>重构临床诊断推理链，<mark class="innovation-highlight">推动指南深度融入诊疗决策</mark></span></div>
-            <div>
+            <div class="innovation-content">
               <p class="innovation-description">将指南转化为 Agent <strong>可调用、可执行、可组合</strong>的临床能力单元，而不是普通知识切块检索。</p>
               <p class="who-note"><b>与世卫组织 WHO SMART Guidelines[1] 方向一致：</b>从叙事型指南走向机器可读的知识、可计算的决策逻辑与可执行的数字临床能力</p>
             </div>
-            <figure class="smart-figure">
-              <img src="./who-smart-guidelines-layers.jpg" alt="WHO SMART Guidelines 从 L1 叙事型指南到 L5 动态精准健康模型的五层框架" />
-              <figcaption>WHO SMART GUIDELINES · L1 NARRATIVE → L5 DYNAMIC</figcaption>
-            </figure>
           </div>
           <div class="innovation-block case">
             <div class="innovation-num">02</div>
             <div class="innovation-title"><strong>相似病例知识库</strong><span>缩小临床经验差异，<mark class="innovation-highlight">提升诊断准确性与一致性</mark></span></div>
-            <div><p class="innovation-mainline">患者关键信息 → 相似病例匹配 → <b>历史诊疗路径参考</b></p><p class="innovation-description">辅助医生快速参考既往诊疗经验，提升复杂病例判断准确率，缓解诊疗经验/医疗资源分布不均。</p></div>
+            <div class="innovation-content"><p class="innovation-mainline">患者关键信息 → 相似病例匹配 → <b>历史诊疗路径参考</b></p><p class="innovation-description">辅助医生快速参考既往诊疗经验，提升复杂病例判断准确率，缓解诊疗经验/医疗资源分布不均。</p></div>
           </div>
         </div>
         <div class="innovation-footer">
